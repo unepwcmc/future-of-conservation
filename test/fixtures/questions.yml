@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  text: MyText
+  weight: 1.5
+  axis: MyString
+
+two:
+  text: MyText
+  weight: 1.5
+  axis: MyString

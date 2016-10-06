@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  ip_address: MyString
+  answers: 
+  x_axis_total: 1.5
+  y_axis_total: 1.5
+
+two:
+  ip_address: MyString
+  answers: 
+  x_axis_total: 1.5
+  y_axis_total: 1.5
