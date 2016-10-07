@@ -9,6 +9,7 @@
 #  y_axis_total :float
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
+#  uuid         :string
 #
 
 # An answer set holds a response to a survey,

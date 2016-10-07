@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'results/:uuid', to: 'results#show', as: 'results'
+
   resources :answer_sets, only: [:create]
   resources :questions
   root 'survey#index'
