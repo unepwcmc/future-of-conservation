@@ -1,8 +1,12 @@
-<h1>Results#show</h1>
-<p>Find me in app/views/results/show.html.erb</p>
+<h1>Your results</h1>
 
-<h2>IP: <%= @results.ip_address %> </h2>
+<dl class="row">
+  <dt class="col-sm-3 text-primary">IP Address</dt>
+  <dd class="col-sm-9"><%= @results.ip_address %></dd>
 
-<h2>X Axis: <%= @results.x_axis_total %> </h2>
-<h2>Y Axis: <%= @results.y_axis_total %> </h2>
-<h2>UUID: <%= @results.uuid %> </h2>
+  <dt class="col-sm-3 text-primary">X axis</dt>
+  <dd class="col-sm-9"><%= @results.x_axis_total %></dd>
+
+  <dt class="col-sm-3 text-primary">Y axis</dt>
+  <dd class="col-sm-9"><%= @results.y_axis_total %></dd>
+</dl>

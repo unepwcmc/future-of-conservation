@@ -1,14 +1,24 @@
-<%#= label_tag 'Strongly Agree' %>
-<%= ff.radio_button "#{question_id}_scale", '5' %>
+<p class="card-text">
+  <%= ff.radio_button "#{question_id}_scale", '5' %>
+  <%= label_tag 'Strongly Agree' %>
+</p>
 
-<%#= label_tag 'Agree' %>
-<%= ff.radio_button "#{question_id}_scale", '4' %>
+<p class="card-text">
+  <%= ff.radio_button "#{question_id}_scale", '4' %>
+  <%= label_tag 'Agree' %>
+</p>
 
-<%#= label_tag 'Neutral' %>
-<%= ff.radio_button "#{question_id}_scale", '3' %>
+<p class="card-text">
+  <%= ff.radio_button "#{question_id}_scale", '3' %>
+  <%= label_tag 'Neutral' %>
+</p>
 
-<%#= label_tag 'Disagree' %>
-<%= ff.radio_button "#{question_id}_scale", '2' %>
+<p class="card-text">
+  <%= ff.radio_button "#{question_id}_scale", '2' %>
+  <%= label_tag 'Disagree' %>
+</p>
 
-<%#= label_tag 'Strongly Disgree' %>
-<%= ff.radio_button "#{question_id}_scale", '1' %>
+<p class="card-text">
+  <%= ff.radio_button "#{question_id}_scale", '1' %>
+  <%= label_tag 'Strongly Disagree' %>
+</p>

@@ -2,18 +2,15 @@
   <%= fields_for :answers do |ff| %>
 
     <% @questions.each_with_index do |question, index| %>
-      <div class="row question">
-        <%= index + 1 %>. <%= question.text %>
-        <div class="row">
-          <div class="two columns"><i>Strongly Agree</i></div>
-          <div class="two columns">
-            <%= render partial: "survey/scale", locals: {ff: ff, question_id: question.id} %>
-          </div>
-          <div class="two columns"><i>Strongly Disagree</i></div>
-        </div>
+      <div class="card card-block">
+        <h4 class="card-title">
+          <span class="text-primary"><%= index + 1 %>.</span> <%= question.text %>
+        </h4>
+        <hr>
+        <%= render partial: "survey/scale", locals: {ff: ff, question_id: question.id} %>
       </div>
     <% end %>
 
   <% end %>
-  <%= f.submit "Submit" %>
+  <%= f.submit "Submit", class: 'btn btn-lg btn-primary' %>
 <% end %>
