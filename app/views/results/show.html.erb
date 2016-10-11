@@ -10,3 +10,15 @@
   <dt class="col-sm-3 text-primary">Y axis</dt>
   <dd class="col-sm-9"><%= @results.y_axis_total %></dd>
 </dl>
+
+<%= scatter_chart [
+  {
+    name: "Other peoples results",
+    data: AnswerSet.pluck(:x_axis_scaled, :y_axis_scaled)
+  },
+  {
+    name: "Your results",
+    data: [[@results.x_axis_scaled, @results.y_axis_scaled]]
+    }
+] %>
+

@@ -29,6 +29,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'annotate', '~> 2.7.1'
 
 gem 'paper_trail', '~> 5.2.2'
+gem "chartkick", '~> 2.1.1'
 
 gem 'bootstrap', '~> 4.0.0.alpha4'
 # Use Capistrano for deployment

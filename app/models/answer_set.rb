@@ -2,14 +2,16 @@
 #
 # Table name: answer_sets
 #
-#  id           :integer          not null, primary key
-#  ip_address   :string
-#  answers      :jsonb
-#  x_axis_total :float
-#  y_axis_total :float
-#  created_at   :datetime         not null
-#  updated_at   :datetime         not null
-#  uuid         :string
+#  id            :integer          not null, primary key
+#  ip_address    :string
+#  answers       :jsonb
+#  x_axis_total  :float
+#  y_axis_total  :float
+#  created_at    :datetime         not null
+#  updated_at    :datetime         not null
+#  uuid          :string
+#  x_axis_scaled :float
+#  y_axis_scaled :float
 #
 
 # An answer set holds a response to a survey,
@@ -36,10 +38,15 @@ class AnswerSet < ApplicationRecord
       answers_array << question_data
     end
 
+    x_axis_total = self.calculate_axis_total(answers_array.select {|h| h[:question_axis] == "X" || "Both"}),
+    y_axis_total = self.calculate_axis_total(answers_array.select {|h| h[:question_axis] == "Y" || "Both"})
+
     self.new(
       answers: answers_array.to_json,
-      x_axis_total: self.calculate_axis_total(answers_array.select {|h| h[:question_axis] == "X"}),
-      y_axis_total: self.calculate_axis_total(answers_array.select {|h| h[:question_axis] == "Y"})
+      x_axis_total: x_axis_total,
+      y_axis_total: y_axis_total,
+      x_axis_scaled: self.scale_axis_total(x_axis_total),
+      y_axis_scaled: self.scale_axis_total(y_axis_total)
     )
   end
 
@@ -53,5 +60,7 @@ class AnswerSet < ApplicationRecord
     end
 
     def self.scale_axis_total(total)
+      max_score = Question.count * 5 # 5 point scale
+      total / max_score
     end
 end
