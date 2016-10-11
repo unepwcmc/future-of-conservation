@@ -11,22 +11,22 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :text %>
-    <%= f.text_area :text %>
+    <%= f.text_area :text, class: 'form-control' %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :weight %>
-    <%= f.text_field :weight %>
+    <%= f.text_field :weight, class: 'form-control' %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :axis %>
-    <%= f.select :axis, options_for_select(["X", "Y", "Both", "None"]) %>
+    <%= f.select :axis, options_for_select(["X", "Y", "Both", "None"]), {}, {class: 'form-control'} %>
   </div>
 
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-group">
+    <%= f.submit class: 'btn btn-primary' %>
   </div>
 <% end %>
