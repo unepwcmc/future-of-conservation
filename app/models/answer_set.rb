@@ -29,7 +29,7 @@ class AnswerSet < ApplicationRecord
       question_data = {
         question_text: question.text,
         question_weight: question.weight,
-        question_version_number: 3,#question.version.index,
+        #question_version_number: 3,#question.version.index,
         question_axis: question.axis,
         answer_inputted: value.to_i,
         answer_calculated: self.calculate_answer(value, question.weight)
@@ -38,7 +38,7 @@ class AnswerSet < ApplicationRecord
       answers_array << question_data
     end
 
-    x_axis_total = self.calculate_axis_total(answers_array.select {|h| h[:question_axis] == "X" || "Both"}),
+    x_axis_total = self.calculate_axis_total(answers_array.select {|h| h[:question_axis] == "X" || "Both"})
     y_axis_total = self.calculate_axis_total(answers_array.select {|h| h[:question_axis] == "Y" || "Both"})
 
     self.new(
@@ -60,7 +60,8 @@ class AnswerSet < ApplicationRecord
     end
 
     def self.scale_axis_total(total)
-      max_score = Question.count * 5 # 5 point scale
-      total / max_score
+      # 4 is the maximum weighting and 3 is the maximum user inputted value
+      max_score = (3 * 4) * Question.count
+      total.to_f / max_score.to_f
     end
 end
