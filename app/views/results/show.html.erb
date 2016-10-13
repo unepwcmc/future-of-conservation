@@ -1,24 +1,26 @@
 <h1>Your results</h1>
 
-<dl class="row">
-  <dt class="col-sm-3 text-primary">IP Address</dt>
-  <dd class="col-sm-9"><%= @results.ip_address %></dd>
+<div class="row">
+  <div class="col-lg-6">
+    <dl class="row">
+      <dt class="col-sm-3 text-primary">IP Address</dt>
+      <dd class="col-sm-9"><%= @results.ip_address %></dd>
 
-  <dt class="col-sm-3 text-primary">X axis</dt>
-  <dd class="col-sm-9"><%= @results.x_axis_total %></dd>
+      <dt class="col-sm-3 text-primary">X axis</dt>
+      <dd class="col-sm-9"><%= @results.x_axis_total %></dd>
 
-  <dt class="col-sm-3 text-primary">Y axis</dt>
-  <dd class="col-sm-9"><%= @results.y_axis_total %></dd>
-</dl>
+      <dt class="col-sm-3 text-primary">Y axis</dt>
+      <dd class="col-sm-9"><%= @results.y_axis_total %></dd>
+    </dl>
+  </div>
 
-<%= scatter_chart [
-  {
-    name: "Other peoples results",
-    data: AnswerSet.pluck(:x_axis_scaled, :y_axis_scaled)
-  },
-  {
-    name: "Your results",
-    data: [[@results.x_axis_scaled, @results.y_axis_scaled]]
-    }
-] %>
+  <div class="col-lg-6">
+    <%= scatter_chart [
+      { name: "Other peoples results", data: AnswerSet.pluck(:x_axis_scaled, :y_axis_scaled) },
+      { name: "Your results", data: [[@results.x_axis_scaled, @results.y_axis_scaled]] }
+    ] %>
+  </div>
+</div>
+
+
 
