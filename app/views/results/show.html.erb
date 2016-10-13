@@ -1,24 +1,50 @@
-<h1>Your results</h1>
-
 <div class="row">
   <div class="col-lg-6">
-    <dl class="row">
-      <dt class="col-sm-3 text-primary">IP Address</dt>
-      <dd class="col-sm-9"><%= @results.ip_address %></dd>
-
-      <dt class="col-sm-3 text-primary">X axis</dt>
-      <dd class="col-sm-9"><%= @results.x_axis_total %></dd>
-
-      <dt class="col-sm-3 text-primary">Y axis</dt>
-      <dd class="col-sm-9"><%= @results.y_axis_total %></dd>
-    </dl>
+    <div class="card">
+      <div class="card-block">
+        <h4 class="card-title">Your results</h4>
+        <p class="card-text">Metadata about the results for this answer set</p>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+          <span class="text-primary">IP Address: </span>
+          <%= @results.ip_address %>
+        </li>
+        <li class="list-group-item">
+          <span class="text-primary">X Axis Total: </span>
+          <%= @results.x_axis_total%>
+        </li>
+        <li class="list-group-item">
+          <span class="text-primary">Y Axis Total: </span>
+          <%= @results.y_axis_total%>
+        </li>
+        <li class="list-group-item">
+          <span class="text-primary">X Axis (Scaled): </span>
+          <%= @results.x_axis_scaled%>
+        </li>
+        <li class="list-group-item">
+          <span class="text-primary">Y Axis (Scaled): </span>
+          <%= @results.y_axis_scaled%>
+        </li>
+        <li class="list-group-item">
+          <span class="text-primary">Date Submitted: </span>
+          <%= @results.created_at.to_formatted_s(:long)%>
+        </li>
+      </ul>
+    </div>
   </div>
 
   <div class="col-lg-6">
-    <%= scatter_chart [
-      { name: "Other peoples results", data: AnswerSet.pluck(:x_axis_scaled, :y_axis_scaled) },
-      { name: "Your results", data: [[@results.x_axis_scaled, @results.y_axis_scaled]] }
-    ] %>
+    <div class="card">
+      <div class="card-block">
+        <h4 class="card-title">Your results</h4>
+        <p class="card-text">See how your results compare to others</p>
+      </div>
+      <%= scatter_chart [
+        { name: "Other peoples results", data: AnswerSet.pluck(:x_axis_scaled, :y_axis_scaled) },
+        { name: "Your results", data: [[@results.x_axis_scaled, @results.y_axis_scaled]] }
+      ] %>
+    </div>
   </div>
 </div>
 
