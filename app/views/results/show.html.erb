@@ -1,4 +1,39 @@
 <div class="row">
+  <div class="col-lg-12">
+    <h3>You have most in common with</h3>
+    <h1>??? Conservationalist</h1>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-lg-6">
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean mauris odio, dapibus id tellus in, tincidunt auctor ligula. Praesent sit amet urna feugiat, euismod leo vitae, ornare quam. Nulla porta dapibus eleifend. Donec a sollicitudin urna, id euismod nisi. Etiam ut cursus quam. Donec at efficitur ipsum. Sed sagittis efficitur dolor, nec sollicitudin elit lacinia eu. Nulla blandit mauris et laoreet luctus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec nisi nulla, porttitor a augue sit amet, efficitur auctor ligula. Fusce malesuada cursus enim vitae volutpat. Donec volutpat dolor vel velit consequat, id tempus nulla tempor. Curabitur fermentum turpis elit, non cursus velit convallis a.
+    </p>
+  </div>
+  <div class="col-lg-6">
+    <%= image_tag 'http://www.placehold.it/500x250' %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-lg-12">
+    <h2>Your result</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean mauris odio, dapibus id tellus in, tincidunt auctor ligula. Praesent sit amet urna feugiat, euismod leo vitae, ornare quam.</p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-lg-6">
+    <div class="card">
+      <div class="card-block">
+        <h4 class="card-title">Your results</h4>
+        <p class="card-text">See how your results compare to others</p>
+      </div>
+      <%= scatter_chart @data, @config %>
+    </div>
+  </div>
+
   <div class="col-lg-6">
     <div class="card">
       <div class="card-block">
@@ -33,20 +68,14 @@
       </ul>
     </div>
   </div>
-
-  <div class="col-lg-6">
-    <div class="card">
-      <div class="card-block">
-        <h4 class="card-title">Your results</h4>
-        <p class="card-text">See how your results compare to others</p>
-      </div>
-      <%= scatter_chart [
-        { name: "Other peoples results", data: AnswerSet.pluck(:x_axis_scaled, :y_axis_scaled) },
-        { name: "Your results", data: [[@results.x_axis_scaled, @results.y_axis_scaled]] }
-      ] %>
-    </div>
-  </div>
 </div>
 
-
-
+<div class="row">
+  <div class="col-lg-6">
+    <h2>Share your results</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean mauris odio, dapibus id tellus in, tincidunt auctor ligula. Praesent sit amet urna feugiat, euismod leo vitae, ornare quam.</p>
+  </div>
+  <div class="col-lg-6">
+    <%= link_to "Share my results", '/', class: 'btn btn-lg btn-primary' %>
+  </div>
+</div>
