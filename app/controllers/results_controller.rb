@@ -3,7 +3,7 @@ class ResultsController < ApplicationController
     @results = AnswerSet.find_by(uuid: params[:uuid])
     @config = { library:
                 {
-                  hAxis: {minValue: -3, maxValue: 3}, vAxis: {minValue: -3, maxValue: 3},
+                  hAxis: {minValue: -1, maxValue: 1}, vAxis: {minValue: -1, maxValue: 1},
                   legend: {position: 'bottom'}
                 }
               }

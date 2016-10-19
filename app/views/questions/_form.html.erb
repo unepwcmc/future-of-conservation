@@ -16,14 +16,16 @@
     <%= f.text_area :text, class: 'form-control' %>
   </div>
 
+  <p>If you want to ignore an axis, enter 0 for the value</p>
+
   <div class="form-group">
-    <%= f.label :weight %>
-    <%= f.text_field :weight, class: 'form-control' %>
+    <%= f.label :x_weight %>
+    <%= f.text_field :x_weight, class: 'form-control' %>
   </div>
 
   <div class="form-group">
-    <%= f.label :axis %>
-    <%= f.select :axis, options_for_select(["X", "Y", "Both", "None"]), {}, {class: 'form-control'} %>
+    <%= f.label :y_weight %>
+    <%= f.text_field :y_weight, class: 'form-control' %>
   </div>
 
   <div class="form-group">

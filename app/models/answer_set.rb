@@ -27,19 +27,22 @@ class AnswerSet < ApplicationRecord
       question      = Question.find(question_id)
       answer        = value
       question_data = {
-        question_text: question.text,
-        question_weight: question.weight,
+        question_text:        question.text,
+        question_x_weight:    question.x_weight,
+        question_y_weight:    question.y_weight,
+        answer_inputted:      value.to_i,
+        x_answer_calculated:  self.calculate_answer(value, question.x_weight),
+        y_answer_calculated:  self.calculate_answer(value, question.y_weight)
+
         #question_version_number: 3,#question.version.index,
-        question_axis: question.axis,
-        answer_inputted: value.to_i,
-        answer_calculated: self.calculate_answer(value, question.weight)
       }
 
       answers_array << question_data
     end
 
-    x_axis_total = self.calculate_axis_total(answers_array.select {|h| h[:question_axis] == "X" || "Both"})
-    y_axis_total = self.calculate_axis_total(answers_array.select {|h| h[:question_axis] == "Y" || "Both"})
+    x_axis_total = self.calculate_axis_total(self.select_by_axis(answers_array, :x_answer_calculated), :x_answer_calculated)
+    y_axis_total = self.calculate_axis_total(self.select_by_axis(answers_array, :y_answer_calculated), :y_answer_calculated)
+
 
     self.new(
       answers: answers_array.to_json,
@@ -51,16 +54,21 @@ class AnswerSet < ApplicationRecord
   end
 
   private
+    def self.select_by_axis(answers, axis)
+      answers.select {|h| h[axis] != 0}
+    end
+
     def self.calculate_answer(answer, weight)
       answer.to_f * weight.to_f
     end
 
-    def self.calculate_axis_total(answers)
-      answers.inject(0) {|sum, hash| sum + hash[:answer_calculated]}
+    def self.calculate_axis_total(answers, axis)
+      answers.inject(0) {|sum, hash| sum + hash[axis]}
     end
 
     def self.scale_axis_total(total)
-      # 4 is the maximum weighting and 3 is the maximum user inputted value
+      # 4 is the maximum weighting on a -4 to 4 scale and 3 is the maximum user inputted value on a -3 to 3 scale
+      # Should scale to between -1 and +1
       max_score = (3 * 4) * Question.count
       total.to_f / max_score.to_f
     end
