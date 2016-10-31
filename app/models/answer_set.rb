@@ -45,7 +45,7 @@ class AnswerSet < ApplicationRecord
 
 
     self.new(
-      answers: answers_array.to_json,
+      answers: {questions: answers_array, demographic: []},
       x_axis_total: x_axis_total,
       y_axis_total: y_axis_total,
       x_axis_scaled: self.scale_axis_total(x_axis_total),
