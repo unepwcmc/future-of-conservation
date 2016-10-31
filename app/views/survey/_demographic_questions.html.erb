@@ -1,0 +1,349 @@
+<div class="card card-block">
+  <h4 class="card-title">
+    <span class="text-primary"><%= Question.count + 1 %>.</span> What is your age?
+  </h4>
+  <hr>
+  <p class="card-text">
+    <%= text_field_tag "demographics[age]" %>
+    <%= label_tag 'Age' %>
+  </p>
+</div>
+
+<div class="card card-block">
+  <h4 class="card-title">
+    <span class="text-primary"><%= Question.count + 2 %>.</span> Select your gender
+  </h4>
+  <hr>
+  <p class="card-text">
+    <%= radio_button_tag "demographics[gender]", 'Male' %>
+    <%= label_tag 'Male' %>
+  </p>
+  <p class="card-text">
+    <%= radio_button_tag "demographics[gender]", 'Female' %>
+    <%= label_tag 'Female' %>
+  </p>
+  <p class="card-text">
+    <%= radio_button_tag "demographics[gender]", 'Other' %>
+    <%= label_tag 'Other' %>
+  </p>
+  <p class="card-text">
+    <%= radio_button_tag "demographics[gender]", 'Prefer not to say' %>
+    <%= label_tag 'Prefer not to say' %>
+  </p>
+</div>
+
+<div class="card card-block">
+  <h4 class="card-title">
+    <span class="text-primary"><%= Question.count + 3 %>.</span> At what level is your highest completed educational qualification?
+  </h4>
+  <hr>
+  <p class="card-text">
+    <%= radio_button_tag "demographics[education]", 'School level' %>
+    <%= label_tag 'School level' %>
+  </p>
+  <p class="card-text">
+    <%= radio_button_tag "demographics[education]", 'Post-high school, but at an institution other than a university' %>
+    <%= label_tag 'Post-high school, but at an institution other than a university' %>
+  </p>
+  <p class="card-text">
+    <%= radio_button_tag "demographics[education]", 'Undergraduate/Bachelors university degree' %>
+    <%= label_tag 'Undergraduate/Bachelors university degree' %>
+  </p>
+  <p class="card-text">
+    <%= radio_button_tag "demographics[education]", 'Masters degree/Postgraduate qualification' %>
+    <%= label_tag 'Masters degree/Postgraduate qualification' %>
+  </p>
+  <p class="card-text">
+    <%= radio_button_tag "demographics[education]", 'Doctorate' %>
+    <%= label_tag 'Doctorate' %>
+  </p>
+</div>
+
+<div class="card card-block">
+  <h4 class="card-title">
+    <span class="text-primary"><%= Question.count + 4 %>.</span> Which of the following best describes your educational specialism?
+  </h4>
+  <hr>
+  <p class="card-text">
+    <%= radio_button_tag "demographics[educational_specialism]", 'Biological Sciences' %>
+    <%= label_tag 'Biological Sciences (e.g. Zoology, Plant Sciences)' %>
+  </p>
+  <p class="card-text">
+    <%= radio_button_tag "demographics[educational_specialism]", 'Non-biological Natural Sciences' %>
+    <%= label_tag 'Non-biological Natural Sciences (e.g. Chemistry, Maths, Engineering)' %>
+  </p>
+  <p class="card-text">
+    <%= radio_button_tag "demographics[educational_specialism]", 'Social Sciences' %>
+    <%= label_tag 'Social Sciences (e.g. Economics, Human Geography, Political Science)' %>
+  </p>
+  <p class="card-text">
+    <%= radio_button_tag "demographics[educational_specialism]", 'Humanities' %>
+    <%= label_tag 'Humanities (e.g. Literature, History, Philosophy, Languages)' %>
+  </p>
+  <p class="card-text">
+    <%= radio_button_tag "demographics[educational_specialism]", 'Interdisciplinary' %>
+    <%= label_tag 'Interdisciplinary (a combination of at least two of Natural Science, Social Science and Humanities)' %>
+  </p>
+  <p class="card-text">
+    <%= radio_button_tag "demographics[educational_specialism]", 'Not Applicable' %>
+    <%= label_tag 'Not Applicable' %>
+  </p>
+</div>
+
+<div class="card card-block">
+  <h4 class="card-title">
+    <span class="text-primary"><%= Question.count + 5 %>.</span> What is your country of nationality?
+  </h4>
+  <hr>
+  <p class="card-text">
+    <%= country_select "demographics", "country", include_blank: true %>
+  </p>
+</div>
+
+<div class="card card-block">
+  <h4 class="card-title">
+    <span class="text-primary"><%= Question.count + 6 %>.</span> Where have you done most of your work as a conservationist? Please select up to three countries. You may skip this question if you do not self-identify as someone professionally engaged in conservation.
+  </h4>
+  <hr>
+  <p class="card-text">
+    <%= country_select "demographics[location_of_work]", "country_one", include_blank: true %><br>
+    <%= country_select "demographics[location_of_work]", "country_two", include_blank: true %><br>
+    <%= country_select "demographics[location_of_work]", "country_three", include_blank: true %>
+  </p>
+</div>
+
+<div class="card card-block">
+  <h4 class="card-title">
+    <span class="text-primary"><%= Question.count + 7 %>.</span> If more than three, please tell us how many countries you have worked in as a conservationist in total.
+  </h4>
+  <hr>
+  <p class="card-text">
+    <%= text_field_tag "demographics[location_of_work][total_countries_worked_in]" %>
+  </p>
+</div>
+
+<div class="card card-block">
+  <h4 class="card-title">
+    <span class="text-primary"><%= Question.count + 8 %>.</span> In which of the following sectors have you done conservation work in your career? Please choose all that apply.
+  </h4>
+  <hr>
+  <p class="card-text">
+    <%= check_box_tag "demographics[conservation_sectors][]", 'Academia/Educational institution' %>
+    <%= label_tag 'Academia/Educational institution' %>
+  </p>
+  <p class="card-text">
+    <%= check_box_tag "demographics[conservation_sectors][]", 'Not for profit/Non Governmental Organisation' %>
+    <%= label_tag 'Not for profit/Non Governmental Organisation' %>
+  </p>
+  <p class="card-text">
+    <%= check_box_tag "demographics[conservation_sectors][]", 'Private sector' %>
+    <%= label_tag 'Private sector' %>
+  </p>
+  <p class="card-text">
+    <%= check_box_tag "demographics[conservation_sectors][]", 'Government' %>
+    <%= label_tag 'Government' %>
+  </p>
+</div>
+
+<div class="card card-block">
+  <h4 class="card-title">
+    <span class="text-primary"><%= Question.count + 9 %>.</span> Do you have any substantial professional experience in a field other than conservation during your career?
+  </h4>
+  <hr>
+  <p class="card-text">
+    <%= radio_button_tag "demographics[experience_in_other_fields]", 'Yes' %>
+    <%= label_tag 'Yes' %>
+  </p>
+  <p class="card-text">
+    <%= radio_button_tag "demographics[experience_in_other_fields]", 'No' %>
+    <%= label_tag 'No' %>
+  </p>
+</div>
+
+<div class="card card-block">
+  <h4 class="card-title">
+    <span class="text-primary"><%= Question.count + 10 %>.</span> In which of the following sectors have you done non-conservation work in your career? Please choose all that apply.
+  </h4>
+  <hr>
+  <p class="card-text">
+    <%= check_box_tag "demographics[non_conservation_sectors][]", 'Academia/Educational institution' %>
+    <%= label_tag 'Academia/Educational institution' %>
+  </p>
+  <p class="card-text">
+    <%= check_box_tag "demographics[non_conservation_sectors][]", 'Not for profit/Non Governmental Organisation' %>
+    <%= label_tag 'Not for profit/Non Governmental Organisation' %>
+  </p>
+  <p class="card-text">
+    <%= check_box_tag "demographics[non_conservation_sectors][]", 'Private sector' %>
+    <%= label_tag 'Private sector' %>
+  </p>
+  <p class="card-text">
+    <%= check_box_tag "demographics[non_conservation_sectors][]", 'Government' %>
+    <%= label_tag 'Government' %>
+  </p>
+</div>
+
+<div class="card card-block">
+  <h4 class="card-title">
+    <span class="text-primary"><%= Question.count + 11 %>.</span> Which of the following categories best describes your current professional engagement in conservation? Please skip if you are not currently working in a conservation role.
+  </h4>
+  <hr>
+  <p class="card-text">
+    <%= radio_button_tag "demographics[professional_engagement]", 'Exclusively a Researcher' %>
+    <%= label_tag 'Exclusively a Researcher' %>
+  </p>
+  <p class="card-text">
+    <%= radio_button_tag "demographics[professional_engagement]", 'Mostly a Researcher' %>
+    <%= label_tag 'Mostly a Researcher' %>
+  </p>
+  <p class="card-text">
+    <%= radio_button_tag "demographics[professional_engagement]", 'Both a Researcher and Practictioner' %>
+    <%= label_tag 'Both a Researcher and Practictioner' %>
+  </p>
+  <p class="card-text">
+    <%= radio_button_tag "demographics[professional_engagement]", 'Mostly a Practitioner' %>
+    <%= label_tag 'Mostly a Practitioner' %>
+  </p>
+  <p class="card-text">
+    <%= radio_button_tag "demographics[professional_engagement]", 'Exclusively a Researcher' %>
+    <%= label_tag 'Exclusively a Researcher' %>
+  </p>
+</div>
+
+<div class="card card-block">
+  <h4 class="card-title">
+    <span class="text-primary"><%= Question.count + 12 %>.</span> Which of the following categories best describes the seniority of your current role within conservation?
+  </h4>
+  <hr>
+  <p class="card-text">
+    <%= radio_button_tag "demographics[seniority_of_current_role]", 'Very junior position' %>
+    <%= label_tag 'Very junior position' %>
+  </p>
+  <p class="card-text">
+    <%= radio_button_tag "demographics[seniority_of_current_role]", 'Fairly junior position' %>
+    <%= label_tag 'Fairly junior position' %>
+  </p>
+  <p class="card-text">
+    <%= radio_button_tag "demographics[seniority_of_current_role]", 'Neither senior nor junior position' %>
+    <%= label_tag 'Neither senior nor junior position' %>
+  </p>
+  <p class="card-text">
+    <%= radio_button_tag "demographics[seniority_of_current_role]", 'Fairly senior position' %>
+    <%= label_tag 'Fairly senior position' %>
+  </p>
+  <p class="card-text">
+    <%= radio_button_tag "demographics[seniority_of_current_role]", 'Very senior position' %>
+    <%= label_tag 'Very senior position' %>
+  </p>
+  <p class="card-text">
+    <%= radio_button_tag "demographics[seniority_of_current_role]", 'I am not currently working in a conservation role' %>
+    <%= label_tag 'I am not currently working in a conservation role' %>
+  </p>
+</div>
+
+<div class="card card-block">
+  <h4 class="card-title">
+    <span class="text-primary"><%= Question.count + 13 %>.</span> Which of the following categories best describes the context in which you have done most of your professional conservation work?
+  </h4>
+  <hr>
+  <p class="card-text">
+    <%= radio_button_tag "demographics[category_of_most_professional_work]", 'Very heavily modified ecosystems' %>
+    <%= label_tag 'Very heavily modified ecosystems (e.g. urban areas)' %>
+  </p>
+  <p class="card-text">
+    <%= radio_button_tag "demographics[category_of_most_professional_work]", 'Largely modified ecosystems' %>
+    <%= label_tag 'Largely modified ecosystems (e.g. intensive farmland, intensive fisheries)' %>
+  </p>
+  <p class="card-text">
+    <%= radio_button_tag "demographics[category_of_most_professional_work]", 'Somewhat modified ecosystems' %>
+    <%= label_tag 'Somewhat modified ecosystems (e.g. low intensity farmland, low intensity fisheries)' %>
+  </p>
+  <p class="card-text">
+    <%= radio_button_tag "demographics[category_of_most_professional_work]", 'Largely unmodified ecosystems' %>
+    <%= label_tag 'Largely unmodified ecosystems (e.g. sustainable use area)' %>
+  </p>
+  <p class="card-text">
+    <%= radio_button_tag "demographics[category_of_most_professional_work]", 'Unmodified or very little modified ecosystem' %>
+    <%= label_tag 'Unmodified or very little modified ecosystem (e.g. wilderness areas)' %>
+  </p>
+  <p class="card-text">
+    <%= radio_button_tag "demographics[category_of_most_professional_work]", 'Not applicable' %>
+    <%= label_tag 'Not applicable' %>
+  </p>
+</div>
+
+<div class="card card-block">
+  <h4 class="card-title">
+    <span class="text-primary"><%= Question.count + 14 %>.</span> Do you have any experiences of working as a researcher or as a practitioner on market/based schemes in conservation (e.g. payments for ecosystem services, taxes and subsidies, mitigation or species banking, certification)?
+  </h4>
+  <hr>
+  <p class="card-text">
+    <%= radio_button_tag "demographics[educational_specialism]", 'Yes, as a researcher' %>
+    <%= label_tag 'Yes, as a researcher' %>
+  </p>
+  <p class="card-text">
+    <%= radio_button_tag "demographics[educational_specialism]", 'Yes, as a practitioner' %>
+    <%= label_tag 'Yes, as a practitioner' %>
+  </p>
+  <p class="card-text">
+    <%= radio_button_tag "demographics[educational_specialism]", 'Yes, both as a researcher and as a practitioner' %>
+    <%= label_tag 'Yes, both as a researcher and as a practitioner' %>
+  </p>
+  <p class="card-text">
+    <%= radio_button_tag "demographics[educational_specialism]", 'No' %>
+    <%= label_tag 'No' %>
+  </p>
+</div>
+
+<div class="card card-block">
+  <h4 class="card-title">
+    <span class="text-primary"><%= Question.count + 15 %>.</span> Please choose up to four of the following items that you believe have been most important in shaping your conservation values.
+  </h4>
+  <hr>
+  <p class="card-text">
+    <%= check_box_tag "demographics[value_shaping_items][]", 'Values of close family and friends during childhood' %>
+    <%= label_tag 'Values of close family and friends during childhood' %>
+  </p>
+  <p class="card-text">
+    <%= check_box_tag "demographics[value_shaping_items][]", 'Values of close family and friends during adulthood' %>
+    <%= label_tag 'Values of close family and friends during adulthood' %>
+  </p>
+  <p class="card-text">
+    <%= check_box_tag "demographics[value_shaping_items][]", 'Outdoor play/recreation during childhood' %>
+    <%= label_tag 'Outdoor play/recreation during childhood' %>
+  </p>
+  <p class="card-text">
+    <%= check_box_tag "demographics[value_shaping_items][]", 'Outdoor play/recreation during adulthood' %>
+    <%= label_tag 'Outdoor play/recreation during adulthood' %>
+  </p>
+  <p class="card-text">
+    <%= check_box_tag "demographics[value_shaping_items][]", 'Indoor experiences during childhood' %>
+    <%= label_tag 'Indoor experiences (e.g. reading books, watching documentaries, playing video games) during childhood' %>
+  </p>
+  <p class="card-text">
+    <%= check_box_tag "demographics[value_shaping_items][]", 'Indoor experiences during adulthood' %>
+    <%= label_tag 'Indoor experiences (e.g. reading books, watching documentaries, playing video games) during adulthood' %>
+  </p>
+  <p class="card-text">
+    <%= check_box_tag "demographics[value_shaping_items][]", 'Formal education experience during childhood' %>
+    <%= label_tag 'Formal education experience (e.g. field trip, classroom session) during childhood' %>
+  </p>
+  <p class="card-text">
+    <%= check_box_tag "demographics[value_shaping_items][]", 'Formal education experience during adulthood' %>
+    <%= label_tag 'Formal education experience (e.g. field trip, classroom session) during adulthood' %>
+  </p>
+  <p class="card-text">
+    <%= check_box_tag "demographics[value_shaping_items][]", 'Professional experience during adulthood' %>
+    <%= label_tag 'Professional experience during adulthood' %>
+  </p>
+</div>
+
+<div class="card card-block">
+  <h4 class="card-title">
+    <span class="text-primary"><%= Question.count + 16 %>.</span> Please feel free to tell us about anything else that you think was important in shaping your values:
+  </h4>
+  <hr>
+  <p class="card-text">
+    <%= text_area_tag "demographics[shaping_values]" %>
+  </p>
+</div>
