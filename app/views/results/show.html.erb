@@ -81,18 +81,16 @@
         <div id="collapseOne" class="collapse in" role="tabpanel" aria-labelledby="headingOne">
           <div class="card-block">
             <%= form_tag results_path(@results.uuid), method: :get do %>
-              <ul class="list-group list-group-flush">
-                <li class="list-group-item">
-                  <%= label_tag "filter[gender]", 'Male' %>
-                  <%= radio_button_tag "filter[gender]", 'Male' %>
-                </li>
-                <li class="list-group-item">
-                  <%= label_tag "filter[gender]", 'Female' %>
-                  <%= radio_button_tag "filter[gender]", 'Female' %>
-                </li>
-              </ul>
+              <p>
+                <%= label_tag "filter[gender]", 'Male' %>
+                <%= radio_button_tag "filter[gender]", 'Male' %>
+              </p>
+              <p>
+                <%= label_tag "filter[gender]", 'Female' %>
+                <%= radio_button_tag "filter[gender]", 'Female' %>
+              </p>
 
-              <%= submit_tag 'Submit' %>
+              <%= submit_tag 'Filter', class: 'btn btn-primary' %>
             <% end %>
           </div>
         </div>
@@ -101,7 +99,7 @@
         <div class="card-header" role="tab" id="headingTwo">
           <h5 class="mb-0">
             <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-              Collapsible Group Item #2
+              Filter option
             </a>
           </h5>
         </div>
@@ -115,7 +113,7 @@
         <div class="card-header" role="tab" id="headingThree">
           <h5 class="mb-0">
             <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-              Collapsible Group Item #3
+              Filter option
             </a>
           </h5>
         </div>
