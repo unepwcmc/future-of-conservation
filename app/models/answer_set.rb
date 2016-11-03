@@ -20,9 +20,11 @@
 
 class AnswerSet < ApplicationRecord
   def self.build_new_from_params(params)
-    answers_array = []
+    answers             = params["answers"]
+    demographic_answers = params["demographics"]
+    answers_array       = []
 
-    params.each do |key, value|
+    answers.each do |key, value|
       question_id   = key.split("_").first
       question      = Question.find(question_id)
       answer        = value
@@ -33,7 +35,6 @@ class AnswerSet < ApplicationRecord
         answer_inputted:      value.to_i,
         x_answer_calculated:  self.calculate_answer(value, question.x_weight),
         y_answer_calculated:  self.calculate_answer(value, question.y_weight)
-
         #question_version_number: 3,#question.version.index,
       }
 
@@ -45,7 +46,7 @@ class AnswerSet < ApplicationRecord
 
 
     self.new(
-      answers: {questions: answers_array, demographic: []},
+      answers: { questions: answers_array, demographics: demographic_answers },
       x_axis_total: x_axis_total,
       y_axis_total: y_axis_total,
       x_axis_scaled: self.scale_axis_total(x_axis_total),
