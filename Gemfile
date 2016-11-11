@@ -32,7 +32,7 @@ gem 'paper_trail', '~> 5.2.2'
 gem "chartkick", '~> 2.1.1'
 gem 'country_select', '~> 2.5.2'
 
-gem 'bootstrap', '~> 4.0.0.alpha4'
+gem 'bootstrap', '~> 4.0.0.alpha5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
