@@ -1,7 +1,7 @@
 <%= form_for @answer_set, { class: 'survey__questions' } do |f| %>
 
   <%= fields_for :answers do |ff| %>
-    <%= @questions.each_slice(10).with_index do |questions_set, set_index| %>
+    <%= @questions.each_slice(@questions_per_page).with_index do |questions_set, set_index| %>
       <section class="survey__page" id="survey__page--<%= set_index + 1%>">
         <h3 class="survey__title">Page #<%= set_index + 1 %></h3>
         <div class="survey__questions-set">

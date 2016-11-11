@@ -15,5 +15,4 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require chartkick
-//= require jquery.steps.min
 //= require_tree .
