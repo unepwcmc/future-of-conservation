@@ -1,8 +1,6 @@
 # Place all the behaviors and hooks related to the matching controller here.
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
-#
-#
 
 $(document).on 'turbolinks:load', ->
   # Hide all pages except first one
@@ -12,8 +10,11 @@ $(document).on 'turbolinks:load', ->
   $('.survey__next-page').click (e) ->
     e.preventDefault()
     currentPage = $('section.survey__page:visible')
+
     if checkAllQuestionsAnswered(currentPage)
       nextPage()
+      if isLastPage($('section.survey__page:visible'))
+        $('.survey__submit').show()
     else
       alert("There are unanswered questions on this page!")
 
@@ -21,6 +22,7 @@ $(document).on 'turbolinks:load', ->
   $('.survey__previous-page').click (e) ->
     e.preventDefault()
     previousPage()
+
 
 
 
@@ -47,11 +49,11 @@ nextPage = () ->
   # show page at next index unless end of array in which case grey out the next button
   if nextPageIndex >= pages.length
     alert("You're already on the last page!")
-    #$('.survey__submit').show()
   else
     $(pages[nextPageIndex]).show()
     $('html,body').scrollTop(0)
     currentPage.hide()
+
 
 previousPage = () ->
   # Return to the previous page
@@ -65,6 +67,17 @@ previousPage = () ->
     $(pages[prevPageIndex]).show()
     $('html,body').scrollTop(0)
     currentPage.hide()
+
+# Helpers
+getCurrentPageIndex = (currentPage) ->
+  pages = $('section.survey__page')
+  pages.index(currentPage)
+
+isLastPage = (currentPage) ->
+  currentPageIndex = getCurrentPageIndex(currentPage)
+  pages = $('section.survey__page')
+  currentPageIndex == (pages.length - 1)
+
 
 
 
