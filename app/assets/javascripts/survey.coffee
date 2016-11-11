@@ -50,6 +50,7 @@ nextPage = () ->
     #$('.survey__submit').show()
   else
     $(pages[nextPageIndex]).show()
+    $('html,body').scrollTop(0)
     currentPage.hide()
 
 previousPage = () ->
@@ -62,6 +63,7 @@ previousPage = () ->
     alert("Can't go back!")
   else
     $(pages[prevPageIndex]).show()
+    $('html,body').scrollTop(0)
     currentPage.hide()
 
 
