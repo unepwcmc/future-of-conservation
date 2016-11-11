@@ -1,7 +1,7 @@
 class ResultsController < ApplicationController
   def show
     @results = AnswerSet.find_by(uuid: params[:uuid])
-    @all_other_results = AnswerSet.pluck(:x_axis_scaled, :y_axis_scaled)
+    @all_other_results = AnswerSet.all.reject{ |r| r.id == @results.id }.pluck(:x_axis_scaled, :y_axis_scaled)
 
     if params["filter"].present?
       if params["filter"]["gender"].present?
