@@ -15,6 +15,9 @@ $(document).on 'turbolinks:load', ->
       nextPage()
       if isLastPage($('section.survey__page:visible'))
         $('.survey__submit').show()
+        $('.survey__next-page').hide()
+      else
+        $('.survey__next-page').show()
     else
       alert("There are unanswered questions on this page!")
 
