@@ -1,0 +1,24 @@
+<p class="card-text">
+  <%= radio_button_tag "demographics[#{question.short_name}]", 'Biological Sciences' %>
+  <%= label_tag 'Biological Sciences (e.g. Zoology, Plant Sciences)' %>
+</p>
+<p class="card-text">
+  <%= radio_button_tag "demographics[#{question.short_name}]", 'Non-biological Natural Sciences' %>
+  <%= label_tag 'Non-biological Natural Sciences (e.g. Chemistry, Maths, Engineering)' %>
+</p>
+<p class="card-text">
+  <%= radio_button_tag "demographics[#{question.short_name}]", 'Social Sciences' %>
+  <%= label_tag 'Social Sciences (e.g. Economics, Human Geography, Political Science)' %>
+</p>
+<p class="card-text">
+  <%= radio_button_tag "demographics[#{question.short_name}]", 'Humanities' %>
+  <%= label_tag 'Humanities (e.g. Literature, History, Philosophy, Languages)' %>
+</p>
+<p class="card-text">
+  <%= radio_button_tag "demographics[#{question.short_name}]", 'Interdisciplinary' %>
+  <%= label_tag 'Interdisciplinary (a combination of at least two of Natural Science, Social Science and Humanities)' %>
+</p>
+<p class="card-text">
+  <%= radio_button_tag "demographics[#{question.short_name}]", 'Not Applicable' %>
+  <%= label_tag 'Not Applicable' %>
+</p>

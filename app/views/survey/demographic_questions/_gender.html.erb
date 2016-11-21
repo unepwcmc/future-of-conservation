@@ -1,0 +1,16 @@
+<p class="card-text">
+  <%= radio_button_tag "demographics[#{question.short_name}]", 'Male' %>
+  <%= label_tag 'Male' %>
+</p>
+<p class="card-text">
+  <%= radio_button_tag "demographics[#{question.short_name}]", 'Female' %>
+  <%= label_tag 'Female' %>
+</p>
+<p class="card-text">
+  <%= radio_button_tag "demographics[#{question.short_name}]", 'Other' %>
+  <%= label_tag 'Other' %>
+</p>
+<p class="card-text">
+  <%= radio_button_tag "demographics[#{question.short_name}]", 'Prefer not to say' %>
+  <%= label_tag 'Prefer not to say' %>
+</p>

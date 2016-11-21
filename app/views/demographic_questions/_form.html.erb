@@ -1,0 +1,32 @@
+<%= form_for(demographic_question) do |f| %>
+  <% if demographic_question.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(demographic_question.errors.count, "error") %> prohibited this demographic_question from being saved:</h2>
+
+      <ul>
+      <% demographic_question.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :text %>
+    <%= f.text_area :text %>
+  </div>
+
+  <div class="field">
+    <%= f.label :position %>
+    <%= f.number_field :position %>
+  </div>
+
+  <div class="field">
+    <%= f.label :short_name %>
+    <%= f.text_field :short_name %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

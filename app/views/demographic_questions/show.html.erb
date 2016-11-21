@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Text:</strong>
+  <%= @demographic_question.text %>
+</p>
+
+<p>
+  <strong>Position:</strong>
+  <%= @demographic_question.position %>
+</p>
+
+<p>
+  <strong>Short name:</strong>
+  <%= @demographic_question.short_name %>
+</p>
+
+<%= link_to 'Edit', edit_demographic_question_path(@demographic_question) %> |
+<%= link_to 'Back', demographic_questions_path %>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161019110613) do
+ActiveRecord::Schema.define(version: 20161118111052) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,14 @@ ActiveRecord::Schema.define(version: 20161019110613) do
     t.string   "uuid"
     t.float    "x_axis_scaled"
     t.float    "y_axis_scaled"
+  end
+
+  create_table "demographic_questions", force: :cascade do |t|
+    t.text     "text"
+    t.integer  "position"
+    t.string   "short_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "questions", force: :cascade do |t|

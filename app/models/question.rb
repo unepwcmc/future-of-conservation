@@ -18,3 +18,4 @@ class Question < ApplicationRecord
     less_than_or_equal_to: 4.0,
     message: "Weighting must be a decimal value between -4.0 and 4.0"
 end
+

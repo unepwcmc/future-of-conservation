@@ -54,6 +54,32 @@ class AnswerSet < ApplicationRecord
     )
   end
 
+  def conservationist_classification
+    x, y = self.x_axis_scaled, self.y_axis_scaled
+
+    if x.between?(-0.1, 0.1) && y.between?(-0.1, 0.1)
+      "Center square"
+    elsif x.between?(-1, 0) && y.between?(-0.1, 0.1)
+      "Left boundary"
+    elsif x.between?(0, 1) && y.between?(-0.1, 0.1)
+      "Right boundary"
+    elsif x.between?(-0.1, 0.1) && y.between?(-1, 0)
+      "Bottom boundary"
+    elsif x.between?(-0.1, 0.1) && y.between?(0, 1)
+      "Top boundary"
+    elsif x.between?(-1, 0) && y.between?(-1, 0)
+      "Bottom left"
+    elsif x.between?(-1, 0) && y.between?(0, 1)
+      "Top left"
+    elsif x.between?(0, 1) && y.between?(-1, 0)
+      "Bottom right"
+    elsif x.between?(0, 1) && y.between?(0, 1)
+      "Top right"
+    else
+      "I don't know"
+    end
+  end
+
   private
     def self.select_by_axis(answers, axis)
       answers.select {|h| h[axis] != 0}

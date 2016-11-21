@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :demographic_questions
   get 'static_pages/index'
   get 'results/:uuid', to: 'results#show', as: 'results'
 

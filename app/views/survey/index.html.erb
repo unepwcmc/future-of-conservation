@@ -8,10 +8,7 @@
           <% questions_set.each_with_index do |question, question_index| %>
 
             <div class="survey__question card card-block">
-              <h4 class="card-title">
-                <span class="text-primary"><%= question_index + 1 %>.</span>
-                <%= question.text %>
-              </h4>
+              <h4 class="card-title"><%= question.text %></h4>
               <%= render partial: "survey/scale", locals: {ff: ff, question_id: question.id} %>
             </div>
 
@@ -20,9 +17,21 @@
       </section>
     <% end %>
 
+    <%= @demographic_questions.each_slice(@questions_per_page).with_index do |questions_set, set_index| %>
+      <section class="survey__page" id="survey__page--<%= (@questions.count / @questions_per_page) + set_index + 1%>">
+        <h3 class="survey__title">Page #<%= @questions.count + set_index + 1 %></h3>
+        <div class="survey__questions-set">
+          <% questions_set.each_with_index do |question, question_index| %>
 
-    <%#= render partial: 'survey/demographic_questions' %>
+            <div class="survey__question card card-block">
+              <h4 class="card-title"><%= question.text %></h4>
+              <%= render partial: "survey/demographic_questions/#{question.short_name}", locals: {question: question} %>
+            </div>
 
+          <% end %>
+        </div>
+      </section>
+    <% end %>
 
   <% end %>
   <a href="" class="btn btn-lg btn-primary survey__previous-page">Previous</a>

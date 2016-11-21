@@ -1,0 +1,16 @@
+<p class="card-text">
+  <%= check_box_tag "demographics[#{question.short_name}][]", 'Academia/Educational institution' %>
+  <%= label_tag 'Academia/Educational institution' %>
+</p>
+<p class="card-text">
+  <%= check_box_tag "demographics[#{question.short_name}][]", 'Not for profit/Non Governmental Organisation' %>
+  <%= label_tag 'Not for profit/Non Governmental Organisation' %>
+</p>
+<p class="card-text">
+  <%= check_box_tag "demographics[#{question.short_name}][]", 'Private sector' %>
+  <%= label_tag 'Private sector' %>
+</p>
+<p class="card-text">
+  <%= check_box_tag "demographics[#{question.short_name}][]", 'Government' %>
+  <%= label_tag 'Government' %>
+</p>

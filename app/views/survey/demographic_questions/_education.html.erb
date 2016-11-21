@@ -1,0 +1,20 @@
+<p class="card-text">
+  <%= radio_button_tag "demographics[#{question.short_name}]", 'School level' %>
+  <%= label_tag 'School level' %>
+</p>
+<p class="card-text">
+  <%= radio_button_tag "demographics[#{question.short_name}]", 'Post-high school, but at an institution other than a university' %>
+  <%= label_tag 'Post-high school, but at an institution other than a university' %>
+</p>
+<p class="card-text">
+  <%= radio_button_tag "demographics[#{question.short_name}]", 'Undergraduate/Bachelors university degree' %>
+  <%= label_tag 'Undergraduate/Bachelors university degree' %>
+</p>
+<p class="card-text">
+  <%= radio_button_tag "demographics[#{question.short_name}]", 'Masters degree/Postgraduate qualification' %>
+  <%= label_tag 'Masters degree/Postgraduate qualification' %>
+</p>
+<p class="card-text">
+  <%= radio_button_tag "demographics[#{question.short_name}]", 'Doctorate' %>
+  <%= label_tag 'Doctorate' %>
+</p>

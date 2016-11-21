@@ -1,0 +1,16 @@
+  <p class="card-text">
+    <%= radio_button_tag "demographics[#{question.short_name}]", 'Yes, as a researcher' %>
+    <%= label_tag 'Yes, as a researcher' %>
+  </p>
+  <p class="card-text">
+    <%= radio_button_tag "demographics[#{question.short_name}]", 'Yes, as a practitioner' %>
+    <%= label_tag 'Yes, as a practitioner' %>
+  </p>
+  <p class="card-text">
+    <%= radio_button_tag "demographics[#{question.short_name}]", 'Yes, both as a researcher and as a practitioner' %>
+    <%= label_tag 'Yes, both as a researcher and as a practitioner' %>
+  </p>
+  <p class="card-text">
+    <%= radio_button_tag "demographics[#{question.short_name}]", 'No' %>
+    <%= label_tag 'No' %>
+  </p>
