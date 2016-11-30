@@ -1,0 +1,20 @@
+@import 'utilities/colors';
+
+.survey__question {
+}
+
+.survey__title {
+  padding: 10px 0;
+  margin: 0.8em 0;
+  border-bottom: 1px solid $grey-7;
+}
+
+.survey__title--green {
+  padding: 10px 0;
+  margin: 0.8em 0;
+  border-bottom: 1px solid $green-pale;
+}
+
+.survey__answer-set {
+  margin-left: 1.5em;
+}

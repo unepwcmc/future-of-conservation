@@ -90,3 +90,12 @@ questions = [
     short_name: "shaping_values"
   },
 ]
+
+questions.each do |question|
+  DemographicQuestion.where(short_name: question[:short_name]).first_or_create do |dq|
+    dq.text = question[:text]
+    dq.position = question[:position]
+    puts "Created question with the short_name: #{question[:short_name]}..."
+  end
+end
+

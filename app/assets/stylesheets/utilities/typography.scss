@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700,700i|PT+Sans:400,700');
+
+@import 'colors';
+
+$font-family-base: 'Merriweather Sans', sans-serif;
+
+$font-size-h1: 3.875em ;
+$font-size-h2: 2.938em ;
+$font-size-h3: 2.313em ;
+$font-size-h4: 1.625em ;
+$font-size-h5: 1.250em ;
+$font-size-h6: 1.125em ;
+
+$headings-color: $blue-darkest;
+$headings-font-family: 'PT Sans', sans-serif;
+$headings-font-weight: 700;
+
+$text-muted: $grey-5;
+
+$link-color:            $brand-primary !default;
+$link-decoration:       none !default;
+$link-hover-color:      $green-dark !default;
+$link-hover-decoration: underline !default;
+
+hr.primary {
+  background-color: $green-pale;
+}
