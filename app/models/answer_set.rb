@@ -58,23 +58,23 @@ class AnswerSet < ApplicationRecord
     x, y = self.x_axis_scaled, self.y_axis_scaled
 
     if x.between?(-0.1, 0.1) && y.between?(-0.1, 0.1)
-      "Center square"
+      "Undecided" # Center square
     elsif x.between?(-1, 0) && y.between?(-0.1, 0.1)
-      "Left boundary"
+      "Traditional Conservation and Critical Social Science" # Left boundary
     elsif x.between?(0, 1) && y.between?(-0.1, 0.1)
-      "Right boundary"
+      "Market Biocentrism and New Conservation" # Right boundary
     elsif x.between?(-0.1, 0.1) && y.between?(-1, 0)
-      "Bottom boundary"
+      "Critical Social Science and New Conservation" # Bottom boundary
     elsif x.between?(-0.1, 0.1) && y.between?(0, 1)
-      "Top boundary"
+      "Traditional Conservation and Market Biocentrism" # Top boundary
     elsif x.between?(-1, 0) && y.between?(-1, 0)
-      "Bottom left"
+      "Critical Social Science" # Bottom left
     elsif x.between?(-1, 0) && y.between?(0, 1)
-      "Top left"
+      "Traditional Conservation" # Top left
     elsif x.between?(0, 1) && y.between?(-1, 0)
-      "Bottom right"
+      "New Conservation" # Bottom right
     elsif x.between?(0, 1) && y.between?(0, 1)
-      "Top right"
+      "Market Biocentrism" #Top right
     else
       "I don't know"
     end
