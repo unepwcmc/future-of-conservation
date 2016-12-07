@@ -20,7 +20,8 @@
   <div class="col-lg-12">
     <h1>Your results</h1>
     <hr class="primary">
-    <h4>Your thinking most closely aligns with: <%= @results.conservationist_classification %></h4>
+    <h4>Your thinking most closely aligns with: <%= @results.classification.name %></h4>
+    <%= format_text(@results.classification.description) %>
   </div>
 </div>
 
@@ -34,42 +35,13 @@
       <%= scatter_chart @data, @config %>
     </div>
   </div>
-
   <div class="col-lg-6">
-    <div class="card">
-      <div class="card-block">
-        <h4 class="card-title">Your results</h4>
-        <p class="card-text">This information is for testing only</p>
-      </div>
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item">
-          <span class="text-primary">IP Address: </span>
-          <%= @results.ip_address %>
-        </li>
-        <li class="list-group-item">
-          <span class="text-primary">X Axis Total: </span>
-          <%= @results.x_axis_total%>
-        </li>
-        <li class="list-group-item">
-          <span class="text-primary">Y Axis Total: </span>
-          <%= @results.y_axis_total%>
-        </li>
-        <li class="list-group-item">
-          <span class="text-primary">X Axis (Scaled): </span>
-          <%= @results.x_axis_scaled%>
-        </li>
-        <li class="list-group-item">
-          <span class="text-primary">Y Axis (Scaled): </span>
-          <%= @results.y_axis_scaled%>
-        </li>
-        <li class="list-group-item">
-          <span class="text-primary">Date Submitted: </span>
-          <%= @results.created_at.to_formatted_s(:long)%>
-        </li>
-      </ul>
-    </div>
+    <h4>Your results</h4>
+    <%= format_text(@results.classification.results_description) %>
   </div>
 </div>
+
+<%= render 'social_sharing' %>
 
 <div class="row my-2">
   <div class="col-lg-12">

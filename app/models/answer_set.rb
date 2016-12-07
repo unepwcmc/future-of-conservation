@@ -2,16 +2,21 @@
 #
 # Table name: answer_sets
 #
-#  id            :integer          not null, primary key
-#  ip_address    :string
-#  answers       :jsonb
-#  x_axis_total  :float
-#  y_axis_total  :float
-#  created_at    :datetime         not null
-#  updated_at    :datetime         not null
-#  uuid          :string
-#  x_axis_scaled :float
-#  y_axis_scaled :float
+#  id                :integer          not null, primary key
+#  ip_address        :string
+#  answers           :jsonb
+#  x_axis_total      :float
+#  y_axis_total      :float
+#  created_at        :datetime         not null
+#  updated_at        :datetime         not null
+#  uuid              :string
+#  x_axis_scaled     :float
+#  y_axis_scaled     :float
+#  classification_id :integer
+#
+# Indexes
+#
+#  index_answer_sets_on_classification_id  (classification_id)
 #
 
 # An answer set holds a response to a survey,
@@ -19,6 +24,8 @@
 # answers just incase the questions change
 
 class AnswerSet < ApplicationRecord
+  belongs_to :classification
+
   def self.build_new_from_params(params)
     answers             = params["answers"]
     demographic_answers = params["demographics"]
@@ -50,37 +57,35 @@ class AnswerSet < ApplicationRecord
       x_axis_total: x_axis_total,
       y_axis_total: y_axis_total,
       x_axis_scaled: self.scale_axis_total(x_axis_total),
-      y_axis_scaled: self.scale_axis_total(y_axis_total)
+      y_axis_scaled: self.scale_axis_total(y_axis_total),
+      classification: self.classify(x_axis_scaled, y_axis_scaled)
     )
   end
 
-  def conservationist_classification
-    x, y = self.x_axis_scaled, self.y_axis_scaled
 
-    if x.between?(-0.1, 0.1) && y.between?(-0.1, 0.1)
-      "Undecided" # Center square
-    elsif x.between?(-1, 0) && y.between?(-0.1, 0.1)
-      "Traditional Conservation and Critical Social Science" # Left boundary
-    elsif x.between?(0, 1) && y.between?(-0.1, 0.1)
-      "Market Biocentrism and New Conservation" # Right boundary
-    elsif x.between?(-0.1, 0.1) && y.between?(-1, 0)
-      "Critical Social Science and New Conservation" # Bottom boundary
-    elsif x.between?(-0.1, 0.1) && y.between?(0, 1)
-      "Traditional Conservation and Market Biocentrism" # Top boundary
-    elsif x.between?(-1, 0) && y.between?(-1, 0)
-      "Critical Social Science" # Bottom left
-    elsif x.between?(-1, 0) && y.between?(0, 1)
-      "Traditional Conservation" # Top left
-    elsif x.between?(0, 1) && y.between?(-1, 0)
-      "New Conservation" # Bottom right
-    elsif x.between?(0, 1) && y.between?(0, 1)
-      "Market Biocentrism" #Top right
-    else
-      "I don't know"
+    def classify(x, y)
+      if x.between?(-0.1, 0.1) && y.between?(-0.1, 0.1)
+        Classification.find_by(name: "Undecided") # Center square
+      elsif x.between?(-1, 0) && y.between?(-0.1, 0.1)
+        Classification.find_by(name: "Traditional Conservation and Critical Social Science") # Left boundary
+      elsif x.between?(0, 1) && y.between?(-0.1, 0.1)
+        Classification.find_by(name: "Market Biocentrism and New Conservation") # Right boundary
+      elsif x.between?(-0.1, 0.1) && y.between?(-1, 0)
+        Classification.find_by(name: "Critical Social Science and New Conservation") # Bottom boundary
+      elsif x.between?(-0.1, 0.1) && y.between?(0, 1)
+        Classification.find_by(name: "Traditional Conservation and Market Biocentrism") # Top boundary
+      elsif x.between?(-1, 0) && y.between?(-1, 0)
+        Classification.find_by(name: "Critical Social Science") # Bottom left
+      elsif x.between?(-1, 0) && y.between?(0, 1)
+        Classification.find_by(name: "Traditional Conservation") # Top left
+      elsif x.between?(0, 1) && y.between?(-1, 0)
+        Classification.find_by(name: "New Conservation") # Bottom right
+      elsif x.between?(0, 1) && y.between?(0, 1)
+        Classification.find_by(name: "Market Biocentrism") #Top right
+      end
     end
-  end
-
   private
+
     def self.select_by_axis(answers, axis)
       answers.select {|h| h[axis] != 0}
     end
