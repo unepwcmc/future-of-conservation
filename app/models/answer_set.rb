@@ -49,15 +49,17 @@ class AnswerSet < ApplicationRecord
     end
 
     x_axis_total = self.calculate_axis_total(self.select_by_axis(answers_array, :x_answer_calculated), :x_answer_calculated)
-    y_axis_total = self.calculate_axis_total(self.select_by_axis(answers_array, :y_answer_calculated), :y_answer_calculated)
+    x_axis_scaled = self.scale_axis_total(x_axis_total)
 
+    y_axis_total = self.calculate_axis_total(self.select_by_axis(answers_array, :y_answer_calculated), :y_answer_calculated)
+    y_axis_scaled = self.scale_axis_total(y_axis_scaled)
 
     self.new(
       answers: { questions: answers_array, demographics: demographic_answers },
       x_axis_total: x_axis_total,
       y_axis_total: y_axis_total,
-      x_axis_scaled: self.scale_axis_total(x_axis_total),
-      y_axis_scaled: self.scale_axis_total(y_axis_total),
+      x_axis_scaled: x_axis_scaled,
+      y_axis_scaled: y_axis_scaled,
       classification: self.classify(x_axis_scaled, y_axis_scaled)
     )
   end
