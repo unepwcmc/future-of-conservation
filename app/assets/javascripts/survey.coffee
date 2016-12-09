@@ -13,6 +13,7 @@ $(document).on 'turbolinks:load', ->
 
     if checkAllQuestionsAnswered(currentPage)
       nextPage()
+      # Hide the next page button if this is the last page
       if isLastPage($('section.survey__page:visible'))
         $('.survey__submit').show()
         $('.survey__next-page').hide()
@@ -33,7 +34,11 @@ checkAllQuestionsAnswered = (sectionName) ->
   # Gets all questions in the section and checks that each one is answered
   questions = $(sectionName).find('.survey__question')
   unansweredQuestions = (question for question in questions when checkQuestionAnswered(question) is false)
-  unansweredQuestions.length == 0
+  # Bypass validations if the page is for demographic questions
+  if isDemographicSection(sectionName)
+    true
+  else
+    unansweredQuestions.length == 0
 
 checkQuestionAnswered = (question) ->
   # Gets all inputs for a given question and check none are unanswered
@@ -42,6 +47,9 @@ checkQuestionAnswered = (question) ->
     false
   else
     true
+
+isDemographicSection = (sectionName) ->
+  $(sectionName).hasClass('demographic')
 
 nextPage = () ->
   # Advance to the next page

@@ -1,0 +1,2 @@
+<div class="text-xs-center" id="progress_bar">Page <%= current_page %> of <%= total_pages %></div>
+<progress class="progress" value="<%= (current_page / total_pages.to_f) * 100 %>" max="100" aria-describedby="progess_bar"></progress>
