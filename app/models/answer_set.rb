@@ -64,7 +64,7 @@ class AnswerSet < ApplicationRecord
     )
   end
 
-  def classify(x, y)
+  def self.classify(x, y)
     if x.between?(-0.1, 0.1) && y.between?(-0.1, 0.1)
       Classification.find_by(name: "Undecided") # Center square
     elsif x.between?(-1, 0) && y.between?(-0.1, 0.1)
