@@ -64,30 +64,29 @@ class AnswerSet < ApplicationRecord
     )
   end
 
-
-    def classify(x, y)
-      if x.between?(-0.1, 0.1) && y.between?(-0.1, 0.1)
-        Classification.find_by(name: "Undecided") # Center square
-      elsif x.between?(-1, 0) && y.between?(-0.1, 0.1)
-        Classification.find_by(name: "Traditional Conservation and Critical Social Science") # Left boundary
-      elsif x.between?(0, 1) && y.between?(-0.1, 0.1)
-        Classification.find_by(name: "Market Biocentrism and New Conservation") # Right boundary
-      elsif x.between?(-0.1, 0.1) && y.between?(-1, 0)
-        Classification.find_by(name: "Critical Social Science and New Conservation") # Bottom boundary
-      elsif x.between?(-0.1, 0.1) && y.between?(0, 1)
-        Classification.find_by(name: "Traditional Conservation and Market Biocentrism") # Top boundary
-      elsif x.between?(-1, 0) && y.between?(-1, 0)
-        Classification.find_by(name: "Critical Social Science") # Bottom left
-      elsif x.between?(-1, 0) && y.between?(0, 1)
-        Classification.find_by(name: "Traditional Conservation") # Top left
-      elsif x.between?(0, 1) && y.between?(-1, 0)
-        Classification.find_by(name: "New Conservation") # Bottom right
-      elsif x.between?(0, 1) && y.between?(0, 1)
-        Classification.find_by(name: "Market Biocentrism") #Top right
-      end
+  def classify(x, y)
+    if x.between?(-0.1, 0.1) && y.between?(-0.1, 0.1)
+      Classification.find_by(name: "Undecided") # Center square
+    elsif x.between?(-1, 0) && y.between?(-0.1, 0.1)
+      Classification.find_by(name: "Traditional Conservation and Critical Social Science") # Left boundary
+    elsif x.between?(0, 1) && y.between?(-0.1, 0.1)
+      Classification.find_by(name: "Market Biocentrism and New Conservation") # Right boundary
+    elsif x.between?(-0.1, 0.1) && y.between?(-1, 0)
+      Classification.find_by(name: "Critical Social Science and New Conservation") # Bottom boundary
+    elsif x.between?(-0.1, 0.1) && y.between?(0, 1)
+      Classification.find_by(name: "Traditional Conservation and Market Biocentrism") # Top boundary
+    elsif x.between?(-1, 0) && y.between?(-1, 0)
+      Classification.find_by(name: "Critical Social Science") # Bottom left
+    elsif x.between?(-1, 0) && y.between?(0, 1)
+      Classification.find_by(name: "Traditional Conservation") # Top left
+    elsif x.between?(0, 1) && y.between?(-1, 0)
+      Classification.find_by(name: "New Conservation") # Bottom right
+    elsif x.between?(0, 1) && y.between?(0, 1)
+      Classification.find_by(name: "Market Biocentrism") #Top right
     end
-  private
+  end
 
+  private
     def self.select_by_axis(answers, axis)
       answers.select {|h| h[axis] != 0}
     end
