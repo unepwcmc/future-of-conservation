@@ -13,12 +13,7 @@ $(document).on 'turbolinks:load', ->
 
     if checkAllQuestionsAnswered(currentPage)
       nextPage()
-      # Hide the next page button if this is the last page
-      if isLastPage($('section.survey__page:visible'))
-        $('.survey__submit').show()
-        $('.survey__next-page').hide()
-      else
-        $('.survey__next-page').show()
+      toggleSurveyControls($('section.survey__page:visible'))
     else
       alert("There are unanswered questions on this page!")
 
@@ -26,6 +21,7 @@ $(document).on 'turbolinks:load', ->
   $('.survey__previous-page').click (e) ->
     e.preventDefault()
     previousPage()
+    toggleSurveyControls($('section.survey__page:visible'))
 
 
 
@@ -89,6 +85,13 @@ isLastPage = (currentPage) ->
   pages = $('section.survey__page')
   currentPageIndex == (pages.length - 1)
 
+toggleSurveyControls = (currentPage) ->
+  # Hide the next page button if this is the last page
+  if isLastPage(currentPage)
+    $('.survey__submit').show()
+    $('.survey__next-page').hide()
+  else
+    $('.survey__next-page').show()
 
 
 

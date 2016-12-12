@@ -23,7 +23,7 @@
 
     <%= @demographic_questions.each_slice(@questions_per_page).with_index do |questions_set, set_index| %>
       <section class="survey__page demographic" id="survey__page--<%= question_pages_count(@questions_per_page) + set_index + 1%>">
-        <%= render partial: 'survey/progress_bar', locals: {current_page: set_index + 1, total_pages: @total_pages} %>
+        <%= render partial: 'survey/progress_bar', locals: {current_page: question_pages_count(@questions_per_page) + set_index + 1, total_pages: @total_pages} %>
         <h3 class="survey__title--green"></h3>
         <div class="survey__questions-set">
           <% questions_set.each_with_index do |question, question_index| %>
