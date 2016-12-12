@@ -49,10 +49,10 @@ class AnswerSet < ApplicationRecord
     end
 
     x_axis_total = self.calculate_axis_total(self.select_by_axis(answers_array, :x_answer_calculated), :x_answer_calculated)
-    x_axis_scaled = self.scale_axis_total(x_axis_total)
+    x_axis_scaled = self.scale_axis_total(x_axis_total, :x_weight)
 
     y_axis_total = self.calculate_axis_total(self.select_by_axis(answers_array, :y_answer_calculated), :y_answer_calculated)
-    y_axis_scaled = self.scale_axis_total(y_axis_scaled)
+    y_axis_scaled = self.scale_axis_total(y_axis_total, :y_weight)
 
     self.new(
       answers: { questions: answers_array, demographics: demographic_answers },
@@ -88,7 +88,7 @@ class AnswerSet < ApplicationRecord
 
   private
     def self.select_by_axis(answers, axis)
-      answers.select {|h| h[axis] != 0}
+      answers.select {|hash| hash[axis] != 0}
     end
 
     def self.calculate_answer(answer, weight)
@@ -99,10 +99,15 @@ class AnswerSet < ApplicationRecord
       answers.inject(0) {|sum, hash| sum + hash[axis]}
     end
 
-    def self.scale_axis_total(total)
-      # 4 is the maximum weighting on a -4 to 4 scale and 3 is the maximum user inputted value on a -3 to 3 scale
+    def self.scale_axis_total(total, axis_weight)
+      # 4 is the maximum weighting on a -4 to 4 scale
+      # 3 is the maximum user inputted value on a -3 to 3 scale
       # Should scale to between -1 and +1
-      max_score = (3 * 4) * Question.count
+      # Ignores questions where the weighting is zero (for reliable scaling)
+      valid_columns = ["x_weight", "y_weight"]
+      valid_columns.include?(axis_weight.to_s) or raise "You are not permitted to count from this field"
+
+      max_score = (3 * 4) * Question.where("#{axis_weight} != 0.0").count
       total.to_f / max_score.to_f
     end
 end
