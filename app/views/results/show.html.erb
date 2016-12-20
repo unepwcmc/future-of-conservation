@@ -31,6 +31,9 @@
       <div class="card-block">
         <h4 class="card-title">See how you compare with others</h4>
         <p class="card-text">Comparing your results against <%= @all_other_results.count %> other <%= "result".pluralize(@all_other_results.count) %></p>
+        <% if params["filter"].present? %>
+          <p>Filtering results by: <%= format_filters_for_display %></p>
+        <% end %>
       </div>
       <%= scatter_chart @data, @config %>
     </div>
@@ -51,7 +54,7 @@
         <div class="card-header" role="tab" id="headingOne">
           <h5 class="mb-0">
             <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-              Filter results by Gender
+              Filter results by Sex
            </a>
           </h5>
         </div>
@@ -59,6 +62,7 @@
         <div id="collapseOne" class="collapse in" role="tabpanel" aria-labelledby="headingOne">
           <div class="card-block">
             <%= form_tag results_path(@results.uuid), method: :get do %>
+              <h4>Sex</h4>
               <p>
                 <%= radio_button_tag "filter[gender]", 'Male' %>
                 <%= label_tag "filter[gender]", 'Show only results by Males' %>
@@ -68,8 +72,53 @@
                 <%= label_tag "filter[gender]", 'Show only results by Females' %>
               </p>
 
-              <%= submit_tag 'Filter', class: 'btn btn-primary' %>
+              <%= submit_tag 'Filter by Sex', class: 'btn btn-primary' %>
             <% end %>
+          </div>
+
+        </div>
+
+        <div class="card">
+          <div class="card-header" role="tab" id="headingTwo">
+            <h5 class="mb-0">
+              <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+               Filter results by Educational Specialism
+              </a>
+            </h5>
+          </div>
+
+          <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
+            <div class="card-block">
+              <%= form_tag results_path(@results.uuid), method: :get do %>
+                <h4>Educational Specialism</h4>
+                <p class="card-text">
+                  <%= radio_button_tag "filter[educational_specialism]", 'Biological Sciences' %>
+                  <%= label_tag 'Biological Sciences (e.g. Zoology, Plant Sciences)' %>
+                </p>
+                <p class="card-text">
+                  <%= radio_button_tag "filter[educational_specialism]", 'Non-biological Natural Sciences' %>
+                  <%= label_tag 'Non-biological Natural Sciences (e.g. Chemistry, Maths, Engineering)' %>
+                </p>
+                <p class="card-text">
+                  <%= radio_button_tag "filter[educational_specialism]", 'Social Sciences' %>
+                  <%= label_tag 'Social Sciences (e.g. Economics, Human Geography, Political Science)' %>
+                </p>
+                <p class="card-text">
+                  <%= radio_button_tag "filter[educational_specialism]", 'Humanities' %>
+                  <%= label_tag 'Humanities (e.g. Literature, History, Philosophy, Languages)' %>
+                </p>
+                <p class="card-text">
+                  <%= radio_button_tag "filter[educational_specialism]", 'Interdisciplinary' %>
+                  <%= label_tag 'Interdisciplinary (a combination of at least two of Natural Science, Social Science and Humanities)' %>
+                </p>
+                <p class="card-text">
+                  <%= radio_button_tag "filter[educational_specialism]", 'Not Applicable' %>
+                  <%= label_tag 'Not Applicable' %>
+                </p>
+
+                <%= submit_tag 'Filter by Educational Specialism', class: 'btn btn-primary' %>
+              <% end %>
+            </div>
           </div>
         </div>
 
@@ -80,41 +129,3 @@
 
 
 
-      <%#<div class="card">%>
-        <%#<div class="card-header" role="tab" id="headingTwo">%>
-          <%#<h5 class="mb-0">%>
-            <%#<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">%>
-              <%#Filter option%>
-            <%#</a>%>
-          <%#</h5>%>
-        <%#</div>%>
-        <%#<div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo">%>
-          <%#<div class="card-block">%>
-            <%#Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.%>
-          <%#</div>%>
-        <%#</div>%>
-      <%#</div>%>
-      <%#<div class="card">%>
-        <%#<div class="card-header" role="tab" id="headingThree">%>
-          <%#<h5 class="mb-0">%>
-            <%#<a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">%>
-              <%#Filter option%>
-            <%#</a>%>
-          <%#</h5>%>
-        <%#</div>%>
-        <%#<div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree">%>
-          <%#<div class="card-block">%>
-            <%#Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.%>
-          <%#</div>%>
-        <%#</div>%>
-      <%#</div>%>
-
-<%#<div class="row">%>
-  <%#<div class="col-lg-6">%>
-    <%#<h2>Share your results</h2>%>
-    <%#<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean mauris odio, dapibus id tellus in, tincidunt auctor ligula. Praesent sit amet urna feugiat, euismod leo vitae, ornare quam.</p>%>
-  <%#</div>%>
-  <%#<div class="col-lg-6">%>
-    <%#<%= link_to "Share my results", '/', class: 'btn btn-lg btn-primary' %>
-  <%#</div>%>
-<%#</div>%>

@@ -1,0 +1,18 @@
+@import 'utilities/colors';
+
+.navbar-logo {
+  height: 60px;
+}
+
+.navbar-light {
+  border-bottom: 1px solid $blue-darkest;
+}
+
+.bg-faded {
+  background-color: $white;
+}
+
+.navbar-nav .nav-link {
+  padding: 1.5rem 0;
+}
+

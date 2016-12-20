@@ -9,6 +9,12 @@ class ResultsController < ApplicationController
                                "answers->'demographics'->>'gender' = ?", params["filter"]["gender"]
                              ).reject{ |r| r.id == @results.id }.pluck(:x_axis_scaled, :y_axis_scaled)
       end
+
+      if params["filter"]["educational_specialism"].present?
+        @all_other_results = AnswerSet.where(
+                               "answers->'demographics'->>'educational_specialism' = ?", params["filter"]["educational_specialism"]
+                             ).reject{ |r| r.id == @results.id }.pluck(:x_axis_scaled, :y_axis_scaled)
+      end
     end
 
     @data = [ { name: "Other peoples results", data: @all_other_results },

@@ -11,4 +11,8 @@ module ResultsHelper
 
     html.join.html_safe
   end
+
+  def format_filters_for_display
+    params["filter"].to_unsafe_h.map {|k,v| "#{k.gsub('_', ' ').titleize} (#{v})" }.join(", ")
+  end
 end
