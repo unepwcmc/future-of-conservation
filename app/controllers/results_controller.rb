@@ -8,11 +8,15 @@ class ResultsController < ApplicationController
         @all_other_results = AnswerSet.where(
                                "answers->'demographics'->>'gender' = ?", params["filter"]["gender"]
                              ).reject{ |r| r.id == @results.id }.pluck(:x_axis_scaled, :y_axis_scaled)
-      end
-
-      if params["filter"]["educational_specialism"].present?
+      elsif params["filter"]["educational_specialism"].present?
         @all_other_results = AnswerSet.where(
                                "answers->'demographics'->>'educational_specialism' = ?", params["filter"]["educational_specialism"]
+                             ).reject{ |r| r.id == @results.id }.pluck(:x_axis_scaled, :y_axis_scaled)
+      elsif params["filter"]["education"].present?
+        #@all_other_results = AnswerSet.results_by_field("education")
+
+        @all_other_results = AnswerSet.where(
+                               "answers->'demographics'->>'education' = ?", params["filter"]["education"]
                              ).reject{ |r| r.id == @results.id }.pluck(:x_axis_scaled, :y_axis_scaled)
       end
     end
@@ -26,4 +30,11 @@ class ResultsController < ApplicationController
                 }
               }
   end
+
+  private
+    def results_by_field(field)
+      AnswerSet.where(
+        "answers->'demographics'->>'education' = ?", params["filter"][field]
+      ).reject{ |r| r.id == @results.id }.pluck(:x_axis_scaled, :y_axis_scaled)
+    end
 end

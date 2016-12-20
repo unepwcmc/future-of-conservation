@@ -22,6 +22,8 @@
     <hr class="primary">
     <h4>Your thinking most closely aligns with: <%= @results.classification.name %></h4>
     <%= format_text(@results.classification.description) %>
+    <h4>Your results</h4>
+    <%= format_text(@results.classification.results_description) %>
   </div>
 </div>
 
@@ -36,18 +38,14 @@
         <% end %>
       </div>
       <%= scatter_chart @data, @config %>
+      <div class="my-2 text-xs-center">
+        <h4>Share your results</h4>
+        <%= render 'social_sharing' %>
+      </div>
     </div>
   </div>
   <div class="col-lg-6">
-    <h4>Your results</h4>
-    <%= format_text(@results.classification.results_description) %>
-  </div>
-</div>
 
-<%= render 'social_sharing' %>
-
-<div class="row my-2">
-  <div class="col-lg-12">
 
     <div id="accordion" role="tablist" aria-multiselectable="true">
       <div class="card">
@@ -77,55 +75,94 @@
           </div>
 
         </div>
+      </div>
 
-        <div class="card">
-          <div class="card-header" role="tab" id="headingTwo">
-            <h5 class="mb-0">
-              <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-               Filter results by Educational Specialism
-              </a>
-            </h5>
-          </div>
-
-          <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
-            <div class="card-block">
-              <%= form_tag results_path(@results.uuid), method: :get do %>
-                <h4>Educational Specialism</h4>
-                <p class="card-text">
-                  <%= radio_button_tag "filter[educational_specialism]", 'Biological Sciences' %>
-                  <%= label_tag 'Biological Sciences (e.g. Zoology, Plant Sciences)' %>
-                </p>
-                <p class="card-text">
-                  <%= radio_button_tag "filter[educational_specialism]", 'Non-biological Natural Sciences' %>
-                  <%= label_tag 'Non-biological Natural Sciences (e.g. Chemistry, Maths, Engineering)' %>
-                </p>
-                <p class="card-text">
-                  <%= radio_button_tag "filter[educational_specialism]", 'Social Sciences' %>
-                  <%= label_tag 'Social Sciences (e.g. Economics, Human Geography, Political Science)' %>
-                </p>
-                <p class="card-text">
-                  <%= radio_button_tag "filter[educational_specialism]", 'Humanities' %>
-                  <%= label_tag 'Humanities (e.g. Literature, History, Philosophy, Languages)' %>
-                </p>
-                <p class="card-text">
-                  <%= radio_button_tag "filter[educational_specialism]", 'Interdisciplinary' %>
-                  <%= label_tag 'Interdisciplinary (a combination of at least two of Natural Science, Social Science and Humanities)' %>
-                </p>
-                <p class="card-text">
-                  <%= radio_button_tag "filter[educational_specialism]", 'Not Applicable' %>
-                  <%= label_tag 'Not Applicable' %>
-                </p>
-
-                <%= submit_tag 'Filter by Educational Specialism', class: 'btn btn-primary' %>
-              <% end %>
-            </div>
-          </div>
+      <div class="card">
+        <div class="card-header" role="tab" id="headingTwo">
+          <h5 class="mb-0">
+            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+             Filter results by Educational Specialism
+            </a>
+          </h5>
         </div>
 
-      </div><!--card-->
+        <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
+          <div class="card-block">
+            <%= form_tag results_path(@results.uuid), method: :get do %>
+              <h4>Educational Specialism</h4>
+              <p class="card-text">
+                <%= radio_button_tag "filter[educational_specialism]", 'Biological Sciences' %>
+                <%= label_tag 'Biological Sciences (e.g. Zoology, Plant Sciences)' %>
+              </p>
+              <p class="card-text">
+                <%= radio_button_tag "filter[educational_specialism]", 'Non-biological Natural Sciences' %>
+                <%= label_tag 'Non-biological Natural Sciences (e.g. Chemistry, Maths, Engineering)' %>
+              </p>
+              <p class="card-text">
+                <%= radio_button_tag "filter[educational_specialism]", 'Social Sciences' %>
+                <%= label_tag 'Social Sciences (e.g. Economics, Human Geography, Political Science)' %>
+              </p>
+              <p class="card-text">
+                <%= radio_button_tag "filter[educational_specialism]", 'Humanities' %>
+                <%= label_tag 'Humanities (e.g. Literature, History, Philosophy, Languages)' %>
+              </p>
+              <p class="card-text">
+                <%= radio_button_tag "filter[educational_specialism]", 'Interdisciplinary' %>
+                <%= label_tag 'Interdisciplinary (a combination of at least two of Natural Science, Social Science and Humanities)' %>
+              </p>
+              <p class="card-text">
+                <%= radio_button_tag "filter[educational_specialism]", 'Not Applicable' %>
+                <%= label_tag 'Not Applicable' %>
+              </p>
+
+              <%= submit_tag 'Filter by Educational Specialism', class: 'btn btn-primary' %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header" role="tab" id="headingThree">
+          <h5 class="mb-0">
+            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+             Highest completed educational qualification
+            </a>
+          </h5>
+        </div>
+
+        <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree">
+          <div class="card-block">
+            <%= form_tag results_path(@results.uuid), method: :get do %>
+              <h4>Highest completed educational qualification</h4>
+              <p class="card-text">
+                <%= radio_button_tag "filter[education]", 'School level' %>
+                <%= label_tag 'School level' %>
+              </p>
+              <p class="card-text">
+                <%= radio_button_tag "filter[education]", 'Post-high school, but at an institution other than a university' %>
+                <%= label_tag 'Post-high school, but at an institution other than a university' %>
+              </p>
+              <p class="card-text">
+                <%= radio_button_tag "filter[education]", 'Undergraduate/Bachelors university degree' %>
+                <%= label_tag 'Undergraduate/Bachelors university degree' %>
+              </p>
+              <p class="card-text">
+                <%= radio_button_tag "filter[education]", 'Masters degree/Postgraduate qualification' %>
+                <%= label_tag 'Masters degree/Postgraduate qualification' %>
+              </p>
+              <p class="card-text">
+                <%= radio_button_tag "filted[education]", 'Doctorate' %>
+                <%= label_tag 'Doctorate' %>
+              </p>
+
+              <%= submit_tag 'Filter by Highest completed educational qualification', class: 'btn btn-primary' %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+
     </div><!--accordion-->
+
   </div>
 </div>
-
-
 
