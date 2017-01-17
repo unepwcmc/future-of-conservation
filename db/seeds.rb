@@ -89,6 +89,11 @@ questions = [
     position: 16,
     short_name: "shaping_values"
   },
+  {
+    text: "Please provide us with your email address so that we can send you summarised results, and to invite you to participate in the survey again in future to see how your views may have changed over time. We will not use your address for any other reason",
+    position: 17,
+    short_name: "email"
+  },
 ]
 
 questions.each do |question|
