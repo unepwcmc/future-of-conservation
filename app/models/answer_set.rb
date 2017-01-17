@@ -86,6 +86,20 @@ class AnswerSet < ApplicationRecord
     end
   end
 
+  def self.results_by_field(field, value, excluded_result_id)
+    self.where(
+      "answers->'demographics'->>:field = :value",
+      field: field, value: value
+    ).reject{ |r| r.id == excluded_result_id }.pluck(:x_axis_scaled, :y_axis_scaled)
+  end
+
+  def self.results_by_age(min, max, excluded_result_id)
+    self.where(
+      "answers->'demographics'->>'age' between :min and :max",
+      min: min, max: max
+    ).reject{ |r| r.id == excluded_result_id }.pluck(:x_axis_scaled, :y_axis_scaled)
+  end
+
   private
     def self.select_by_axis(answers, axis)
       answers.select {|hash| hash[axis] != 0}

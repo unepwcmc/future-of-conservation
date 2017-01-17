@@ -5,24 +5,22 @@ class ResultsController < ApplicationController
 
     if params["filter"].present?
       if params["filter"]["gender"].present?
-        @all_other_results = AnswerSet.where(
-                               "answers->'demographics'->>'gender' = ?", params["filter"]["gender"]
-                             ).reject{ |r| r.id == @results.id }.pluck(:x_axis_scaled, :y_axis_scaled)
+        @all_other_results = AnswerSet.results_by_field("gender", params["filter"]["gender"], @results.id)
       elsif params["filter"]["educational_specialism"].present?
-        @all_other_results = AnswerSet.where(
-                               "answers->'demographics'->>'educational_specialism' = ?", params["filter"]["educational_specialism"]
-                             ).reject{ |r| r.id == @results.id }.pluck(:x_axis_scaled, :y_axis_scaled)
+        @all_other_results = AnswerSet.results_by_field("educational_specialism", params["filter"]["educational_specialism"], @results.id)
       elsif params["filter"]["education"].present?
-        #@all_other_results = AnswerSet.results_by_field("education")
-
-        @all_other_results = AnswerSet.where(
-                               "answers->'demographics'->>'education' = ?", params["filter"]["education"]
-                             ).reject{ |r| r.id == @results.id }.pluck(:x_axis_scaled, :y_axis_scaled)
+        @all_other_results = AnswerSet.results_by_field("education", params["filter"]["education"], @results.id)
+      elsif params["filter"]["age"].present?
+        min = params["filter"]["age"]["min"] || 0
+        max = params["filter"]["age"]["max"] || 99
+        @all_other_results = AnswerSet.results_by_age(min, max, @results.id)
       end
     end
 
-    @data = [ { name: "Other peoples results", data: @all_other_results },
-              { name: "Your results", data: [[@results.x_axis_scaled, @results.y_axis_scaled]] } ]
+    @data = [
+      { name: "Other peoples results", data: @all_other_results },
+      { name: "Your results", data: [[@results.x_axis_scaled, @results.y_axis_scaled]] }
+    ]
     @config = { library:
                 {
                   hAxis: {minValue: -1, maxValue: 1}, vAxis: {minValue: -1, maxValue: 1},
@@ -31,10 +29,4 @@ class ResultsController < ApplicationController
               }
   end
 
-  private
-    def results_by_field(field)
-      AnswerSet.where(
-        "answers->'demographics'->>'education' = ?", params["filter"][field]
-      ).reject{ |r| r.id == @results.id }.pluck(:x_axis_scaled, :y_axis_scaled)
-    end
 end

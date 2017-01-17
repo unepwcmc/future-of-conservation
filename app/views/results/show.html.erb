@@ -161,6 +161,34 @@
         </div>
       </div>
 
+      <div class="card">
+        <div class="card-header" role="tab" id="headingFour">
+          <h5 class="mb-0">
+            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+             Age
+            </a>
+          </h5>
+        </div>
+
+        <div id="collapseFour" class="collapse" role="tabpanel" aria-labelledby="headingFour">
+          <div class="card-block">
+            <%= form_tag results_path(@results.uuid), method: :get do %>
+              <h4>Age</h4>
+              <p class="card-text">
+                <%= number_field_tag "filter[age][min]", 'School level' %>
+                <%= label_tag 'Minimum Age' %>
+              </p>
+              <p class="card-text">
+                <%= number_field_tag "filter[age][max]", 'Post-high school, but at an institution other than a university' %>
+                <%= label_tag 'Maximum Age' %>
+              </p>
+
+              <%= submit_tag 'Filter by Age', class: 'btn btn-primary' %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+
     </div><!--accordion-->
 
   </div>

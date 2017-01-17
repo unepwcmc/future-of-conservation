@@ -13,6 +13,12 @@ module ResultsHelper
   end
 
   def format_filters_for_display
-    params["filter"].to_unsafe_h.map {|k,v| "#{k.gsub('_', ' ').titleize} (#{v})" }.join(", ")
+    filters = params["filter"].to_unsafe_h
+    filters = filters.map do |k, v|
+                key = k.gsub('_', ' ').titleize
+                val = k == "age" ? "#{v['min']} - #{v['max']}" : v
+                "#{key} (#{val})"
+              end
+    filters.join(", ")
   end
 end

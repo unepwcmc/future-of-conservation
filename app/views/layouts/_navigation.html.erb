@@ -3,11 +3,17 @@
   <%= image_tag 'foc_logo.png', class: 'navbar-logo' %>
 </a>
   <ul class="nav navbar-nav">
-    <li class="nav-item active">
-      <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+    <li class="nav-item">
+      <%= link_to "Home", root_path, class: 'nav-link' %>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#">About</a>
+      <%= link_to "Take the Survey", new_survey_path, class: 'nav-link' %>
+    </li>
+    <li class="nav-item">
+      <%= link_to "About the Project", about_the_project_path, class: 'nav-link' %>
+    </li>
+    <li class="nav-item">
+      <%= link_to "About the Debate", about_the_debate_path, class: 'nav-link' %>
     </li>
   </ul>
 </nav>
