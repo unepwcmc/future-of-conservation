@@ -65,17 +65,18 @@ class AnswerSet < ApplicationRecord
   end
 
   def self.classify(x, y)
-    if x.between?(-0.1, 0.1) && y.between?(-0.1, 0.1)
-      Classification.find_by(name: "Undecided") # Center square
-    elsif x.between?(-1, 0) && y.between?(-0.1, 0.1)
-      Classification.find_by(name: "Traditional Conservation and Critical Social Science") # Left boundary
-    elsif x.between?(0, 1) && y.between?(-0.1, 0.1)
-      Classification.find_by(name: "Market Biocentrism and New Conservation") # Right boundary
-    elsif x.between?(-0.1, 0.1) && y.between?(-1, 0)
-      Classification.find_by(name: "Critical Social Science and New Conservation") # Bottom boundary
-    elsif x.between?(-0.1, 0.1) && y.between?(0, 1)
-      Classification.find_by(name: "Traditional Conservation and Market Biocentrism") # Top boundary
-    elsif x.between?(-1, 0) && y.between?(-1, 0)
+    #if x.between?(-0.1, 0.1) && y.between?(-0.1, 0.1)
+      #Classification.find_by(name: "Undecided") # Center square
+    #elsif x.between?(-1, 0) && y.between?(-0.1, 0.1)
+      #Classification.find_by(name: "Traditional Conservation and Critical Social Science") # Left boundary
+    #elsif x.between?(0, 1) && y.between?(-0.1, 0.1)
+      #Classification.find_by(name: "Market Biocentrism and New Conservation") # Right boundary
+    #elsif x.between?(-0.1, 0.1) && y.between?(-1, 0)
+      #Classification.find_by(name: "Critical Social Science and New Conservation") # Bottom boundary
+    #elsif x.between?(-0.1, 0.1) && y.between?(0, 1)
+      #Classification.find_by(name: "Traditional Conservation and Market Biocentrism") # Top boundary
+
+    if x.between?(-1, 0) && y.between?(-1, 0)
       Classification.find_by(name: "Critical Social Science") # Bottom left
     elsif x.between?(-1, 0) && y.between?(0, 1)
       Classification.find_by(name: "Traditional Conservation") # Top left
