@@ -10,7 +10,7 @@
 
     <div id="collapseOne" class="collapse in" role="tabpanel" aria-labelledby="headingOne">
       <div class="card-block">
-        <%= form_tag results_path(@results.uuid), method: :get do %>
+        <%= form_tag results_path(@results.uuid, anchor: "chart"), method: :get do %>
           <h4>Gender</h4>
           <p>
             <%= radio_button_tag "filter[gender]", 'Male' %>
@@ -39,7 +39,7 @@
 
     <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
       <div class="card-block">
-        <%= form_tag results_path(@results.uuid), method: :get do %>
+        <%= form_tag results_path(@results.uuid, anchor: "chart"), method: :get do %>
           <h4>Educational Specialism</h4>
           <p class="card-text">
             <%= radio_button_tag "filter[educational_specialism]", 'Biological Sciences' %>
@@ -83,7 +83,7 @@
 
     <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree">
       <div class="card-block">
-        <%= form_tag results_path(@results.uuid), method: :get do %>
+        <%= form_tag results_path(@results.uuid, anchor: "chart"), method: :get do %>
           <h4>Highest completed educational qualification</h4>
           <p class="card-text">
             <%= radio_button_tag "filter[education]", 'School level' %>
@@ -123,7 +123,7 @@
 
     <div id="collapseFour" class="collapse" role="tabpanel" aria-labelledby="headingFour">
       <div class="card-block">
-        <%= form_tag results_path(@results.uuid), method: :get do %>
+        <%= form_tag results_path(@results.uuid, anchor: "chart"), method: :get do %>
           <h4>Age</h4>
           <p class="card-text">
             <%= number_field_tag "filter[age][min]", 'School level' %>

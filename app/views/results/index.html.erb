@@ -14,7 +14,7 @@
           <td><%= answer_set.id %></td>
           <td><%= answer_set.classification.name %></td>
           <td><%= answer_set.created_at.to_formatted_s(:long) %></td>
-          <td><%= link_to 'View Results', results_path(answer_set.uuid) %></td>
+          <td><%= link_to 'View Results Page', results_path(answer_set.uuid) %></td>
         </tr>
       <% end %>
     </tbody>

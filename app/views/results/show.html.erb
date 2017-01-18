@@ -31,6 +31,7 @@
   <div class="col-lg-6">
     <div class="card">
       <div class="card-block">
+        <a name="chart"></a>
         <h4 class="card-title">See how you compare with others</h4>
         <p class="card-text">Comparing your results against <%= @all_other_results.count %> other <%= "result".pluralize(@all_other_results.count) %></p>
         <% if params["filter"].present? %>

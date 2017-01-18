@@ -27,12 +27,6 @@ class ResultsController < ApplicationController
       { name: "Other peoples results", data: @all_other_results },
       { name: "Your results", data: [[@results.x_axis_scaled, @results.y_axis_scaled]] }
     ]
-    @config = { library:
-                {
-                  hAxis: {minValue: -1, maxValue: 1}, vAxis: {minValue: -1, maxValue: 1},
-                  legend: {position: 'bottom'}
-                }
-              }
+    @config = CHARTKICK_CONFIG
   end
-
 end
