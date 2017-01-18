@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   resources :answer_sets, only: [:create]
   resources :questions
+  resources :results, only: [:index]
 
   get 'survey/new', to: 'survey#index', as: 'new_survey'
 

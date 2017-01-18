@@ -1,4 +1,10 @@
 class ResultsController < ApplicationController
+  before_action :authenticate, only: [:index]
+
+  def index
+    @results = AnswerSet.all
+  end
+
   def show
     @results = AnswerSet.find_by(uuid: params[:uuid])
     @all_other_results = AnswerSet.all.reject{ |r| r.id == @results.id }.pluck(:x_axis_scaled, :y_axis_scaled)
