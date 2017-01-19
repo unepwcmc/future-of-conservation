@@ -2,17 +2,18 @@
 #
 # Table name: answer_sets
 #
-#  id                :integer          not null, primary key
-#  ip_address        :string
-#  answers           :jsonb
-#  x_axis_total      :float
-#  y_axis_total      :float
-#  created_at        :datetime         not null
-#  updated_at        :datetime         not null
-#  uuid              :string
-#  x_axis_scaled     :float
-#  y_axis_scaled     :float
-#  classification_id :integer
+#  id                      :integer          not null, primary key
+#  ip_address              :string
+#  answers                 :jsonb
+#  x_axis_total            :float
+#  y_axis_total            :float
+#  created_at              :datetime         not null
+#  updated_at              :datetime         not null
+#  uuid                    :string
+#  x_axis_scaled           :float
+#  y_axis_scaled           :float
+#  classification_id       :integer
+#  classification_strength :string
 #
 # Indexes
 #
@@ -60,22 +61,12 @@ class AnswerSet < ApplicationRecord
       y_axis_total: y_axis_total,
       x_axis_scaled: x_axis_scaled,
       y_axis_scaled: y_axis_scaled,
-      classification: self.classify(x_axis_scaled, y_axis_scaled)
+      classification: self.classify(x_axis_scaled, y_axis_scaled),
+      classification_strength: self.find_quadrant_strength(x_axis_scaled, y_axis_scaled)
     )
   end
 
   def self.classify(x, y)
-    #if x.between?(-0.1, 0.1) && y.between?(-0.1, 0.1)
-      #Classification.find_by(name: "Undecided") # Center square
-    #elsif x.between?(-1, 0) && y.between?(-0.1, 0.1)
-      #Classification.find_by(name: "Traditional Conservation and Critical Social Science") # Left boundary
-    #elsif x.between?(0, 1) && y.between?(-0.1, 0.1)
-      #Classification.find_by(name: "Market Biocentrism and New Conservation") # Right boundary
-    #elsif x.between?(-0.1, 0.1) && y.between?(-1, 0)
-      #Classification.find_by(name: "Critical Social Science and New Conservation") # Bottom boundary
-    #elsif x.between?(-0.1, 0.1) && y.between?(0, 1)
-      #Classification.find_by(name: "Traditional Conservation and Market Biocentrism") # Top boundary
-
     if x.between?(-1, 0) && y.between?(-1, 0)
       Classification.find_by(name: "Critical Social Science") # Bottom left
     elsif x.between?(-1, 0) && y.between?(0, 1)
@@ -124,5 +115,9 @@ class AnswerSet < ApplicationRecord
 
       max_score = (3 * 4) * Question.where("#{axis_weight} != 0.0").count
       total.to_f / max_score.to_f
+    end
+
+    def self.find_quadrant_strength(x, y)
+      x.between?(-0.5, 0.5) && y.between?(-0.5, 0.5) ? "weak" : "strong"
     end
 end

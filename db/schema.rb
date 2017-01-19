@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161207111942) do
+ActiveRecord::Schema.define(version: 20170119121147) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,12 +20,13 @@ ActiveRecord::Schema.define(version: 20161207111942) do
     t.jsonb    "answers"
     t.float    "x_axis_total"
     t.float    "y_axis_total"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
     t.string   "uuid"
     t.float    "x_axis_scaled"
     t.float    "y_axis_scaled"
     t.integer  "classification_id"
+    t.string   "classification_strength"
     t.index ["classification_id"], name: "index_answer_sets_on_classification_id", using: :btree
   end
 
