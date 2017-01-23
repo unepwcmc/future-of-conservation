@@ -29,14 +29,19 @@ class AnswerSet < ApplicationRecord
   belongs_to :classification
 
   def self.build_new_from_params(params)
-    answers             = params["answers"]
-    demographic_answers = params["demographics"]
-    answers_array       = []
+    answer_set = self.new
+    answer_set.build_answers(params["answers"], params["demographics"])
+    answer_set.calculate_scores
+    answer_set.classify
+    # Return the answer set
+    answer_set
+  end
 
+  def build_answers(answers, demographic_answers)
+    answers_array   = []
     answers.each do |key, value|
       question_id   = key.split("_").first
       question      = Question.find(question_id)
-      answer        = value
       question_data = {
         question_text:        question.text,
         question_x_weight:    question.x_weight,
@@ -44,50 +49,35 @@ class AnswerSet < ApplicationRecord
         answer_inputted:      value.to_i,
         x_answer_calculated:  calculate_answer(value, question.x_weight),
         y_answer_calculated:  calculate_answer(value, question.y_weight)
-        #question_version_number: 3,#question.version.index,
       }
-
       answers_array << question_data
     end
 
-    x_axis_total  = calculate_axis_total(select_by_axis(answers_array, :x_answer_calculated), :x_answer_calculated)
-    x_axis_scaled = scale_axis_total(x_axis_total, :x_weight)
+    self.answers = { questions: answers_array, demographics: demographic_answers }
+  end
 
-    y_axis_total  = calculate_axis_total(select_by_axis(answers_array, :y_answer_calculated), :y_answer_calculated)
-    y_axis_scaled = scale_axis_total(y_axis_total, :y_weight)
+  def calculate_scores
+    x_answers = select_by_axis(self.answers["questions"], :x_answer_calculated)
+    x_total   = calculate_axis_total(x_answers, :x_answer_calculated)
+    x_scaled  = scale_axis_total(x_total, :x_weight)
 
-    self.new(
-      answers: { questions: answers_array, demographics: demographic_answers },
-      x_axis_total: x_axis_total,
-      y_axis_total: y_axis_total,
-      x_axis_scaled: x_axis_scaled,
-      y_axis_scaled: y_axis_scaled
-    )
-    self.classify
+    y_answers = select_by_axis(self.answers["questions"], :y_answer_calculated)
+    y_total   = calculate_axis_total(y_answers, :y_answer_calculated)
+    y_scaled  = scale_axis_total(y_total, :y_weight)
+
+    self.x_axis_total   = x_total
+    self.x_axis_scaled  = x_scaled
+
+    self.y_axis_total   = y_total
+    self.y_axis_scaled  = y_scaled
   end
 
   def classify
     x, y = self.x_axis_scaled, self.y_axis_scaled
-
     self.classification             = choose_quadrant
     self.classification_strength_x  = find_quadrant_strength(x)
     self.classification_strength_y  = find_quadrant_strength(y)
   end
-
-  def choose_quadrant
-    x, y = self.x_axis_scaled, self.y_axis_scaled
-
-    if x.between?(-1, 0) && y.between?(-1, 0)
-      Classification.find_by(name: "Critical Social Science") # Bottom left
-    elsif x.between?(-1, 0) && y.between?(0, 1)
-      Classification.find_by(name: "Traditional Conservation") # Top left
-    elsif x.between?(0, 1) && y.between?(-1, 0)
-      Classification.find_by(name: "New Conservation") # Bottom right
-    elsif x.between?(0, 1) && y.between?(0, 1)
-      Classification.find_by(name: "Market Biocentrism") #Top right
-    end
-  end
-
 
   def self.results_by_field(field, value, excluded_result_id=nil)
     self.where(
@@ -105,7 +95,7 @@ class AnswerSet < ApplicationRecord
 
   private
     def select_by_axis(answers, axis)
-      answers.select {|hash| hash[axis] != 0}
+      answers.select {|hash| hash[axis.to_s] != 0.0}
     end
 
     def calculate_answer(answer, weight)
@@ -113,7 +103,7 @@ class AnswerSet < ApplicationRecord
     end
 
     def calculate_axis_total(answers, axis)
-      answers.inject(0) {|sum, hash| sum + hash[axis]}
+      answers.inject(0) {|sum, hash| sum + hash[axis.to_s]}
     end
 
     def scale_axis_total(total, axis_weight)
@@ -123,11 +113,25 @@ class AnswerSet < ApplicationRecord
       # Ignores questions where the weighting is zero (for reliable scaling)
       valid_columns = ["x_weight", "y_weight"]
       valid_columns.include?(axis_weight.to_s) or raise "You are not permitted to count from this field"
-      max_score = (3 * 4) * Question.where("#{axis_weight} != 0.0").count
+      max_score = (3 * 4) * Question.where("#{axis_weight.to_s} != 0.0").count
       total.to_f / max_score.to_f
     end
 
-    def find_quadrant_strength(axis)
-      axis.between?(-0.5, 0.5) ? "weak" : "strong"
+    def choose_quadrant
+      x, y = self.x_axis_scaled, self.y_axis_scaled
+
+      if x.between?(-1, 0) && y.between?(-1, 0)
+        Classification.find_by(name: "Critical Social Science") # Bottom left
+      elsif x.between?(-1, 0) && y.between?(0, 1)
+        Classification.find_by(name: "Traditional Conservation") # Top left
+      elsif x.between?(0, 1) && y.between?(-1, 0)
+        Classification.find_by(name: "New Conservation") # Bottom right
+      elsif x.between?(0, 1) && y.between?(0, 1)
+        Classification.find_by(name: "Market Biocentrism") #Top right
+      end
+    end
+
+    def find_quadrant_strength(axis_total)
+      axis_total.between?(-0.5, 0.5) ? "weak" : "strong"
     end
 end

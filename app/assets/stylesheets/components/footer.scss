@@ -1,0 +1,24 @@
+@import 'utilities/colors';
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 150px;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  color: $white;
+  background-color: $blue-darkest;
+  padding: 2em 0;
+
+  h6 { color: $white; }
+}
+
