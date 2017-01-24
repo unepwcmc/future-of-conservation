@@ -7,14 +7,15 @@ CHARTKICK_CONFIG = {
       maxValue: 1,
       baselineColor: 'black',
       gridlines: {count: 5, color: '#CCC'},
-      textPosition: 'none',
+      title: 'People and Nature',
+      #textPosition: 'none',
     },
     vAxis: {
       minValue: -1,
       maxValue: 1,
       baselineColor: 'black',
-      #gridlines: {count: 4},
-      textPosition: 'none'
+      title: 'Conservation and Capitalism',
+      #textPosition: 'none'
     },
     legend: {position: 'bottom'}
   }
