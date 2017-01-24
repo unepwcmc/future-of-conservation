@@ -28,6 +28,8 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 gem 'annotate', '~> 2.7.1'
 
+gem 'dotenv-rails', '~> 2.1.1'
+
 gem 'paper_trail', '~> 5.2.2'
 gem "chartkick", '~> 2.1.1'
 gem 'country_select', '~> 2.5.2'
@@ -53,7 +55,6 @@ group :development do
   gem 'capistrano-rails',   '~> 1.1', require: false
   gem 'capistrano-bundler', '~> 1.1', require: false
   gem 'capistrano-passenger', '~> 0.1.1', require: false
-  gem 'dotenv-rails', '~> 2.1.1'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
