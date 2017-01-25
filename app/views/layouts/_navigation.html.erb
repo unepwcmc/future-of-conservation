@@ -1,11 +1,19 @@
-<nav class="navbar navbar-fixed-top navbar-light bg-faded">
-  <a class="navbar-brand" href="#">
-    <%= image_tag 'foc_logo.png', class: 'navbar-logo' %>
-  </a>
-  <ul class="nav navbar-nav">
-    <%= active_link_to "Home", root_path %>
-    <%= active_link_to "Take the Survey", new_survey_path %>
-    <%= active_link_to "About the Project", about_the_project_path %>
-    <%= active_link_to "About the Debate", about_the_debate_path %>
-  </ul>
+<nav id="topNav" class="navbar navbar-fixed-top navbar-light bg-faded">
+  <div class="container">
+    <button class="navbar-toggler hidden-md-up float-xs-right" type="button" data-toggle="collapse" data-target="#collapsingNavbar"></button>
+
+    <%= link_to root_path, class: 'navbar-brand page-scroll' do %>
+      <%= image_tag 'foc_logo.png', class: 'navbar-logo' %>
+    <% end %>
+
+    <div class="collapse navbar-toggleable-sm" id="collapsingNavbar">
+      <ul class="nav navbar-nav">
+        <%= active_link_to "Home", root_path %>
+        <%= active_link_to "Take the Survey", new_survey_path %>
+        <%= active_link_to "About the Project", about_the_project_path %>
+        <%= active_link_to "About the Debate", about_the_debate_path %>
+      </ul>
+    </div>
+  </div>
 </nav>
+
