@@ -51,6 +51,8 @@
     <%= format_text(@results.classification.results_description) %>
     <h4>Your thinking most closely aligns with: <%= @results.classification.name %></h4>
     <%= format_text(@results.classification.description) %>
+
+    <p><%= link_to "Find out more about your position and the others", about_the_debate_path %></p>
   </div>
 </div>
 
