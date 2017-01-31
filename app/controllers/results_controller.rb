@@ -24,7 +24,7 @@ class ResultsController < ApplicationController
     end
 
     @data = [
-      { name: "Other peoples results", data: @all_other_results },
+      { name: "Other people's results", data: @all_other_results },
       { name: "Your results", data: [[@results.x_axis_scaled, @results.y_axis_scaled]] }
     ]
     @config = CHARTKICK_CONFIG
