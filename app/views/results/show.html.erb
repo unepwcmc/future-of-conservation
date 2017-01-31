@@ -17,7 +17,7 @@
 <%#</div>%>
 
 <div class="row my-2">
-  <h1>Your results</h1>
+  <h3>Your results</h3>
   <hr class="primary">
 
   <div class="col-lg-6">
@@ -45,12 +45,12 @@
 
 <div class="row my-2">
   <div class="col-lg-12">
-    <h4>Your thinking most closely aligns with: <%= @results.classification.name %></h4>
-    <%= format_text(@results.classification.description) %>
-    <h4>Your results</h4>
+    <h4>How to interpret your results</h4>
     <p>Your position is <%= @results.classification_strength_x %> along the people/nature axis and <%= @results.classification_strength_y %> along the conservation & capitalism axis.</p>
 
     <%= format_text(@results.classification.results_description) %>
+    <h4>Your thinking most closely aligns with: <%= @results.classification.name %></h4>
+    <%= format_text(@results.classification.description) %>
   </div>
 </div>
 
