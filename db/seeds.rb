@@ -133,10 +133,22 @@ classifications = [
 ]
 
 classifications.each do |classification|
-  Classification.where(name: classification[:name]).first_or_create do |c|
+  cls = Classification.where(name: classification[:name]).first_or_create do |c|
     c.description = classification[:description]
     c.results_description = classification[:results_description]
     puts "Created classification with the name: #{classification[:name]}..."
+  end
+
+  # If there is a change from the saved record, update it
+  unless cls.description == classification[:description] ||
+    cls.results_description == classification[:results_description] ||
+    cls.name == classification[:name]
+
+    cls.update_attributes(
+      name:                 classification[:name],
+      description:          classification[:description],
+      results_description:  classification[:results_description]
+    )
   end
 end
 
