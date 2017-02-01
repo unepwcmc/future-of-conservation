@@ -21,4 +21,17 @@ module ResultsHelper
               end
     filters.join(", ")
   end
+
+  def format_results_strength(result, axis)
+    case axis
+    when :x
+      polarity = result.x_axis_scaled > 0.0 ? "positive" : "negative"
+      strength = result.classification_strength_x
+    when :y
+      polarity = result.y_axis_scaled > 0.0 ? "positive" : "negative"
+      strength = result.classification_strength_y
+    end
+
+    "#{strength}ly #{polarity}"
+  end
 end

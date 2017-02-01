@@ -46,13 +46,14 @@
 <div class="row my-2">
   <div class="col-lg-12">
     <h4>How to interpret your results</h4>
-    <p>Your position is <%= @results.classification_strength_x %> along the people/nature axis and <%= @results.classification_strength_y %> along the conservation & capitalism axis.</p>
+    <p>Your position is <%= format_results_strength(@results, :x) %> along the people/nature axis and <%= format_results_strength(@results, :y) %> along the conservation & capitalism axis.</p>
 
     <%= format_text(@results.classification.results_description) %>
     <h4>Your thinking most closely aligns with: <%= @results.classification.name %></h4>
     <%= format_text(@results.classification.description) %>
 
-    <p><%= link_to "Find out more about your position and the others", about_the_debate_path %></p>
+    <p>All four positions represented by these particular dimensions of the debate are shown in the figure below.</p>
+    <p><%= link_to "Find out more about your position and the others.", about_the_debate_path %></p>
     <%= image_tag 'FoC-ALL.jpg' %>
   </div>
 </div>
