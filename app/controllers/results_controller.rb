@@ -3,6 +3,11 @@ class ResultsController < ApplicationController
 
   def index
     @results = AnswerSet.all
+
+    respond_to do |format|
+      format.html
+      format.csv { send_data CsvExporter.export_results(@results, filename: "results-#{Date.today}.csv") }
+    end
   end
 
   def show
