@@ -106,6 +106,10 @@ class AnswerSet < ApplicationRecord
       answers.inject(0) {|sum, hash| sum + hash[axis.to_s]}
     end
 
+    def calculate_axis_max_score(axis_weight)
+      self.answers["questions"].inject(0) {|sum, hash| sum + (hash["question_#{axis_weight.to_s}"] * 3 }
+    end
+
     def scale_axis_total(total, axis_weight)
       # 4 is the maximum weighting on a -4 to 4 scale
       # 3 is the maximum user inputted value on a -3 to 3 scale
@@ -113,7 +117,14 @@ class AnswerSet < ApplicationRecord
       # Ignores questions where the weighting is zero (for reliable scaling)
       valid_columns = ["x_weight", "y_weight"]
       valid_columns.include?(axis_weight.to_s) or raise "You are not permitted to count from this field"
-      max_score = (3 * 4) * Question.where("#{axis_weight.to_s} != 0.0").count
+      #max_score = (3 * 4) * Question.where("#{axis_weight.to_s} != 0.0").count
+      # Max score needs to be calculated, which will be for a particular axis, sum the (weight of a question times by * 3)
+      # answers.inject(0) {|sum, question| sum + (question.x_weight * 3)}
+
+      max_score = calculate_axis_max_score(axis_weight.to_s)
+
+      puts "MAX SCORE FOR #{axis_weight.to_s} IS #{max_score}"
+
       total.to_f / max_score.to_f
     end
 
