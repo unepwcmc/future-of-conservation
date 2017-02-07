@@ -106,9 +106,9 @@ class AnswerSet < ApplicationRecord
       answers.inject(0) {|sum, hash| sum + hash[axis.to_s]}
     end
 
-    def calculate_axis_max_score(axis_weight)
-      self.answers["questions"].inject(0) {|sum, hash| sum + (hash["question_#{axis_weight.to_s}"] * 3) }
-    end
+    #def calculate_axis_max_score(axis_weight)
+      #self.answers["questions"].inject(0) {|sum, hash| sum + (hash["question_#{axis_weight.to_s}"] * 3) }
+    #end
 
     def scale_axis_total(total, axis_weight)
       # 4 is the maximum weighting on a -4 to 4 scale
@@ -121,9 +121,15 @@ class AnswerSet < ApplicationRecord
       # Max score needs to be calculated, which will be for a particular axis, sum the (weight of a question times by * 3)
       # answers.inject(0) {|sum, question| sum + (question.x_weight * 3)}
 
-      max_score = calculate_axis_max_score(axis_weight.to_s)
+      case axis_weight.to_s
+      when "x_weight"
+        max_score = 177
+      when "y_weight"
+        max_score = 90
+      end
 
-      Rails.logger.debug "MAX SCORE FOR #{axis_weight.to_s} IS #{max_score}"
+      #max_score = calculate_axis_max_score(axis_weight.to_s)
+      #Rails.logger.debug "MAX SCORE FOR #{axis_weight.to_s} IS #{max_score}"
 
       total.to_f / max_score.to_f
     end
