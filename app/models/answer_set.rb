@@ -107,7 +107,7 @@ class AnswerSet < ApplicationRecord
     end
 
     def calculate_axis_max_score(axis_weight)
-      self.answers["questions"].inject(0) {|sum, hash| sum + (hash["question_#{axis_weight.to_s}"] * 3 }
+      self.answers["questions"].inject(0) {|sum, hash| sum + (hash["question_#{axis_weight.to_s}"] * 3) }
     end
 
     def scale_axis_total(total, axis_weight)
