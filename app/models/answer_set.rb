@@ -123,8 +123,7 @@ class AnswerSet < ApplicationRecord
 
       max_score = calculate_axis_max_score(axis_weight.to_s)
 
-      puts "MAX SCORE FOR #{axis_weight.to_s} IS #{max_score}"
-      byebug
+      Rails.logger.debug "MAX SCORE FOR #{axis_weight.to_s} IS #{max_score}"
 
       total.to_f / max_score.to_f
     end
