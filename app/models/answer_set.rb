@@ -137,14 +137,14 @@ class AnswerSet < ApplicationRecord
     def choose_quadrant
       x, y = self.x_axis_scaled, self.y_axis_scaled
 
-      if x.between?(-1, 0) && y.between?(-1, 0)
-        Classification.find_by(name: "Critical Social Science") # Bottom left
-      elsif x.between?(-1, 0) && y.between?(0, 1)
-        Classification.find_by(name: "Traditional Conservation") # Top left
-      elsif x.between?(0, 1) && y.between?(-1, 0)
-        Classification.find_by(name: "New Conservation") # Bottom right
-      elsif x.between?(0, 1) && y.between?(0, 1)
-        Classification.find_by(name: "Market Biocentrism") #Top right
+      if x.between?(-1, 0) && y.between?(-1, 0) # Bottom left
+        Classification.find_by(name: "Critical Social Science")
+      elsif x.between?(-1, 0) && y.between?(0, 1) # Top left
+        Classification.find_by(name: "New Conservation")
+      elsif x.between?(0, 1) && y.between?(-1, 0) # Bottom right
+        Classification.find_by(name: "Traditional Conservation")
+      elsif x.between?(0, 1) && y.between?(0, 1) # Top right
+        Classification.find_by(name: "Market Biocentrism")
       end
     end
 
