@@ -6,7 +6,7 @@ class ResultsController < ApplicationController
 
     respond_to do |format|
       format.html
-      format.csv { send_data CsvExporter.export_results(@results, filename: "results-#{Date.today}.csv") }
+      format.csv { send_data CsvExporter.export_results(@results), filename: "results-#{Date.today}.csv" }
     end
   end
 
@@ -33,5 +33,10 @@ class ResultsController < ApplicationController
       { name: "Your results", data: [[@results.x_axis_scaled, @results.y_axis_scaled]] }
     ]
     @config = CHARTKICK_CONFIG
+  end
+
+  def export
+    CsvExporterJob.perform_later(AnswerSet.all)
+    redirect_to results_path, notice: "Your CSV is being generated, we will send an email to #{Rails.application.secret.notification_email} when it is ready to download"
   end
 end

@@ -93,6 +93,15 @@ class AnswerSet < ApplicationRecord
     ).reject{ |r| r.id == excluded_result_id }.pluck(:x_axis_scaled, :y_axis_scaled)
   end
 
+  def self.to_csv
+    CSV.generate do |csv|
+      csv << column_names
+      all.each do |product|
+        csv << product.attributes.values_at(*column_names)
+      end
+    end
+  end
+
   private
     def select_by_axis(answers, axis)
       answers.select {|hash| hash[axis.to_s] != 0.0}

@@ -33,8 +33,8 @@ gem 'dotenv-rails', '~> 2.1.1'
 gem 'paper_trail', '~> 5.2.2'
 gem "chartkick", '~> 2.1.1'
 gem 'country_select', '~> 2.5.2'
-
 gem 'bootstrap', '~> 4.0.0.alpha5'
+gem 'sidekiq', '~> 4.2.9'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-tether', '>= 1.3.3'
