@@ -3,6 +3,10 @@ CHARTKICK_CONFIG = {
   {
     fill: 20,
     hAxis: {
+      viewWindow: {
+        min: -1,
+        max: 1
+      },
       minValue: -1,
       maxValue: 1,
       baselineColor: 'black',
@@ -11,6 +15,10 @@ CHARTKICK_CONFIG = {
       #textPosition: 'none',
     },
     vAxis: {
+      viewWindow: {
+        min: -1,
+        max: 1
+      },
       minValue: -1,
       maxValue: 1,
       baselineColor: 'black',
