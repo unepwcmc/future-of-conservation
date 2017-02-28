@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   resources :demographic_questions
   get 'static_pages/index'
   get 'results/:uuid', to: 'results#show', as: 'results'
+  get 'export', to: 'results#export', as: 'export_results'
 
   resources :answer_sets, only: [:create]
   resources :questions

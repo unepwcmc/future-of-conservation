@@ -36,7 +36,7 @@ class ResultsController < ApplicationController
   end
 
   def export
-    CsvExporterJob.perform_later(AnswerSet.all)
-    redirect_to results_path, notice: "Your CSV is being generated, we will send an email to #{Rails.application.secret.notification_email} when it is ready to download"
+    CsvExporterJob.perform_later
+    redirect_to root_path, notice: "Your CSV is being generated, we will send an email to #{Rails.application.secrets.notification_email} when it is ready to download"
   end
 end
