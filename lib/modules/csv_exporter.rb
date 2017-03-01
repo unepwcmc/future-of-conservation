@@ -1,5 +1,4 @@
 require 'csv'
-require 'byebug'
 
 module CsvExporter
   def self.export_results
@@ -25,7 +24,7 @@ module CsvExporter
       [
         "ID", "UUID", "Created at", "IP Address", "Classification Name",
         "X Axis (Scaled)", "Y Axis (Scaled)", self.json_headers_for(answer_set, "questions")
-      ]
+      ].flatten
     end
 
     def self.format_row(result)
@@ -37,13 +36,12 @@ module CsvExporter
         result.classification.name,
         result.x_axis_scaled,
         result.y_axis_scaled,
-        json_row_for(result, "questions"),
+        json_row_for(result, "questions")
       ].flatten
     end
 
     def self.json_headers_for(result, question_type)
       headers = []
-      byebug
       result.answers[question_type].each {|q| headers << q["question_text"] || ""}
       headers
     end
