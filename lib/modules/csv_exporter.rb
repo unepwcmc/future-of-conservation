@@ -30,7 +30,6 @@ module CsvExporter
         DemographicQuestion.find_by_short_name("educational_specialism").text,
         DemographicQuestion.find_by_short_name("country").text,
         DemographicQuestion.find_by_short_name("location_of_work").text,
-        DemographicQuestion.find_by_short_name("total_countries_worked_in").text,
         DemographicQuestion.find_by_short_name("conservation_sectors").text,
         DemographicQuestion.find_by_short_name("experience_in_other_fields").text,
         DemographicQuestion.find_by_short_name("non_conservation_sectors").text,
@@ -41,14 +40,13 @@ module CsvExporter
         DemographicQuestion.find_by_short_name("value_shaping_items").text,
         DemographicQuestion.find_by_short_name("shaping_values").text,
         DemographicQuestion.find_by_short_name("email").text
-      ].flatten
+      ].flatten.map {|q| q.gsub(",", "") }
     end
 
 
     def self.format_row(result)
-      default = "N/A"
-
-      [
+      default = "n/a"
+      row = [
         result.id,
         result.uuid,
         result.created_at,
@@ -62,19 +60,23 @@ module CsvExporter
         result.find_demographic_answer_by_key("education", default),
         result.find_demographic_answer_by_key("educational_specialism", default),
         result.find_demographic_answer_by_key("country", default),
-        result.find_demographic_answer_by_key("location_of_work", default),
-        result.find_demographic_answer_by_key("total_countries_worked_in", default),
-        result.find_demographic_answer_by_key("conservation_sectors", default),
+        self.format_multiple_answer(result.find_demographic_answer_by_key("location_of_work"), default),
+        self.format_multiple_answer(result.find_demographic_answer_by_key("conservation_sectors"), default),
         result.find_demographic_answer_by_key("experience_in_other_fields", default),
-        result.find_demographic_answer_by_key("non_conservation_sectors", default),
+        self.format_multiple_answer(result.find_demographic_answer_by_key("non_conservation_sectors"), default),
         result.find_demographic_answer_by_key("professional_engagement", default),
         result.find_demographic_answer_by_key("seniority_of_current_role", default),
         result.find_demographic_answer_by_key("category_of_most_professional_work", default),
         result.find_demographic_answer_by_key("researcher_experience", default),
-        result.find_demographic_answer_by_key("value_shaping_items", default),
+        self.format_multiple_answer(result.find_demographic_answer_by_key("value_shaping_items"), default),
         result.find_demographic_answer_by_key("shaping_values", default),
         result.find_demographic_answer_by_key("email", default)
       ].flatten
+
+      row.each do |answer|
+        # For text answers, replace commas
+        answer.gsub(",", "") if answer.is_a?(String)
+      end
     end
 
     def self.json_headers_for(result, question_type)
@@ -87,5 +89,12 @@ module CsvExporter
       row = []
       result.answers[question_type].each {|q| row << q["answer_inputted"] || ""}
       row
+    end
+
+    def self.format_multiple_answer(answer, default)
+      return default if answer.nil?
+      answer = Array.wrap(answer.values) if answer.is_a?(Hash)
+      answer = answer.reject(&:empty?).join("|")
+      answer.empty? ? default : answer
     end
 end

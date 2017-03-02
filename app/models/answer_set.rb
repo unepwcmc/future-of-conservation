@@ -107,7 +107,9 @@ class AnswerSet < ApplicationRecord
   end
 
   def find_demographic_answer_by_key(key, default=nil)
-    self.answers.dig("demographics", key) || default
+    answer = self.answers.dig("demographics", key)
+    return default if answer.nil?
+    answer.empty? ? default : answer
   end
 
   private
