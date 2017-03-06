@@ -102,8 +102,8 @@ class AnswerSet < ApplicationRecord
     end
   end
 
-  def find_answer_by_key(key)
-    self.answers.dig("questions", key)
+  def find_answer_by_key_value(key, value, default=nil)
+    self.answers["questions"].find {|h| h[key] == value} || default
   end
 
   def find_demographic_answer_by_key(key, default=nil)
