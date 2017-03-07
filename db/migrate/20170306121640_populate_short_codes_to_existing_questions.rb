@@ -1,5 +1,5 @@
 class PopulateShortCodesToExistingQuestions < ActiveRecord::Migration[5.0]
-  SHORT_CODES = {
+  SHORT_NAMES = {
     "Humans are separate from nature, not part of it" => "humans_separate",
     "Conservation will only succeed if it provides benefits for people" => "provides_benefits",
     "Conserving nature for nature's sake should be a goal of conservation" => "nature_sake",
@@ -42,14 +42,15 @@ class PopulateShortCodesToExistingQuestions < ActiveRecord::Migration[5.0]
 
   def change
     Question.all.each do |q|
-      short_code    = SHORT_CODES[q.text]
-      q.short_code  = short_code
+      short_name    = SHORT_NAMES[q.text]
+      q.short_code  = short_name
       q.save!
 
       AnswerSet.all.each do |a|
+        puts "Adding short_name #{short_name} to #{a.inspect}"
         answer               = a.find_answer_by_key_value("question_text", q.text)
         next if answer.nil?
-        answer["short_code"] = short_code
+        answer["short_name"] = short_name
         a.save!
       end
     end
