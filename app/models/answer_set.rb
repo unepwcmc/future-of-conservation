@@ -103,7 +103,7 @@ class AnswerSet < ApplicationRecord
   end
 
   def find_answer_by_key_value(key, value, default=nil)
-    answer = self.answers["questions"].find {|h| h[key] == value}
+    answer = self.answers.dig("questions")&.find {|h| h[key] == value}
     return default if answer.nil?
     answer.empty? ? default : answer["answer_inputted"]
   end
