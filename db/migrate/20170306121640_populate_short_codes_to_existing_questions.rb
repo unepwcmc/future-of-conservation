@@ -48,9 +48,8 @@ class PopulateShortCodesToExistingQuestions < ActiveRecord::Migration[5.0]
 
       AnswerSet.all.each do |a|
         puts "Adding short_name #{short_name} to #{a.inspect}"
-        answer               = a.find_answer_by_key_value("question_text", q.text)
+        answer               = a.find_question_by_key_value("question_text", q.text)
         next if answer.nil?
-        puts "#{a.id} - #{answer['question_text']} - #{short_name}"
         answer["short_name"] = short_name
         a.save!
       end
