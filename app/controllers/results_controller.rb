@@ -6,7 +6,6 @@ class ResultsController < ApplicationController
 
     respond_to do |format|
       format.html
-      format.csv { send_data CsvExporter.export_results(@results), filename: "results-#{Date.today}.csv" }
     end
   end
 
