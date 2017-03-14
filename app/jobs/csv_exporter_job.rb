@@ -3,7 +3,6 @@ class CsvExporterJob < ApplicationJob
 
   def perform
     file = CsvExporter.export_results
-    puts file.inspect
-    #NotificationMailer.csv_exported_email(file).deliver_now
+    NotificationMailer.csv_exported_email(file).deliver_now
   end
 end
