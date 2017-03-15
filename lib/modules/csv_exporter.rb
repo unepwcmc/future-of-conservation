@@ -7,7 +7,7 @@ module CsvExporter
     FileUtils.mkdir_p(folder)
     filepath = folder.join("csv_export_#{DateTime.now.to_i}.csv")
     # Use last answer set to grab the headers as these may change
-    latest = AnswerSet.first
+    latest = AnswerSet.last
 
     CSV.open(filepath, "wb") do |csv|
       csv << self.headers(latest)
