@@ -1,3 +1,5 @@
+require_relative '../../lib/modules/csv_exporter'
+
 class CsvExporterJob < ApplicationJob
   queue_as :default
 
