@@ -1,3 +1,11 @@
+GIT
+  remote: git://github.com/seuros/capistrano-sidekiq.git
+  revision: 339c42e24f42d8d72173daae832b23504930f941
+  specs:
+    capistrano-sidekiq (0.10.0)
+      capistrano
+      sidekiq (>= 3.4)
+
 GEM
   remote: https://rubygems.org/
   remote: https://rails-assets.org/
@@ -227,6 +235,7 @@ DEPENDENCIES
   capistrano-passenger (~> 0.1.1)
   capistrano-rails (~> 1.1)
   capistrano-rvm (~> 0.1)
+  capistrano-sidekiq!
   chartkick (~> 2.1.1)
   coffee-rails (~> 4.2)
   country_select (~> 2.5.2)
