@@ -19,6 +19,10 @@
   <%= label_tag 'Unmodified or very little modified ecosystem (e.g. wilderness areas)' %>
 </p>
 <p class="card-text">
+  <%= radio_button_tag "demographics[#{question.short_name}]", 'None of the above' %>
+  <%= label_tag 'None of the above' %>
+</p>
+<p class="card-text">
   <%= radio_button_tag "demographics[#{question.short_name}]", 'Not applicable' %>
   <%= label_tag 'Not applicable' %>
 </p>
