@@ -153,9 +153,13 @@ module CsvExporter
         result.find_demographic_answer_by_key("email", default)
       ].flatten
 
-      row.each do |answer|
+      row.map do |answer|
         # For text answers, replace commas
-        answer.gsub(",", "") if answer.is_a?(String)
+        if answer.is_a?(String)
+          answer.gsub(",", "")
+        else
+          answer
+        end
       end
     end
 
@@ -174,7 +178,7 @@ module CsvExporter
     def self.format_multiple_answer(answer, default)
       return default if answer.nil?
       answer = Array.wrap(answer.values) if answer.is_a?(Hash)
-      answer = answer.reject(&:empty?).join("|")
+      answer = answer.reject(&:blank?).join("|")
       answer.empty? ? default : answer
     end
 end
