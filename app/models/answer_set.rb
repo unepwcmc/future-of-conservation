@@ -104,20 +104,17 @@ class AnswerSet < ApplicationRecord
 
   def find_question_by_key_value(key, value, default=nil)
     answer = self.answers.dig("questions")&.find {|h| h[key] == value}
-    return default if answer.nil?
-    answer.empty? ? default : answer
+    answer.blank? ? default : answer
   end
 
   def find_answer_by_key_value(key, value, default=nil)
     answer = self.answers.dig("questions")&.find {|h| h[key] == value}
-    return default if answer.nil?
-    answer.empty? ? default : answer["answer_inputted"]
+    answer.blank? ? default : answer["answer_inputted"]
   end
 
   def find_demographic_answer_by_key(key, default=nil)
     answer = self.answers.dig("demographics", key)
-    return default if answer.nil?
-    answer.empty? ? default : answer
+    answer.blank? ? default : answer
   end
 
   private
