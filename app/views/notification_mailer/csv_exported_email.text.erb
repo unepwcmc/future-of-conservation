@@ -1,2 +1,2 @@
-Your CSV has finished exporting, to download the file, please click here: <%= link_to @file, @file %>
+Your CSV has finished exporting, to download the file, please click <%= link_to "here", File.join(root_url, "csv_exports", @file.basename) %>
 
