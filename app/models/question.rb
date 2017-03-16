@@ -8,6 +8,7 @@
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #  y_weight   :float
+#  short_name :string
 #
 
 class Question < ApplicationRecord

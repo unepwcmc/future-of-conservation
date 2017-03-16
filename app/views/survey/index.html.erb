@@ -28,8 +28,11 @@
         <div class="survey__questions-set">
           <% questions_set.each_with_index do |question, question_index| %>
 
-            <div class="survey__question my-2">
+            <div class="survey__question <%= "survey__question--optional" if question.optional? %> my-2">
               <h4 class="survey__title"><%= question.text %></h4>
+              <% if question.description.present? %>
+                <p class="survey__description text-muted"><%= question.description %></p>
+              <% end %>
               <div class="survey__answer-set">
                 <%= render partial: "survey/demographic_questions/#{question.short_name}", locals: {question: question} %>
               </div>
