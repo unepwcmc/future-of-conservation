@@ -6,13 +6,12 @@ class ResultsController < ApplicationController
 
     respond_to do |format|
       format.html
-      format.csv { send_data CsvExporter.export_results(@results), filename: "results-#{Date.today}.csv" }
     end
   end
 
   def show
     @results = AnswerSet.find_by(uuid: params[:uuid])
-    @all_other_results = AnswerSet.all.reject{ |r| r.id == @results.id }.pluck(:x_axis_scaled, :y_axis_scaled)
+    @all_other_results = AnswerSet.last(100).reject{ |r| r.id == @results.id }.pluck(:x_axis_scaled, :y_axis_scaled)
 
     if params["filter"].present?
       if params["filter"]["gender"].present?
@@ -36,7 +35,7 @@ class ResultsController < ApplicationController
   end
 
   def export
-    CsvExporterJob.perform_later(AnswerSet.all)
-    redirect_to results_path, notice: "Your CSV is being generated, we will send an email to #{Rails.application.secret.notification_email} when it is ready to download"
+    CsvExporterJob.perform_later
+    redirect_to root_path, notice: "Your CSV is being generated, we will send an email to #{Rails.application.secrets.notification_email} when it is ready to download"
   end
 end

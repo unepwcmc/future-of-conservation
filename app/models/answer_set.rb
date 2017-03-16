@@ -102,6 +102,21 @@ class AnswerSet < ApplicationRecord
     end
   end
 
+  def find_question_by_key_value(key, value, default=nil)
+    answer = self.answers.dig("questions")&.find {|h| h[key] == value}
+    answer.blank? ? default : answer
+  end
+
+  def find_answer_by_key_value(key, value, default=nil)
+    answer = self.answers.dig("questions")&.find {|h| h[key] == value}
+    answer.blank? ? default : answer["answer_inputted"]
+  end
+
+  def find_demographic_answer_by_key(key, default=nil)
+    answer = self.answers.dig("demographics", key)
+    answer.blank? ? default : answer
+  end
+
   private
     def select_by_axis(answers, axis)
       answers.select {|hash| hash[axis.to_s] != 0.0}
