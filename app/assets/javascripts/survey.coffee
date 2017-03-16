@@ -33,7 +33,7 @@ checkAllQuestionsAnswered = (sectionName) ->
   unansweredQuestions.length == 0
 
 checkQuestionAnswered = (question) ->
-  if question.hasClass("survey__question--optional")
+  if $(question).hasClass("survey__question--optional")
     true
   else
     # Gets all inputs for a given question and check none are unanswered
