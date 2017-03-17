@@ -30,19 +30,18 @@ checkAllQuestionsAnswered = (sectionName) ->
   # Gets all questions in the section and checks that each one is answered
   questions = $(sectionName).find('.survey__question')
   unansweredQuestions = (question for question in questions when checkQuestionAnswered(question) is false)
-  # Bypass validations if the page is for demographic questions
-  if isDemographicSection(sectionName)
-    true
-  else
-    unansweredQuestions.length == 0
+  unansweredQuestions.length == 0
 
 checkQuestionAnswered = (question) ->
-  # Gets all inputs for a given question and check none are unanswered
-  inputs = $(question).find('input')
-  if inputs.filter(':checked').length == 0
-    false
-  else
+  if $(question).hasClass("survey__question--optional")
     true
+  else
+    # Gets all inputs for a given question and check none are unanswered
+    inputs = $(question).find('input')
+    if inputs.filter(':checked').length == 0
+      false
+    else
+      true
 
 isDemographicSection = (sectionName) ->
   $(sectionName).hasClass('demographic')

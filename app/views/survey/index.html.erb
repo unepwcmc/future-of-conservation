@@ -6,11 +6,12 @@
       <section class="survey__page" id="survey__page--<%= set_index + 1%>">
         <%= render partial: 'survey/progress_bar', locals: {current_page: set_index + 1, total_pages: @total_pages} %>
         <h3 class="survey__title--green"></h3>
+        <p>* required</p>
         <div class="survey__questions-set">
           <% questions_set.each_with_index do |question, question_index| %>
 
             <div class="survey__question my-2">
-              <h4 class="survey__title"><%= question.text %></h4>
+              <h4 class="survey__title"><%= question.text %> *</h4>
               <div class="survey__answer-set">
                 <%= render partial: "survey/scale", locals: {ff: ff, question_id: question.id} %>
               </div>
@@ -25,11 +26,15 @@
       <section class="survey__page demographic" id="survey__page--<%= question_pages_count(@questions_per_page) + set_index + 1%>">
         <%= render partial: 'survey/progress_bar', locals: {current_page: question_pages_count(@questions_per_page) + set_index + 1, total_pages: @total_pages} %>
         <h3 class="survey__title--green"></h3>
+        <p>* required</p>
         <div class="survey__questions-set">
           <% questions_set.each_with_index do |question, question_index| %>
 
-            <div class="survey__question my-2">
-              <h4 class="survey__title"><%= question.text %></h4>
+            <div class="survey__question <%= "survey__question--optional" if question.optional? %> my-2">
+              <h4 class="survey__title"><%= question.text %> <%= "*" unless question.optional? %></h4>
+              <% if question.description.present? %>
+                <p class="survey__description text-muted"><%= question.description %></p>
+              <% end %>
               <div class="survey__answer-set">
                 <%= render partial: "survey/demographic_questions/#{question.short_name}", locals: {question: question} %>
               </div>

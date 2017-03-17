@@ -6,6 +6,11 @@
 </p>
 
 <p>
+  <strong>Description:</strong>
+  <%= @demographic_question.description %>
+</p>
+
+<p>
   <strong>Position:</strong>
   <%= @demographic_question.position %>
 </p>
@@ -13,6 +18,11 @@
 <p>
   <strong>Short name:</strong>
   <%= @demographic_question.short_name %>
+</p>
+
+<p>
+  <strong>Optional:</strong>
+  <%= @demographic_question.optional %>
 </p>
 
 <%= link_to 'Edit', edit_demographic_question_path(@demographic_question) %> |
