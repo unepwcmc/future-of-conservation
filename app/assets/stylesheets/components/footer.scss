@@ -14,7 +14,6 @@ footer {
   position: absolute;
   bottom: 0;
   width: 100%;
-  /* Set the fixed height of the footer here */
   color: $white;
   background-color: $blue-darkest;
   padding: 2em 0;
@@ -22,3 +21,11 @@ footer {
   h6 { color: $white; }
 }
 
+.footer__logo {
+  display: block;
+  text-indent: -9999px;
+  width: 153px;
+  height: 50px;
+  background: url(https://s3.amazonaws.com/wcmc.logo/UN-Environment-WCMC+logo+2017+white.svg);
+  background-size: 153px 50px;
+}
