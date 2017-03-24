@@ -3,6 +3,9 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 $(document).on 'turbolinks:load', ->
+  if debugMode()
+    alert("Debug mode is on, all validations will be skipped")
+
   # Hide all pages except first one
   $('section.survey__page').not(':eq(0)').hide()
 
@@ -28,9 +31,12 @@ $(document).on 'turbolinks:load', ->
 
 checkAllQuestionsAnswered = (sectionName) ->
   # Gets all questions in the section and checks that each one is answered
-  questions = $(sectionName).find('.survey__question')
-  unansweredQuestions = (question for question in questions when checkQuestionAnswered(question) is false)
-  unansweredQuestions.length == 0
+  if debugMode() # Skip validations
+    true
+  else
+    questions = $(sectionName).find('.survey__question')
+    unansweredQuestions = (question for question in questions when checkQuestionAnswered(question) is false)
+    unansweredQuestions.length == 0
 
 checkQuestionAnswered = (question) ->
   if $(question).hasClass("survey__question--optional")
@@ -92,6 +98,12 @@ toggleSurveyControls = (currentPage) ->
   else
     $('.survey__next-page').show()
 
-
-
-
+debugMode = () ->
+  # Set ?debug=true in the query string in development or staging to bypass validation
+  environment = $('body').data('env')
+  queryString = window.location.search.substring(1)
+  params = queryString.split("&")
+  for param in params
+    pair = param.split("=")
+    if(pair[0] == "debug") and (pair[1] == "true") and (environment == "development" || environment == "development")
+      return true
