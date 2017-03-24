@@ -105,5 +105,5 @@ debugMode = () ->
   params = queryString.split("&")
   for param in params
     pair = param.split("=")
-    if(pair[0] == "debug") and (pair[1] == "true") and (environment == "development" || environment == "development")
+    if(pair[0] == "debug") and (pair[1] == "true") and (environment == "development" || environment == "staging")
       return true
