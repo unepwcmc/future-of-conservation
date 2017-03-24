@@ -11,7 +11,7 @@
     <%= favicon_link_tag 'favicon.ico' %>
   </head>
 
-  <body>
+  <body data-env="<%= Rails.env %>">
     <div class="container">
       <%= render 'layouts/flash' %>
       <%= render 'layouts/navigation' %>

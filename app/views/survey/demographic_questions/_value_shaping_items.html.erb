@@ -38,3 +38,7 @@
   <%= check_box_tag "demographics[#{question.short_name}][]", 'None of the above' %>
   <%= label_tag 'None of the above' %>
 </p>
+<p class="card-text">
+  <%= check_box_tag "demographics[#{question.short_name}][]", 'Not Applicable' %>
+  <%= label_tag 'Not Applicable' %>
+</p>
