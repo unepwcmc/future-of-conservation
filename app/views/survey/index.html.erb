@@ -27,6 +27,7 @@
         <%= render partial: 'survey/progress_bar', locals: {current_page: question_pages_count(@questions_per_page) + set_index + 1, total_pages: @total_pages} %>
         <h3 class="survey__title--green"></h3>
         <p>* required</p>
+        <p> This section contains short questions about your work and background. We are asking these questions so that we can understand the factors which determine how opinions on the future of conservation vary amongst conservationists. The data gathered will be used only for this piece of research, and your individual responses will not be identifiable.<p>
         <div class="survey__questions-set">
           <% questions_set.each_with_index do |question, question_index| %>
 
