@@ -1,28 +1,28 @@
 <p class="card-text">
-  <%= radio_button_tag "demographics[#{question.short_name}]", 'Very heavily modified ecosystems' %>
+  <%= check_box_tag "demographics[#{question.short_name}]", 'Very heavily modified ecosystems' %>
   <%= label_tag 'Very heavily modified ecosystems (e.g. urban areas)' %>
 </p>
 <p class="card-text">
-  <%= radio_button_tag "demographics[#{question.short_name}]", 'Largely modified ecosystems' %>
+  <%= check_box_tag "demographics[#{question.short_name}]", 'Largely modified ecosystems' %>
   <%= label_tag 'Largely modified ecosystems (e.g. intensive farmland, intensive fisheries)' %>
 </p>
 <p class="card-text">
-  <%= radio_button_tag "demographics[#{question.short_name}]", 'Somewhat modified ecosystems' %>
+  <%= check_box_tag "demographics[#{question.short_name}]", 'Somewhat modified ecosystems' %>
   <%= label_tag 'Somewhat modified ecosystems (e.g. low intensity farmland, low intensity fisheries)' %>
 </p>
 <p class="card-text">
-  <%= radio_button_tag "demographics[#{question.short_name}]", 'Largely unmodified ecosystems' %>
+  <%= check_box_tag "demographics[#{question.short_name}]", 'Largely unmodified ecosystems' %>
   <%= label_tag 'Largely unmodified ecosystems (e.g. sustainable use area)' %>
 </p>
 <p class="card-text">
-  <%= radio_button_tag "demographics[#{question.short_name}]", 'Unmodified or very little modified ecosystem' %>
+  <%= check_box_tag "demographics[#{question.short_name}]", 'Unmodified or very little modified ecosystem' %>
   <%= label_tag 'Unmodified or very little modified ecosystem (e.g. wilderness areas)' %>
 </p>
 <p class="card-text">
-  <%= radio_button_tag "demographics[#{question.short_name}]", 'None of the above' %>
-  <%= label_tag 'None of the above' %>
+  <%= check_box_tag "demographics[#{question.short_name}]", 'Other' %>
+  <%= label_tag 'Other' %>
 </p>
 <p class="card-text">
-  <%= radio_button_tag "demographics[#{question.short_name}]", 'Not applicable' %>
+  <%= check_box_tag "demographics[#{question.short_name}]", 'Not applicable' %>
   <%= label_tag 'Not applicable' %>
 </p>
