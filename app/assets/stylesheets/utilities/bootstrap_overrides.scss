@@ -16,5 +16,9 @@ $brand-inverse:             $blue !default;
 $body-color:                $gray-dark;
 $navbar-light-active-color: $blue !default;
 
-
-
+$container-max-widths: (
+  sm: 540px,
+  md: 734px,
+  lg: 960px,
+  xl: 1140px
+) !default;;
