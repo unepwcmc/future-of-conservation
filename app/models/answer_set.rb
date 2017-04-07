@@ -33,7 +33,6 @@ class AnswerSet < ApplicationRecord
     answer_set.build_answers(params["answers"], params["demographics"])
     answer_set.calculate_scores
     answer_set.classify
-    # Return the answer set
     answer_set
   end
 
@@ -48,7 +47,8 @@ class AnswerSet < ApplicationRecord
         question_y_weight:    question.y_weight,
         answer_inputted:      value.to_i,
         x_answer_calculated:  calculate_answer(value, question.x_weight),
-        y_answer_calculated:  calculate_answer(value, question.y_weight)
+        y_answer_calculated:  calculate_answer(value, question.y_weight),
+        short_name:           question.short_name
       }
       answers_array << question_data
     end
