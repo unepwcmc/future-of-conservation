@@ -37,10 +37,7 @@ class AddShortNameToAnswerSets < ActiveRecord::Migration[5.0]
     "Giving a voice to those affected by conservation action is an ethical imperative" => "giving_voice_ethical",
     "Conservation messages that emphasise the value of nature for nature's own sake are more effective than those that promote the benefits of nature to humans" => "emphasise_value",
     "There is a risk that economic rationales for conservation will displace other motivations for conservation" => "displace_motivations",
-    "Pristine nature, untouched by human influences, does not exist" => "pristine_nature",
-
-    # QUESTION TEXT THAT HAS CHANGED SINCE LAST TIME
-
+    "Pristine nature, untouched by human influences, does not exist" => "pristine_nature"
   }
 
   def change
@@ -65,7 +62,7 @@ class AddShortNameToAnswerSets < ActiveRecord::Migration[5.0]
     orphan_answer_sets = []
 
     AnswerSet.find_in_batches(batch_size: 250) do |batch|
-      batch.each.do |a|
+      batch.each do |a|
         a.answers["questions"].each do |q|
           if q["short_name"].blank?
             orphans << q
