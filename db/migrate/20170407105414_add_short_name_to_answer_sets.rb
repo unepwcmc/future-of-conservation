@@ -45,7 +45,6 @@ class AddShortNameToAnswerSets < ActiveRecord::Migration[5.0]
       short_name = SHORT_NAMES[q.text]
 
       AnswerSet.find_in_batches(batch_size: 250) do |batch|
-        puts "Processing batch ##{batch}"
         batch.each do |a|
           answer = a.find_question_by_key_value("question_text", q.text)
           next if answer.nil?
