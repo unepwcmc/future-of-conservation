@@ -47,13 +47,16 @@ class AddShortNameToAnswerSets < ActiveRecord::Migration[5.0]
     Question.all.each do |q|
       short_name = SHORT_NAMES[q.text]
 
-      AnswerSet.all.each do |a|
-        answer = a.find_question_by_key_value("question_text", q.text)
-        next if answer.nil?
-        next if answer["short_name"].present?
-        puts "Adding short_name #{short_name} to #{a.id}"
-        answer["short_name"] = short_name
-        a.save!
+      AnswerSet.find_in_batches(batch_size: 250) do |batch|
+        puts "Processing batch ##{batch}"
+        batch.each do |a|
+          answer = a.find_question_by_key_value("question_text", q.text)
+          next if answer.nil?
+          next if answer["short_name"].present?
+          puts "Adding short_name #{short_name} to #{a.id}"
+          answer["short_name"] = short_name
+          a.save!
+        end
       end
     end
 
@@ -61,11 +64,13 @@ class AddShortNameToAnswerSets < ActiveRecord::Migration[5.0]
     orphans = []
     orphan_answer_sets = []
 
-    AnswerSet.all.each do |a|
-      a.answers["questions"].each do |q|
-        if q["short_name"].blank?
-          orphans << q
-          orphan_answer_sets << a.id
+    AnswerSet.find_in_batches(batch_size: 250) do |batch|
+      batch.each.do |a|
+        a.answers["questions"].each do |q|
+          if q["short_name"].blank?
+            orphans << q
+            orphan_answer_sets << a.id
+          end
         end
       end
     end
