@@ -1,6 +1,6 @@
 desc 'Finds all answers across all AnswerSets where the short_name is missing, and fills it in'
 
-task add_short_name_to_answers: :environment do
+task add_short_names_to_answers: :environment do
   SHORT_NAMES = {
     "Humans are separate from nature, not part of it" => "humans_separate",
     "Conservation will only succeed if it provides benefits for people" => "provides_benefits",
