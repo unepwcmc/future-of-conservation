@@ -17,9 +17,13 @@ Rails.application.routes.draw do
   get '/about-the-project', to: 'static_pages#about_the_project', as: 'about_the_project'
   get '/about-the-debate',  to: 'static_pages#about_the_debate',  as: 'about_the_debate'
 
-  if Rails.env.development? || Rails.env.staging?
-    mount Sidekiq::Web => '/sidekiq'
+  # Protect sidekiq dash endpoint
+  Sidekiq::Web.use Rack::Auth::Basic do |username, password|
+    ActiveSupport::SecurityUtils.secure_compare(::Digest::SHA256.hexdigest(username), ::Digest::SHA256.hexdigest(ENV["ADMIN_USERNAME"])) &
+      ActiveSupport::SecurityUtils.secure_compare(::Digest::SHA256.hexdigest(password), ::Digest::SHA256.hexdigest(ENV["ADMIN_PASSWORD"]))
   end
+
+  mount Sidekiq::Web, at: "/sidekiq"
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
