@@ -2,7 +2,6 @@ require 'csv'
 
 module CsvExporter
   def self.export_results
-    results = AnswerSet.all
     folder = Rails.root.join("public", "csv_exports")
     FileUtils.mkdir_p(folder)
     filepath = folder.join("csv_export_#{DateTime.now.to_i}.csv")
@@ -11,8 +10,11 @@ module CsvExporter
 
     CSV.open(filepath, "wb") do |csv|
       csv << self.headers(latest)
-      results.each do |result|
-        csv << self.format_row(result)
+
+      AnswerSet.find_in_batches(batch_size: 250) do |batch|
+        batch.each do |result|
+          csv << self.format_row(result)
+        end
       end
     end
 
