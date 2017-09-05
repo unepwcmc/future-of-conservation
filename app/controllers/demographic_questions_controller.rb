@@ -1,4 +1,5 @@
 class DemographicQuestionsController < ApplicationController
+  before_action :authenticate
   before_action :set_demographic_question, only: [:show, :edit, :update, :destroy]
 
   # GET /demographic_questions
