@@ -84,7 +84,9 @@ module CsvExporter
         DemographicQuestion.find_by_short_name("researcher_experience").text,
         DemographicQuestion.find_by_short_name("value_shaping_items").text,
         DemographicQuestion.find_by_short_name("shaping_values").text,
-        DemographicQuestion.find_by_short_name("email").text
+        DemographicQuestion.find_by_short_name("email").text,
+        DemographicQuestion.find_by_short_name("taken_survey_before").text,
+        DemographicQuestion.find_by_short_name("wwf_staff_survey").text
       ].flatten.map {|q| q.gsub(",", "") }
     end
 
@@ -152,7 +154,9 @@ module CsvExporter
         result.find_demographic_answer_by_key("researcher_experience", default),
         self.format_multiple_answer(result.find_demographic_answer_by_key("value_shaping_items"), default),
         result.find_demographic_answer_by_key("shaping_values", default),
-        result.find_demographic_answer_by_key("email", default)
+        result.find_demographic_answer_by_key("email", default),
+        result.find_demographic_answer_by_key("taken_survey_before", default),
+        result.find_demographic_answer_by_key("wwf_staff_survey", default)
       ].flatten
 
       row.map do |answer|
