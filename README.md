@@ -28,4 +28,6 @@ Demographic questions are semi editable and always appear at the end of the ques
 
 Because of the variation of the answer types for a demographic question, they each render their own partial stored in `views/survey/demographic_questions` and taking the name of `_short_name.html.erb`, this is what the short name is for, finding the partial, and it also provides a unique identifier of what that answer is stored as in the database. For this reason, editing of short names is restricted for users. Demographic data is also stored in the JSON in an AnswerSet.
 
+# Debug mode
 
+You can append `?debug=true` to the URL in development and staging to remove the Javascript validations for making sure questions are answered before allowing a user to advance pages of the survey
