@@ -6,10 +6,10 @@
       <%= image_tag 'foc_logo.png', class: 'navbar-logo' %>
     <% end %>
 
-    <div class="collapse navbar-collapse navbar-toggleable-sm" id="collapsingNavbar">
+    <div class="collapse navbar-collapse navbar-toggleable-sm justify-content-between" id="collapsingNavbar">
       <ul class="nav navbar-nav">
-        <%= active_link_to "Home", root_path %>
-        <%= active_link_to "Take the Survey", new_survey_path %>
+        <%= active_link_to t('menu.home'), root_path %>
+        <%= active_link_to t("menu.take_the_survey"), new_survey_path %>
         <%= active_link_to "About the Project", about_the_project_path %>
         <%= active_link_to "About the Debate", about_the_debate_path %>
       </ul>

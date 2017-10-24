@@ -1,4 +1,4 @@
-en:
+es:
   # Universal
 
   here: 'here'
@@ -6,8 +6,8 @@ en:
   # Menu
 
   menu:
-    home: 'Home'
-    take_the_survey: 'Take the Survey'
+    home: 'Homo'
+    take_the_survey: 'Takos los Survos'
 
   # Home page: static_pages#index
 
