@@ -22,8 +22,9 @@ en:
     <p>We hope that you enjoy the survey and encourage you to share your experience by asking others to take part!</p>'
     call_to_action: "Take the survey"
     disclaimer: "Your responses will be kept anonymous, stored securely and will only be used for this project. Full details of ethics and data security for this project can be found"
-    what_next_title: "What next?"
-    what_next_text: ""
+    what_next:
+      title: "What next?"
+      text: "<p>We plan to use the data to establish whether there are any factors (such as nationality, educational background, or experience of different ecosystems) that explain some of the variation in the views held by conservationists.</p><p>We aim to disseminate our findings amongst the conservation community, through this website, through publications in conservation journals, and other outlets.</p>"
 
   # About the Debate: static_pages#about_the_debate
 
