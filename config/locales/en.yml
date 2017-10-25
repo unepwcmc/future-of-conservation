@@ -2,12 +2,16 @@ en:
   # Universal
 
   here: 'here'
+  contact: '<p>For more information about The Future of Conservation project please email <a href="mailto:futureofconservation@gmail.com">futureofconservation@gmail.com</a></p>'
 
   # Menu
 
   menu:
     home: 'Home'
     take_the_survey: 'Take the Survey'
+    about_the_project: 'About the Project'
+    about_the_debate: 'About the debate'
+
 
   # Home page: static_pages#index
 
@@ -21,3 +25,54 @@ en:
     what_next_title: "What next?"
     what_next_text: ""
 
+  # About the Debate: static_pages#about_the_debate
+
+  about_the_debate:
+    title: "About the Future of Conservation debate"
+    intro: "<p> Although discussions about the aims and methods of conservation probably date back as far as conservation itself, the ‘new conservation’ debate as such was sparked by Kareiva and Marvier’s 2012 article entitled What is conservation science?  </p>
+    <p> Two prominent positions have emerged in this debate, that of Kareiva and Marvier, which we label ‘new conservation’ (top-left quadrant of the figure below), and a strongly opposed viewpoint that we label ‘traditional conservation’ (bottom-right quadrant).  </p>
+    <p> These positions can be clearly distinguished by their views on nature and people in conservation on the one hand, and on the role of corporations and capital in conservation on the other hand (the two axes in the figure).  </p>
+    <p> However, our earlier research suggests that some conservationists may hold different views, that would place them in the bottom-left quadrant (critical social science) or the top-right (market biocentrism) quadrants. This page describes these four possible positions for those who wish to know more.  </p>"
+    key_references: "Key References:"
+    new_conservation:
+      title: "New Conservation"
+      text: "<p>Central to the ‘new conservation’ position is a shift towards viewing conservation as being about protecting nature in order to improve human wellbeing (especially that of the poor), rather than for biodiversity’s own sake.</p>
+    <p>‘New conservationists’ believe that win-win situations in which people benefit from conservation can often be achieved by promoting economic growth and partnering with corporations.</p>
+    <p>Although new conservation advocates have been criticised for doing away with nature’s intrinsic value, key authors within the movement have responded by clarifying that their motive is not so much an ethical as a strategic or pragmatic one.</p>
+    <p>In other words, they claim that conservation needs to emphasise nature’s instrumental value to people because this better promotes support for conservation compared to arguments based solely on species’ rights to exist.</p>"
+      citations: '“Conservation in the Anthropocene -- Beyond Solitude and Fragility.” Accessed February 24, 2015. <a href="http://thebreakthrough.org/index.php/journal/past-issues/issue-2/conservation-in-the-anthropocene">http://thebreakthrough.org/index.php/journal/past-issues/issue-2/conservation-in-the-anthropocene</a>.<br>
+        Kareiva, Peter, and Michelle Marvier. “What Is Conservation Science?” BioScience 62, no. 11 (November 1, 2012): 962–69. doi:10.1525/bio.2012.62.11.5.<br>
+        Kareiva, Peter. “New Conservation: Setting the Record Straight and Finding Common Ground.” Conservation Biology 28, no. 3 (June 1, 2014): 634–36. doi:10.1111/cobi.12295.<br>
+        Levin, Phillip S. “New Conservation for the Anthropocene Ocean.” Conservation Letters 7, no. 4 (July 1, 2014): 339–40. doi:10.1111/conl.12108.<br>
+        Marris, Emma. “‘New Conservation’ Is an Expansion of Approaches, Not an Ethical Orientation.” Animal Conservation 17, no. 6 (December 1, 2014): 516–17. doi:10.1111/acv.12129.<br>
+        Marvier, Michelle, and Peter Kareiva. “The Evidence and Values Underlying ‘New Conservation’.” Trends in Ecology & Evolution 29, no. 3 (January 3, 2014): 131–32. doi:10.1016/j.tree.2014.01.005.'
+    traditional_conservation:
+      title: "Traditional Conservation"
+      text: "<p> Traditional conservationists often support the protection of nature for its own sake.  </p>
+    <p> This emphasis on nature’s intrinsic value typically leads traditional conservation advocates to be critical of markets and economic growth as tools for conservation. This is because they believe that by embracing markets, we run the risk of ‘selling out nature’ by neglecting species that may be considered to be of little economic value.  </p>
+    <p> What’s more, economic growth itself is seen as a major driver of threats to biodiversity.  </p>
+    <p> Traditional conservationists often defend their position by claiming that there is nothing new in ‘new conservation’, noting for example that conservation has for a long time kept human wellbeing in mind and tried to minimise any negative impacts it may have had on local communities.  </p>
+    <p> Traditional conservationists typically favour protected areas, particularly in ecosystems with relatively low human impacts, as a primary conservation strategy.  </p>"
+      citations: 'Soulé, Michael “What is conservation biology?” Bioscience 35, no. 11 (December, 1985): 727-734. Doi: 10.1111/cobi.12147<br>
+        Greenwald, Noah, Dominick A. Dellasala, and John W. Terborgh. “Nothing New in Kareiva and Marvier.” BioScience 63, no. 4 (April 1, 2013): 241–241. Doi:10.1525/bio.2013.63.4.18.<br>
+        Noss, Reed, Nash, Roderick, Paquet, Paul, and Michael Soulé. “Humanity’s Domination of Nature is Part of the Problem: A Response to Kareiva and Marvier.” BioScience 63, no. 4 (April 1, 2013): 241–42. Doi:10.1525/bio.2013.63.4.19.<br>
+        McCauley, Douglas J.. “Selling out on Nature”. Nature 443 (September 7, 2006): 27-28. DOI: 10.1038/443027a.<br>
+        Wuerthner, Geroge, Crist, Eileen, and Tom Butler (eds.). Keeping the Wild: Against the Domestication of Earth. Island Press. Doi: 10.5822/978-1-61091-559-5<br>
+        Miller, B., M.E. Soulé, and J. Terborgh. “’New Conservation’ or Surrender to Development?” Animal Conservation 17, no.6 (December 1, 2014): 509-15. Doi: 10.1111/acv.12127'
+    market_biocentrism:
+      title: "Market Biocentrism"
+      text: "<p> Support for conservation based on nature’s intrinsic value along with a market-based approach is not common in the existing literature.  </p>
+    <p> Perhaps one example of such ‘market biocentrism’ is EO Wilson’s recent book ‘Half-Earth’, which advocates the setting aside of half of the Earth’s surface for nature reserves.  </p>
+    <p> Aware that this ambitious target would require a drastic decrease in per capita environmental footprint worldwide, Wilson supports free markets as a means to favour those products which generate the maximum profit for the minimum energy and resource consumption.  </p>
+    <p> However, Wilson’s pro-markets view seems to be more to do with ensuring that humanity can flourish on only 50% of the Earth’s surface rather than as a tool for carrying out conservation: that is, the pro-market strategy would be used to buffer the ‘human’ half of the Earth against the need to exploit the ‘natural’ half, rather than as a means to create economic value from protecting the ‘natural’ half.  </p>"
+      citations: "Wilson, E.O. Half-Earth: Our Planet’s Fight for Life. New York: Liveright Publishing Corporation, 2016."
+    critical_social_science:
+      title: "Critical Social Science"
+      text: "<p> According to critical social scientists, the impacts of conservation on human wellbeing should be at the forefront of the conservation debate.  </p>
+    <p> This entails both being critical of negative side-effects that conservation activities might have on people who are economically poor and/or politically marginalised, and also employing conservation initiatives as a means of improving human welfare.  </p>
+    <p> However, critical social scientists tend to be sceptical of the ability of markets and capitalism to deliver benefits for both nature and people.  </p>
+    <p> For example, the economic valuation of nature might be perceived as a corporate strategy to open up avenues for its exploitation, whilst concealing the negative impacts of such activities by manipulating the way in which these activities are presented to the public.  </p>
+    <p> This position is sometimes critiqued by others for offering a strong diagnosis of what is wrong with conservation practice, whilst failing to offer practical alternatives.  </p>"
+      citations: "Büscher, Bram, Sullivan, Sian, Neves, Katja, Igoe, Jim and Dan Brockington. “Towards a Synthesized Critique of Neoliberal Biodiversity Conservation” Capitalism Nature Socialism 23, no. 2 (June 2012): 4-30. Doi: 10.1080/10455752.2012.674149<br>
+        Spash, Clive L. “Bulldozing biodiversity: The economics of offsets and trading-in Nature”. Biological Conservation 192 (December 2015): 541-551 .Doi: 10.1016/j.biocon.2015.07.037<br>
+        Brockington, Dan and Rosaleen Duffy (eds.). Capitalism and Conservation. Chichester: Wiley-Blackwell, 2011."
