@@ -2,7 +2,9 @@ en:
   # Universal
 
   here: 'here'
-  contact: '<p>For more information about The Future of Conservation project please email <a href="mailto:futureofconservation@gmail.com">futureofconservation@gmail.com</a></p>'
+  contact:
+    title: "Contact"
+    text: '<p>For more information about The Future of Conservation project please email <a href="mailto:futureofconservation@gmail.com">futureofconservation@gmail.com</a></p>'
 
   # Menu
 
@@ -77,3 +79,125 @@ en:
       citations: "Büscher, Bram, Sullivan, Sian, Neves, Katja, Igoe, Jim and Dan Brockington. “Towards a Synthesized Critique of Neoliberal Biodiversity Conservation” Capitalism Nature Socialism 23, no. 2 (June 2012): 4-30. Doi: 10.1080/10455752.2012.674149<br>
         Spash, Clive L. “Bulldozing biodiversity: The economics of offsets and trading-in Nature”. Biological Conservation 192 (December 2015): 541-551 .Doi: 10.1016/j.biocon.2015.07.037<br>
         Brockington, Dan and Rosaleen Duffy (eds.). Capitalism and Conservation. Chichester: Wiley-Blackwell, 2011."
+
+  # About the Project: static_pages#about_the_project
+
+  about_the_project:
+    title: "About the Future of Conservation project"
+    intro: "<p>The purpose of this project is to explore the views of conservationists on a range of issues, as a way of informing debates on the future of conservation. Recent debates about the future of conservation have been dominated by a few high-profile individuals, whose views seem to fit fairly neatly into polarised positions. In this survey, we are exploring the range of views that exist within the conservation movement globally, and how this varies by key demographic characteristics such as age, gender, geography and educational background.</p>"
+    how_does_it_work:
+      title: "How does it work?"
+      text:  '<p> After taking the survey, the website will present your views on a plot with two axes: how people-centred or nature-centred your views are, and how pro-markets or anti-markets they are. We chose these two axes based on the results of our earlier studies into the <a href="http://onlinelibrary.wiley.com/doi/10.1111/cobi.12811/abstract">views of conservationists</a>, which identified them as important dimensions that distinguished between respondents.  </p>
+    <p> To place your viewpoint on the plot, the website calculates a score for each axis. This is done by applying a weighting to each question relevant to the axis. The weighting is derived from our previous studies and expert judgement.  </p>
+    <p> We will apply more powerful statistical tools in our subsequent analyses and publications, producing a more detailed and nuanced picture of the views held by conservationists. </p>
+    <p> We will publish our findings on the views of conservationists in various ways. Where possible, we will include these on this website. We intend to make our findings widely available to help inform debates about the future of conservation.  </p>'
+    about_us:
+      title: "About Us"
+      text: '<p> Together we have jointly created the website and associated research projects. We are: </p>
+    <ul>
+      <li> <a href="http://www.geog.cam.ac.uk/people/sandbrook/" target="_blank">Chris Sandbrook (UN Environment World Conservation Monitoring Centre, and University of Cambridge)</a> </li>
+      <li> <a href="http://www.see.leeds.ac.uk/people/g.holmes" target="_blank">George Holmes (University of Leeds)</a></li>
+      <li> <a href="http://www.geos.ed.ac.uk/homes/jfisher2/" target="_blank">Janet Fisher (University of Edinburgh)</a> </li>
+      <li> <a href="http://www.geog.cam.ac.uk/people/luque-lora/" target="_blank">Rogelio Luque-Lora (University of Cambridge)</a> </li>
+    </ul>
+    <p>The website is hosted by the UN Environment World Conservation Monitoring Centre.</p>'
+    research_ethics_and_data_storage:
+      title: "Research ethics and data storage"
+      text: "<p> This project has been approved by the Research Ethics committee at the University of Leeds.  </p> <p> All data gathered will be stored securely and anonymously by UN Environment World Conservation Monitoring Centre, and used solely for the purposes of this research project. It will not be seen by anyone outside the research project.  </p> <p> Your individual responses will not be identifiable either in this website or in subsequent publications. If you provide us with your email address, we will not share it with other parties, and will only use this to send you summarised results and to invite you to participate in the survey again in future.  </p>"
+    frequently_asked_questions:
+      title: "Frequently Asked Questions"
+      text: '    <p>
+    Several people have been in touch with questions about various aspects of the Future of Conservation project. Rather than write to everyone individually, we have prepared the following answers to some frequently asked questions. If you still have a question that is not answered below, please do get in touch!
+    </p>
+
+    <p class="text-primary">
+    Q: For some statements my answer would depend on the context - in some situations I would agree, and others I would disagree - but this isn’t covered by the response options I am given to choose from.
+    </p>
+
+    <p>
+    A: This is a fair point, but  we hope and assume that when faced with such a situation respondents will choose the mid point of the choices (labeled ‘neutral’), or close to the mid point if they think that on average they lean slightly towards agree/disagree on that question. If this happens then the survey is working well, because some other people will have unambiguous views about the same question and will choose ‘strongly agree’ or ‘strongly disagree’. In this way the survey is effective at revealing the difference between people who have mixed or nuanced views versus those who hold strong positions regardless of the context.
+    </p>
+
+    <p class="text-primary">
+    Q: The survey uses a quantitative approach, but the issues involved are complex and require qualitative data. There should be more opportunities to enter qualitative answers in the survey.
+    </p>
+
+    <p>
+    A: We agree that the issues are complex, and we regularly use qualitative data in our own research. Indeed, the questions we used for the Future of Conservation Survey were first developed for a small sample size Q method study, which is a mixed quant/qual methodology. That study revealed some distinct ways of thinking about the issues covered by the Future of Conservation Survey, and in this project we wanted to see how prevalent these views might be in the wider conservation community and what factors might explain the views people hold. To do this we opted for a quantitative approach with a large sample size. It is worth noting that had we received the same number of survey responses (now 8000+) with detailed qualitative data we would have had no prospect of analysing all the survey responses.
+    </p>
+
+    <p class="text-primary">
+    Q: This is an exercise that oversimplifies the debate and is fundamentally reductive.
+    </p>
+
+    <p>
+    A: We recognize that this is a relatively reductionist way of examining the issues, but we propose (and much of the feedback we’ve had indicates) that it is still useful to show the range of issues and allow people to explore one characterization of their position compared with those of other conservationists. In this particular research, we have prioritized breadth over depth: we were acutely aware that people would not be lessresponsive to a survey taking more than roughly 15 minutes to complete, hence the choice to work with quantitative data related to pre-prepared statements that people could respond to relatively intuitively using a simple spectrum of agreement.  We recognise that the two axes presented in the figure on the results page do not cover the full breadth of issues at stake in debates about the future of conservation, and indeed many of the questions in the survey do not contribute to respondents’ scores on these two axes. We plan to generate new axes directly from the data collected through the survey, using statistical techniques, and it will be interesting to see the extent to which these are similar or different from those we constructed from theory in advance. We plan to publish these results as they become available and will post links and summaries to this website.
+    </p>
+
+
+    <p class="text-primary">
+    Q: The wording of some of the questions is problematic, making it difficult to know how to answer.
+    </p>
+
+    <p>
+    A: The survey went through a lengthy period of testing, but like all social surveys, we accept that not all the questions are perfect and that some people will dislike some of them. It is important to note that as the survey was intended to discover how conservationists responded to the points made in the New Conservation debate in the literature, many of the statements are direct quotes from published articles in that debate.
+    </p>
+
+    <p class="text-primary">
+    Q: I really don’t agree with where I appeared in the final scatter plot, or the quadrant to which I was assigned.
+    </p>
+
+    <p>
+    A: This is unfortunate, but we are confident that the mechanism that generates the results scatter plot is working correctly and that the vast majority of respondents consider that their location represents their views. It is worth noting a few things: (1) we are careful to say that “your position appears most closely aligned with X” rather than “you are an X” - recognising that the survey cannot be a perfect tool and that labelling can be unhelpful. (2) You may be very close to the dividing line between quadrants on one or both of the axes. In that case, it is worth thinking about whether your viewpoint really sits between the two positions, rather than in the one to which you have been assigned. (3) If you feel you are in completely the wrong place, it might be possible that you answered one or more questions incorrectly by not noticing the negative wording of the statement – e.g. if you answer that you strongly disagree with the statement “There is no significant conservation value in highly modified landscapes”, then you are in effect saying that you do think there is significant conservation value in highly modified landscapes.
+    </p>
+
+    <p class="text-primary">
+    Q: Isn’t this just an academic exercise? What difference can it make?
+    </p>
+
+    <p>
+    A: We certainly want this survey to be more than just an academic exercise, and we see it as one stage on a process rather than an end in itself. We are delighted that it has already stimulated so much debate, and think that this is in itself very useful for the conservation community. As a next step, we are planning to develop a version that can be run for a defined group, like colleagues within an organisation or a student cohort, and to develop accompanying materials to help groups consider the implications of their results. We have already been approached by several groups looking for such a collaboration, and would be delighted to hear from you at futureofconservation@gmail.com if you would be interested to take part.
+    </p>
+
+    <p class="text-primary">
+    Q: Can this survey be run for just my group / organisation?
+    </p>
+
+    <p>
+    A: Several groups have already approached us asking for a closed survey for only their group, and we are looking into developing this as a second phase for the project. If you are interested in such a collaboration or have ideas for potential funding for its development, we would love to hear from you at: <a href="mailto:futureofconservation@gmail.com">futureofconservation@gmail.com</a>
+    </p>
+
+    <p class="text-primary">
+    Q: Why these questions? By limiting the questions to the issues already covered in the New Conservation debate, aren’t you reproducing its limitations?
+    </p>
+
+    <p>
+    A: This is a fair point. Our research began as an investigation into how members of the wider conservation community felt about the issues raised in the New Conservation debate, and that is what we have continued with this survey. These debates are broad enough to cover many key issues in conservation. But we do recognise that there are other important issues that matter for the future of conservation that have not featured in the New Conservation debate, and are therefore missing from our survey. We may look to introduce new questions to rectify this in future versions of this project.
+    </p>
+
+    <p class="text-primary">
+    Q: The questions are leading questions, and this is poor research design.
+    </p>
+
+    <p>
+    A: Please note that the survey is based on statements, rather than questions, and therefore cannot be considered leading. The statements are phrased as Likert items and are sometimes deliberately provocative such that they elicit responses with a spectrum of agreement. This is conventional in social science.
+    </p>'
+
+  # Questionnaire
+  questionnaire:
+    next: "Next"
+    previous: "Previous"
+    submit: "Submit"
+    required: "Required"
+    notices:
+      there_are_unanswered_questions: "There are unanswered questions on this page"
+    answers:
+      strongly_agree: "Strongly Agree"
+      agree: "Agree"
+      neutral: "Neutral"
+      disagree: "Disagree"
+      strongly_disagree: "Strongly Disagree"
+
+
+
+
