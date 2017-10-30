@@ -1,6 +1,7 @@
 en:
   # Universal
 
+  language: 'English'
   here: 'here'
   contact:
     title: "Contact"

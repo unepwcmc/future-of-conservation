@@ -13,4 +13,5 @@
 #
 
 class DemographicQuestion < ApplicationRecord
+  #translates :text, :description
 end

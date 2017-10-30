@@ -4,8 +4,8 @@
       Select language
     </button>
     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-      <%= link_to "English", root_path(locale: "en"), class: 'dropdown-item' %>
-      <%= link_to "Espanol", root_path(locale: "es"), class: 'dropdown-item' %>
+      <%= link_to "English", params.permit(:locale).merge(locale: "en"), class: 'dropdown-item' %>
+      <%= link_to "Espanol", params.permit(:locale).merge(locale: "es"), class: 'dropdown-item' %>
     </div>
   </div>
 </div>

@@ -1,16 +1,18 @@
+<% @question.translations.each do |translation| %>
+  <p>
+  <strong>Text (<%= t('language', locale: translation.locale) %>)</strong>
+  <%= translation.text %>
+  </p>
+<% end %>
+
 <p>
-  <strong>Text:</strong>
-  <%= @question.text %>
+<strong>X Weight:</strong>
+<%= @question.x_weight %>
 </p>
 
 <p>
-  <strong>X Weight:</strong>
-  <%= @question.x_weight %>
-</p>
-
-<p>
-  <strong>Y Weight:</strong>
-  <%= @question.y_weight %>
+<strong>Y Weight:</strong>
+<%= @question.y_weight %>
 </p>
 
 <%= link_to 'Edit', edit_question_path(@question) %> |

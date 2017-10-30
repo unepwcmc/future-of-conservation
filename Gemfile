@@ -36,6 +36,10 @@ gem 'country_select', '~> 2.5.2'
 gem 'bootstrap', '~> 4.0.0.alpha5'
 gem 'sidekiq', '~> 4.2.9'
 
+# For translations
+gem 'globalize', git: 'https://github.com/globalize/globalize'
+gem 'activemodel-serializers-xml'
+
 source 'https://rails-assets.org' do
   gem 'rails-assets-tether', '>= 1.3.3'
 end
