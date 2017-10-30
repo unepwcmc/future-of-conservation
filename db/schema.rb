@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171026131743) do
+ActiveRecord::Schema.define(version: 20171030143916) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,6 +37,17 @@ ActiveRecord::Schema.define(version: 20171026131743) do
     t.text     "results_description"
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
+  end
+
+  create_table "demographic_question_translations", force: :cascade do |t|
+    t.integer  "demographic_question_id", null: false
+    t.string   "locale",                  null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+    t.text     "text"
+    t.text     "description"
+    t.index ["demographic_question_id"], name: "index_9bfb807794557055896440a7791a7c2d67eb43cb", using: :btree
+    t.index ["locale"], name: "index_demographic_question_translations_on_locale", using: :btree
   end
 
   create_table "demographic_questions", force: :cascade do |t|
