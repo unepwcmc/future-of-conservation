@@ -15,8 +15,6 @@ class Question < ApplicationRecord
   has_paper_trail
 
   translates :text
-  #accepts_nested_attributes_for :translations
-  #attr_accessor :translations_attributes
 
   validates_numericality_of :x_weight, :y_weight,
     greater_than_or_equal_to: -4.0,
