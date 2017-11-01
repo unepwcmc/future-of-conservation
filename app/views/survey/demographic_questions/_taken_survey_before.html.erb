@@ -1,8 +1,8 @@
 <p class="card-text">
   <%= radio_button_tag "demographics[#{question.short_name}]", 'Yes' %>
-  <%= label_tag 'Yes' %>
+  <%= label_tag t('questionnaire.yes') %>
 </p>
 <p class="card-text">
   <%= radio_button_tag "demographics[#{question.short_name}]", 'No' %>
-  <%= label_tag 'No' %>
+  <%= label_tag t('questionnaire.no') %>
 </p>

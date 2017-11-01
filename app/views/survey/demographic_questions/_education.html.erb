@@ -1,24 +1,24 @@
 <p class="card-text">
   <%= radio_button_tag "demographics[#{question.short_name}]", 'School level' %>
-  <%= label_tag 'School level' %>
+  <%= label_tag t('questionnaire.demographic_answers.education.academia') %>
 </p>
 <p class="card-text">
   <%= radio_button_tag "demographics[#{question.short_name}]", 'Post-high school, but at an institution other than a university' %>
-  <%= label_tag 'Post-high school, but at an institution other than a university' %>
+  <%= label_tag t('questionnaire.demographic_answers.education.post_high_school') %>
 </p>
 <p class="card-text">
   <%= radio_button_tag "demographics[#{question.short_name}]", 'Undergraduate/Bachelors university degree' %>
-  <%= label_tag 'Undergraduate/Bachelors university degree' %>
+  <%= label_tag t('questionnaire.demographic_answers.education.undergraduate') %>
 </p>
 <p class="card-text">
   <%= radio_button_tag "demographics[#{question.short_name}]", 'Masters degree/Postgraduate qualification' %>
-  <%= label_tag 'Masters degree/Postgraduate qualification' %>
+  <%= label_tag t('questionnaire.demographic_answers.education.postgraduate') %>
 </p>
 <p class="card-text">
   <%= radio_button_tag "demographics[#{question.short_name}]", 'Doctorate' %>
-  <%= label_tag 'Doctorate' %>
+  <%= label_tag t('questionnaire.demographic_answers.education.doctorate') %>
 </p>
 <p class="card-text">
   <%= radio_button_tag "demographics[#{question.short_name}]", 'Not Applicable' %>
-  <%= label_tag 'Not Applicable' %>
+  <%= label_tag t('questionnaire.not_applicable') %>
 </p>

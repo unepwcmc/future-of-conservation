@@ -190,6 +190,11 @@ en:
     previous: "Previous"
     submit: "Submit"
     required: "Required"
+    other: "Other"
+    not_applicable: "Not applicable"
+    none_of_the_above: "None of the above"
+    yes: "Yes"
+    no: "No"
     notices:
       there_are_unanswered_questions: "There are unanswered questions on this page"
     answers:
@@ -201,6 +206,73 @@ en:
       disagree: "Disagree"
       strongly_disagree: "Strongly Disagree"
     demographic_answers:
+      intro: "Pages 5 and 6 of the survey contain short questions about your work and background. We are asking these questions so that we can understand the factors which determine how opinions on the future of conservation vary amongst conservationists. The data gathered will be used only for this piece of research, and your individual responses will not be identifiable."
+      age: "Age"
+      category_of_most_professional_work:
+        heavily_modified: "Very heavily modified ecosystems (e.g. urban areas)"
+        largely_modified: "Largely modified ecosystems (e.g. intensive farmland, intensive fisheries)"
+        somewhat_modified: "Somewhat modified ecosystems (e.g. low intensity farmland, low intensity fisheries)"
+        largely_unmodified: "Largely unmodified ecosystems (e.g. sustainable use area)"
+        unmodified: "Unmodified or very little modified ecosystem (e.g. wilderness areas)"
+      conservational_sectors:
+        academia: "Academia/Educational institution"
+        not_for_profit: "Not for profit/Non Governmental Organisation"
+        private_sector: "Private sector"
+        government: "Government"
+      education:
+        school_level: "School level"
+        post_high_school: "Post-high school, but at an institution other than a university"
+        undergraduate: "Undergraduate/Bachelors university degree"
+        postgraduate: "Masters degree/Postgraduate qualification"
+        doctorate: "Doctorate"
+      educational_specialism:
+        biological_sciences: "Biological Sciences (e.g. Zoology, Plant Sciences)"
+        non_biological_sciences: "Non-biological Natural Sciences (e.g. Chemistry, Maths, Engineering)"
+        social_sciences: "Social Sciences (e.g. Economics, Human Geography, Political Science)"
+        humanities: "Humanities (e.g. Literature, History, Philosophy, Languages)"
+        interdisciplinary: "Interdisciplinary (a combination of at least two of Natural Science, Social Science and Humanities)"
+      email: "Email"
+      gender:
+        male: "Male"
+        female: "Female"
+        prefer_not_to_say: "Prefer not to say"
+      professional_engagement:
+        exclusively_a_researcher: "Exclusively a Researcher"
+        mostly_a_researcher: "Mostly a Researcher"
+        researcher_and_practitioner: "Both a Researcher and Practitioner"
+        mostly_a_practitioner: "Mostly a Practitioner"
+        exclusively_a_practitioner: "Exclusively a Practitioner"
+      research_experience:
+        researcher: "Yes, as a researcher"
+        practitioner: "Yes, as a practitioner"
+        researcher_and_practitioner: "Yes, both as a researcher and as a practitioner"
+      seniority_of_current_role:
+        very_junior: "Very junior position"
+        fairly_junior: "Fairly junior position"
+        neither: "Neither senior nor junior position"
+        fairly_senior: "Fairly senior position"
+        very_senior: "Very senior position"
+        not_currently_working_in_conservation: "I am not currently working in conservation"
+      value_shaping_items:
+        family_during_childhood: "Values of family and friends during childhood"
+        family_during_adulthood: "Values of family and friends during adulthood"
+        outdoor_play_during_childhood: "Outdoor play/recreation during childhood"
+        outdoor_play_during_adulthood: "Outdoor play/recreation during adulthood"
+        indoor_experiences_during_childhood: "Indoor experiences (e.g. reading books, watching documentaries, playing video games) during childhood"
+        indoor_experiences_during_adulthood: "Indoor experiences (e.g. reading books, watching documentaries, playing video games) during adulthood"
+        formal_education_during_childhood: "Formal education experience (e.g. field trip, classroom session) during childhood"
+        formal_education_during_adulthood: "Formal education experience (e.g. field trip, classroom session) during adulthood"
+        professional_experience: "Professional experience during adulthood"
+      wwf_programme:
+        advocacy: "Advocacy"
+        comms_and_media: "Comms and Media"
+        fundraising: "Fundraising"
+        global_programmes: "Global Programmes"
+        operations: "Operations"
+        our_planet: "Our Planet"
+        ceo_office: "CEO Office"
+      wwf_staff_survey: ""
+
 
 
 
