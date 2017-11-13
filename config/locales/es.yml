@@ -3,22 +3,3 @@ es:
 
   language: 'Espanol'
   here: 'here'
-
-  # Menu
-
-  menu:
-    home: 'Homo'
-    take_the_survey: 'Takos los Survos'
-
-  # Home page: static_pages#index
-
-  home:
-    title: "The Future of Conservation Survey"
-    intro: '<p>There have long been debates regarding the future direction of biodiversity conservation, but these have tended to be dominated by a few powerful individuals.</p>
-    <p> This survey allows you to contribute your views, so that a broader range of voices can be taken into account. It will take just 15 minutes to complete, and at the end you will be presented with a graphical representation of your views and how they compare to others who have taken the survey.  </p>
-    <p>We hope that you enjoy the survey and encourage you to share your experience by asking others to take part!</p>'
-    call_to_action: "Take the survey"
-    disclaimer: "Your responses will be kept anonymous, stored securely and will only be used for this project. Full details of ethics and data security for this project can be found"
-    what_next_title: "What next?"
-    what_next_text: "<p> We plan to use the data to establish whether there are any factors (such as nationality, educational background, or experience of different ecosystems) that explain some of the variation in the views held by conservationists.</p><p> We aim to disseminate our findings amongst the conservation community, through this website, through publications in conservation journals, and other outlets.  </p>"
-
