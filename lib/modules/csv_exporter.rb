@@ -11,10 +11,8 @@ module CsvExporter
     CSV.open(filepath, "wb") do |csv|
       csv << self.headers(latest)
 
-      AnswerSet.find_in_batches(batch_size: 250) do |batch|
-        batch.each do |result|
-          csv << self.format_row(result)
-        end
+      AnswerSet.connection.select_all("select * from #{AnswerSet.table_name}").each do |row|
+        csv << row.values
       end
     end
 
