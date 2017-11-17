@@ -25,5 +25,10 @@
   <%= @demographic_question.optional %>
 </p>
 
+<p>
+  <strong>Published:</strong>
+  <%= @demographic_question.published %>
+</p>
+
 <%= link_to 'Edit', edit_demographic_question_path(@demographic_question) %> |
 <%= link_to 'Back', demographic_questions_path %>

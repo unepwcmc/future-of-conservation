@@ -70,6 +70,6 @@ class DemographicQuestionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def demographic_question_params
-      params.require(:demographic_question).permit(:text, :position, :short_name, :description, :optional)
+      params.require(:demographic_question).permit(:text, :position, :short_name, :description, :optional, :published)
     end
 end
