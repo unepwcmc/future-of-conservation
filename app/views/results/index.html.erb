@@ -17,19 +17,15 @@
           </button>
         </div>
         <div class="modal-body">
-          <div class="form-group">
-            <%= label_tag(:q, "Date range:") %>
-          </div>
+        <%= label_tag(:q, "Date range:") %>
           <div class="form-group">
             <%= label_tag(:q, "from: ", class: "form-control-inline") %>
             <%= date_field(:q, :from_date, value: Date.new(2016, 1, 1), class: "form-control-inline") %>
             <%= label_tag(:q, "to: ", class: "form-control-inline") %>
             <%= date_field(:q, :to_date, value: Date.today, class: "form-control-inline") %>
           </div>
+        <%= label_tag(:q, "Email to:") %>
         <div class="form-group">
-          <%= label_tag(:q, "Email to:") %>
-        </div>
-        <div class="form-group my-2">
           <%= text_field(:q, :to_email, size: 32, required: true, class: "form-control-inline") %>
         </div>
       </div>
