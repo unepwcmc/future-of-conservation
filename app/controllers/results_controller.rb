@@ -35,7 +35,7 @@ class ResultsController < ApplicationController
   end
 
   def export
-    to_email = results_params[:to_email]
+    to_email = params[:to_email]
     from_date = results_params[:from_date]
     to_date = results_params[:to_date]
     CsvExporterJob.perform_later(to_email, from_date, to_date)
