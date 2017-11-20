@@ -8,6 +8,7 @@
 
   <div class="modal fade" id="exportModal" tabindex="-1" role="dialog" aria-labelledby="exportModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
+      <%= form_tag(export_results_path, method: "post", class: "form-inline") do %>
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="exportModalLabel">Export CSV</h5>
@@ -15,23 +16,34 @@
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <%= form_tag(export_results_path, method: "post") do %>
         <div class="modal-body">
-          <%= label_tag(:q, "Date range (from/to):") %>
           <div class="form-group">
-            <%= date_field(:q, :from_date, value: Date.new(2016, 1, 1), class: "form-control") %>
-            <%= date_field(:q, :to_date, value: Date.today, class: "form-control") %>
+            <div class="col-md-4">
+              <%= label_tag(:q, "Date range:") %>
+            </div>
+            <div class="col-md-4">
+              <%= label_tag(:q, "from:", class: "form-control-inline") %>
+              <%= date_field(:q, :from_date, value: Date.new(2016, 1, 1), class: "form-control-inline") %>
+            </div>
+            <div class="col-md-4">
+              <%= label_tag(:q, "to:", class: "form-control-inline") %>
+              <%= date_field(:q, :to_date, value: Date.today, class: "form-control-inline") %>
+            </div>
           </div>
-          <%= label_tag(:q, "Email address:") %>
           <div class="form-group">
-          <%= text_field(:q, :to_email, size: 50, required: true, class: "form-control") %>
+            <div class="col-md-4">
+              <%= label_tag(:q, "Email address:") %>
+            </div>
+            <div class="col-md-8">
+              <%= text_field(:q, :to_email, size: 32, required: true, class: "form-control-inline") %>
+            </div>
           </div>
         </div>
         <div class="modal-footer">
-          <%= submit_tag("Filter and Export Results", class: 'btn btn-primary my-2') %>
+          <%= submit_tag("Filter and Export Results", class: 'btn btn-primary') %>
         </div>
-        <% end %>
       </div>
+    <% end %>
     </div>
   </div>
 
