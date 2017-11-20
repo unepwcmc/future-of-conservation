@@ -36,16 +36,10 @@ class ResultsController < ApplicationController
 
   def export
     to_email = params[:to_email]
-    from_date = results_params[:from_date]
-    to_date = results_params[:to_date]
+    from_date = params[:from_date]
+    to_date = params[:to_date]
     CsvExporterJob.perform_later(to_email, from_date, to_date)
     redirect_to root_path, notice: "Your CSV is being generated, we will send an email to #{to_email} when it is ready to download"
   end
-
-  private
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def results_params
-      params.require(:q).permit(:to_email, :from_date, :to_date)
-    end
 
 end
