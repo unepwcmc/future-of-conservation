@@ -1,7 +1,7 @@
 require 'csv'
 
 module CsvExporter
-  def self.export_results
+  def self.export_results(from_date, to_date)
     folder = Rails.root.join("public", "csv_exports")
     FileUtils.mkdir_p(folder)
     filepath = folder.join("csv_export_#{DateTime.now.to_i}.csv")
@@ -13,7 +13,9 @@ module CsvExporter
 
       AnswerSet.find_in_batches(batch_size: 250) do |batch|
         batch.each do |result|
-          csv << self.format_row(result)
+          if ((result.created_at > from_date) && (result.created_at < to_date))
+            csv << self.format_row(result)
+          end
         end
       end
     end
