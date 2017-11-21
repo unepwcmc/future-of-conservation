@@ -16,20 +16,12 @@
           </div>
 
           <div class="form-group">
-            <div class="form-row">
-              <%= label_tag :from_date %>
-            </div>
-            <div class="form-row">
-              <%= date_field_tag :from_date, Date.new(2016, 1, 1), class: "form-control" %>
-            </div>
+            <%= label_tag :from_date %>
+            <%= date_field_tag :from_date, Date.new(2016, 1, 1), class: "form-control" %>
           </div>
           <div class="form-group">
-            <div class="form-row">
-              <%= label_tag :to_date %>
-            </div>
-            <div class="form-row">
-              <%= date_field_tag :to_date, Date.today, class: "form-control" %>
-            </div>
+            <%= label_tag :to_date %>
+            <%= date_field_tag :to_date, Date.today, class: "form-control" %>
           </div>
         </div>
 
