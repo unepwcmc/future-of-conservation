@@ -6,48 +6,7 @@
     Export results as .csv
   </button>
 
-  <div class="modal fade" id="exportModal" tabindex="-1" role="dialog" aria-labelledby="exportModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <%= form_tag(export_results_path, method: "get") do %>
-          <div class="modal-header">
-            <h5 class="modal-title">Export CSV</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-
-          <div class="modal-body">
-            <div class="form-group">
-              <%= label_tag :to_email %>
-              <%= text_field_tag :to_email, nil, required: true, class: "form-control" %>
-            </div>
-
-            <div class="form-group">
-              <div class="form-row">
-                <%= label_tag :from_date %>
-              </div>
-              <div class="form-row">
-                <%= date_field_tag :from_date, Date.new(2016, 1, 1), class: "form-control" %>
-              </div>
-            </div>
-            <div class="form-group">
-              <div class="form-row">
-                <%= label_tag :to_date %>
-              </div>
-              <div class="form-row">
-                <%= date_field_tag :to_date, Date.today, class: "form-control" %>
-              </div>
-            </div>
-          </div>
-
-          <div class="modal-footer">
-            <%= submit_tag("Filter and Export Results", class: 'btn btn-primary') %>
-          </div>
-        <% end %>
-      </div>
-    </div>
-  </div>
+  <%= render "csv_export_modal_form" %>
 
   <table class="table">
     <thead>
