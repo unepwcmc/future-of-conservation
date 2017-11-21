@@ -11,7 +11,7 @@ module CsvExporter
     CSV.open(filepath, "wb") do |csv|
       csv << self.headers(latest)
 
-      AnswerSet.where("created_at > ? AND created_at < ?", from_date, to_date).find_in_batches(batch_size: 250) do |batch|
+      AnswerSet.where("created_at >= ? AND created_at <= ?", from_date, to_date).find_in_batches(batch_size: 250) do |batch|
         batch.each do |result|
           csv << self.format_row(result)
         end
