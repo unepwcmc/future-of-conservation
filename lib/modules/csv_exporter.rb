@@ -1,7 +1,7 @@
 require 'csv'
 
 module CsvExporter
-  def self.export_results
+  def self.export_results(from_date, to_date)
     folder = Rails.root.join("public", "csv_exports")
     FileUtils.mkdir_p(folder)
     filepath = folder.join("csv_export_#{DateTime.now.to_i}.csv")
@@ -11,7 +11,9 @@ module CsvExporter
     CSV.open(filepath, "wb") do |csv|
       csv << self.headers(latest)
 
-      AnswerSet.find_in_batches(batch_size: 250) do |batch|
+      to_date = (Date.strptime(to_date, "%Y-%m-%d") + 1.day).to_s
+
+      AnswerSet.where("created_at >= ? AND created_at <= ?", from_date, to_date).find_in_batches(batch_size: 250) do |batch|
         batch.each do |result|
           csv << self.format_row(result)
         end
