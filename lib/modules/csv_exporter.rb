@@ -11,6 +11,8 @@ module CsvExporter
     CSV.open(filepath, "wb") do |csv|
       csv << self.headers(latest)
 
+      from_date = from_date.empty? || !self.date_valid?(from_date) ? "2016-01-01" : from_date
+      to_date = to_date.empty? || !self.date_valid?(to_date) ? Date.today.to_s : to_date
       to_date = (Date.strptime(to_date, "%Y-%m-%d") + 1.day).to_s
 
       AnswerSet.where("created_at >= ? AND created_at <= ?", from_date, to_date).find_in_batches(batch_size: 250) do |batch|
@@ -192,5 +194,16 @@ module CsvExporter
       answer = Array.wrap(answer.values) if answer.is_a?(Hash)
       answer = answer.reject(&:blank?).join("|")
       answer.empty? ? default : answer
+    end
+
+    private
+
+    def self.date_valid?(date)
+      begin
+        year, month, day = date&.split("-").map(&:to_i)
+        return Date.valid_date?(year, month, day)
+      rescue
+        return false
+      end
     end
 end

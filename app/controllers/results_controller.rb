@@ -1,5 +1,4 @@
 class ResultsController < ApplicationController
-  EMAIL_REGEX = /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i
   before_action :authenticate, only: [:index]
 
   def index
@@ -36,32 +35,12 @@ class ResultsController < ApplicationController
   end
 
   def export
-    to_email = params[:to_email]
+    to_email = params[:to_email].presence || Rails.application.secrets.notification_email
     from_date = params[:from_date]
     to_date = params[:to_date]
-    default_notification_email = Rails.application.secrets.notification_email
-
-    to_email = to_email.empty? || !email_valid?(to_email) ? default_notification_email : to_email
-    from_date = from_date.empty? || !date_valid?(from_date) ? "2016-01-01" : from_date
-    to_date = to_date.empty? || !date_valid?(to_date) ? Date.today.to_s : to_date
 
     CsvExporterJob.perform_later(to_email, from_date, to_date)
     redirect_to root_path, notice: "Your CSV is being generated, we will send an email to #{to_email} when it is ready to download"
-  end
-
-  private
-
-  def date_valid?(date)
-    begin
-      year, month, day = date&.split("-").map(&:to_i)
-      return Date.valid_date?(year, month, day)
-    rescue
-      return false
-    end
-  end
-
-  def email_valid?(email)
-    EMAIL_REGEX.match email
   end
 
 end
