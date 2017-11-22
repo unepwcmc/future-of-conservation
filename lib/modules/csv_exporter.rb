@@ -11,11 +11,16 @@ module CsvExporter
     CSV.open(filepath, "wb") do |csv|
       csv << self.headers(latest)
 
-      from_date = from_date.empty? || !self.date_valid?(from_date) ? "2016-01-01" : from_date
-      to_date = to_date.empty? || !self.date_valid?(to_date) ? Date.today.to_s : to_date
-      to_date = (Date.strptime(to_date, "%Y-%m-%d") + 1.day).to_s
+      if from_date.empty? && to_date.empty?
+        @answersets = AnswerSet.find_in_batches(batch_size: 250)
+      else
+        from_date = self.date_valid?(from_date) ? from_date : "2016-01-01"
+        to_date = self.date_valid?(to_date) ? to_date : Date.today.to_s
+        to_date = (Date.strptime(to_date, "%Y-%m-%d") + 1.day).to_s
+        @answersets = AnswerSet.where("created_at >= ? AND created_at <= ?", from_date, to_date).find_in_batches(batch_size: 250)
+      end
 
-      AnswerSet.where("created_at >= ? AND created_at <= ?", from_date, to_date).find_in_batches(batch_size: 250) do |batch|
+      @answersets.each do |batch|
         batch.each do |result|
           csv << self.format_row(result)
         end
