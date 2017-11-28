@@ -36,8 +36,8 @@ class ResultsController < ApplicationController
 
   def export
     to_email  = params[:to_email].presence || Rails.application.secrets.notification_email
-    from_date = params[:from_date]
-    to_date   = params[:to_date]
+    from_date = params[:from_date].to_s
+    to_date   = params[:to_date].to_s
 
     CsvExporterJob.perform_later(to_email, from_date, to_date)
     redirect_to root_path, notice: "Your CSV is being generated, we will send an email to #{to_email} when it is ready to download"
