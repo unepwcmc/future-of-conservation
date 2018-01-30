@@ -10,6 +10,7 @@
 #  updated_at  :datetime         not null
 #  optional    :boolean          default(FALSE)
 #  description :text
+#  published   :boolean          default(TRUE)
 #
 
 class DemographicQuestion < ApplicationRecord
