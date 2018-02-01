@@ -100,4 +100,5 @@ Rails.application.configure do
     :password => secrets['password']
   }
 
+  config.i18n.fallbacks = true
 end
