@@ -5,7 +5,7 @@ A quiz app that indentifies your orientation as a conservationist
 Just clone and then it's the usual...
 
 `bundle install`
-`rails db:create db:migrate`
+`rails db:create db:migrate db:seed`
 `rails s`
 
 

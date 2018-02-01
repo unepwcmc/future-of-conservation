@@ -1,7 +1,7 @@
 require 'csv'
 
 module CsvExporter
-  def self.export_results
+  def self.export_results(from_date, to_date)
     folder = Rails.root.join("public", "csv_exports")
     FileUtils.mkdir_p(folder)
     filepath = folder.join("csv_export_#{DateTime.now.to_i}.csv")
@@ -11,7 +11,16 @@ module CsvExporter
     CSV.open(filepath, "wb") do |csv|
       csv << self.headers(latest)
 
-      AnswerSet.find_in_batches(batch_size: 250) do |batch|
+      if from_date.empty? && to_date.empty?
+        @answersets = AnswerSet.find_in_batches(batch_size: 250)
+      else
+        from_date   = self.date_valid?(from_date) ? from_date : AnswerSet.first.created_at
+        to_date     = self.date_valid?(to_date)   ? to_date   : DateTime.now
+
+        @answersets = AnswerSet.where("created_at >= ? AND created_at <= ?", from_date, to_date).find_in_batches(batch_size: 250)
+      end
+
+      @answersets.each do |batch|
         batch.each do |result|
           csv << self.format_row(result)
         end
@@ -86,7 +95,9 @@ module CsvExporter
         DemographicQuestion.find_by_short_name("shaping_values").text,
         DemographicQuestion.find_by_short_name("email").text,
         DemographicQuestion.find_by_short_name("taken_survey_before").text,
-        DemographicQuestion.find_by_short_name("wwf_staff_survey").text
+        DemographicQuestion.find_by_short_name("wwf_programme").text,
+        DemographicQuestion.find_by_short_name("wwf_staff_survey").text,
+        DemographicQuestion.find_by_short_name("ol_pejeta_staff_survey").text
       ].flatten.map {|q| q.gsub(",", "") }
     end
 
@@ -156,7 +167,9 @@ module CsvExporter
         result.find_demographic_answer_by_key("shaping_values", default),
         result.find_demographic_answer_by_key("email", default),
         result.find_demographic_answer_by_key("taken_survey_before", default),
-        result.find_demographic_answer_by_key("wwf_staff_survey", default)
+        result.find_demographic_answer_by_key("wwf_programme", default),
+        result.find_demographic_answer_by_key("wwf_staff_survey", default),
+        result.find_demographic_answer_by_key("ol_pejeta_staff_survey", default)
       ].flatten
 
       row.map do |answer|
@@ -186,5 +199,13 @@ module CsvExporter
       answer = Array.wrap(answer.values) if answer.is_a?(Hash)
       answer = answer.reject(&:blank?).join("|")
       answer.empty? ? default : answer
+    end
+
+    private
+
+    def self.date_valid?(date)
+      return nil if date.blank?
+      year, month, day = date&.split("-").map(&:to_i)
+      Date.valid_date?(year, month, day)
     end
 end
