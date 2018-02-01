@@ -186,6 +186,8 @@ en:
 
   # Questionnaire
   questionnaire:
+    "yes": "Yes"
+    "no": "No"
     next: "Next"
     previous: "Previous"
     submit: "Submit"
@@ -193,8 +195,6 @@ en:
     other: "Other"
     not_applicable: "Not applicable"
     none_of_the_above: "None of the above"
-    yes: "Yes"
-    no: "No"
     notices:
       there_are_unanswered_questions: "There are unanswered questions on this page"
     answers:
@@ -271,8 +271,3 @@ en:
         operations: "Operations"
         our_planet: "Our Planet"
         ceo_office: "CEO Office"
-
-
-
-
-
