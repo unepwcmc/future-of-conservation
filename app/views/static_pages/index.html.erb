@@ -1,31 +1,28 @@
 <div class="row my-2">
   <div class="col-lg-12">
-    <h3> The Future of Conservation survey </h3>
+    <h3><%= t('home.title') %></h3>
     <hr class="primary">
-    <p>There have long been debates regarding the future direction of biodiversity conservation, but these have tended to be dominated by a few powerful individuals.</p>
-    <p> This survey allows you to contribute your views, so that a broader range of voices can be taken into account. It will take just 15 minutes to complete, and at the end you will be presented with a graphical representation of your views and how they compare to others who have taken the survey.  </p>
-    <p>We hope that you enjoy the survey and encourage you to share your experience by asking others to take part!</p>
+    <%= raw t('home.intro') %>
   </div>
 </div>
 
 <div class="row text-xs-center my-2">
-  <%= link_to "Take the Survey", new_survey_path, class: 'btn btn-lg btn-primary' %>
+  <%= link_to t('home.call_to_action'), new_survey_path, class: 'btn btn-lg btn-primary' %>
 </div>
 
 <div class="row">
   <div class="col-lg-12">
     <p>
-    Your responses will be kept anonymous, stored securely and will only be used for this project. Full details of ethics and data security for this project can be <%= link_to 'found here', about_the_project_path %>.
+    <%= raw t('home.disclaimer') %> <%= link_to t('here'), about_the_project_path %>.
     </p>
   </div>
 </div>
 
 <div class="row my-2">
   <div class="col-lg-6">
-    <h3> What next?  </h3>
+    <h3><%= t('home.what_next.title') %></h3>
     <hr class="primary">
-    <p> We plan to use the data to establish whether there are any factors (such as nationality, educational background, or experience of different ecosystems) that explain some of the variation in the views held by conservationists.  </p>
-    <p> We aim to disseminate our findings amongst the conservation community, through this website, through publications in conservation journals, and other outlets.  </p>
+    <%= raw t('home.what_next.text') %>
   </div>
   <div class="col-lg-6">
     <%= image_tag 'main.jpg', class: 'img-fluid' %>

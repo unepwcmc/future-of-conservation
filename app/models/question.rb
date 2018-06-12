@@ -3,7 +3,6 @@
 # Table name: questions
 #
 #  id         :integer          not null, primary key
-#  text       :text
 #  x_weight   :float
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
@@ -13,6 +12,8 @@
 
 class Question < ApplicationRecord
   has_paper_trail
+
+  translates :text
 
   validates_numericality_of :x_weight, :y_weight,
     greater_than_or_equal_to: -4.0,

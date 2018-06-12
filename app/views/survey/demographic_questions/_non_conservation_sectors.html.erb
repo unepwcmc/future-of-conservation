@@ -1,24 +1,24 @@
 <p class="card-text">
   <%= check_box_tag "demographics[#{question.short_name}][]", 'Academia/Educational institution' %>
-  <%= label_tag 'Academia/Educational institution' %>
+  <%= label_tag t('questionnaire.demographic_answers.conservational_sectors.academia') %>
 </p>
 <p class="card-text">
   <%= check_box_tag "demographics[#{question.short_name}][]", 'Not for profit/Non Governmental Organisation' %>
-  <%= label_tag 'Not for profit/Non Governmental Organisation' %>
+  <%= label_tag t('questionnaire.demographic_answers.conservational_sectors.not_for_profit') %>
 </p>
 <p class="card-text">
   <%= check_box_tag "demographics[#{question.short_name}][]", 'Private sector' %>
-  <%= label_tag 'Private sector' %>
+  <%= label_tag t('questionnaire.demographic_answers.conservational_sectors.private_sector') %>
 </p>
 <p class="card-text">
   <%= check_box_tag "demographics[#{question.short_name}][]", 'Government' %>
-  <%= label_tag 'Government' %>
+  <%= label_tag t('questionnaire.demographic_answers.conservational_sectors.government') %>
 </p>
 <p class="card-text">
   <%= check_box_tag "demographics[#{question.short_name}][]", 'Other' %>
-  <%= label_tag 'Other' %>
+  <%= label_tag t('questionnaire.other') %>
 </p>
 <p class="card-text">
   <%= check_box_tag "demographics[#{question.short_name}][]", 'Not Applicable' %>
-  <%= label_tag 'Not Applicable' %>
+  <%= label_tag t('questionnaire.not_applicable') %>
 </p>

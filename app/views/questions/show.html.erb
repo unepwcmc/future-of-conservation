@@ -1,7 +1,9 @@
-<p>
-  <strong>Text:</strong>
-  <%= @question.text %>
-</p>
+<% @question.translations.each do |translation| %>
+  <p>
+  <strong>Text (<%= t('language', locale: translation.locale) %>)</strong>
+  <%= translation.text %>
+  </p>
+<% end %>
 
 <p>
   <strong>X Weight:</strong>
