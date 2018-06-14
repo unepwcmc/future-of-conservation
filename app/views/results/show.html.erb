@@ -6,15 +6,15 @@
     <div class="card">
       <div class="card-block">
         <a name="chart"></a>
-        <h4 class="card-title">See how you compare with others</h4>
-        <p class="card-text">Comparing your results against <%= @all_other_results.count %> other most recent <%= "result".pluralize(@all_other_results.count) %></p>
+        <h4 class="card-title"><%= t('results.see_how_you_compare') %></h4>
+        <p class="card-text"><%= t('results.comparing_your_results_against') %> <%= @all_other_results.count %> <%= t('results.other_most_recent') %> <%= t('results.result').pluralize(@all_other_results.count) %></p>
         <% if params["filter"].present? %>
-          <p>Filtering results by: <%= format_filters_for_display %></p>
+          <p><%= t('results.filtering_results_by') %> <%= format_filters_for_display %></p>
         <% end %>
       </div>
       <%= scatter_chart @data, @config %>
       <div class="my-2 text-xs-center">
-        <h4>Share the survey</h4>
+        <h4><%= t('surveys.share_the_survey') %></h4>
         <%= render 'social_sharing' %>
       </div>
     </div>
@@ -27,18 +27,18 @@
 
 <div class="row my-2">
   <div class="col-lg-12">
-    <h4>How to interpret your results</h4>
-    <p>Your position is <%= format_results_strength(@results, :x) %> along the people & nature axis and <%= format_results_strength(@results, :y) %> along the conservation & capitalism axis.</p>
+    <h4><%= t('results.how_to_interpret') %></h4>
+    <p><%= t('results.your_position_is') %> <%= format_results_strength(@results, :x) %> <%= t('results.along_the_people_and_nature') %> <%= format_results_strength(@results, :y) %> <%= t('results.along_the_conservation_and_capitalism') %></p>
 
     <%= format_text(@results.classification.results_description) %>
-    <h4>Your thinking most closely aligns with: <%= @results.classification.name %></h4>
+    <h4><%= t('results.your_thinking_most_closely') %> <%= @results.classification.name %></h4>
     <%= format_text(@results.classification.description) %>
 
-    <p>All four positions represented by these particular dimensions of the debate are shown in the figure below.</p>
-    <p><%= link_to "Find out more about your position and the others.", about_the_debate_path %></p>
+    <p><%= t('results.all_four_positions') %></p>
+    <p><%= link_to t('results.find_out_more_about'), about_the_debate_path %></p>
     <%= image_tag 'FoC-ALL.jpg' %>
 
     <h4>Contact</h4>
-    <p>For more information about The Future of Conservation project please email <a href="mailto:futureofconservation@gmail.com">futureofconservation@gmail.com</a></p>
+    <p><%= raw t('results.for_more_information') %></a></p>
   </div>
 </div>

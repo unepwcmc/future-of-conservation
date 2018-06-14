@@ -19,6 +19,7 @@ module ResultsHelper
                 val = k == "age" ? "#{v['min']} - #{v['max']}" : v
                 "#{key} (#{val})"
               end
+    byebug
     filters.join(", ")
   end
 
