@@ -17,6 +17,8 @@ module ResultsHelper
     filters = filters.map do |k, v|
                 key = k.gsub('_', ' ').titleize
                 val = k == "age" ? "#{v['min']} - #{v['max']}" : v
+                key = t("results.#{key.parameterize.underscore}")
+                val = t("results.#{val.parameterize.underscore}") unless k == "age"
                 "#{key} (#{val})"
               end
     filters.join(", ")
