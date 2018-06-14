@@ -3,7 +3,7 @@
     <div class="card-header" role="tab" id="headingOne">
       <h5 class="mb-0">
         <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-          Filter results by Gender
+          <%= t('results.filter_results_by_gender') %>
        </a>
       </h5>
     </div>
@@ -11,14 +11,14 @@
     <div id="collapseOne" class="collapse" role="tabpanel" aria-labelledby="headingOne">
       <div class="card-block">
         <%= form_tag results_path(@results.uuid, anchor: "chart"), method: :get do %>
-          <h4>Gender</h4>
+          <h4><%= t('results.gender') %></h4>
           <p>
             <%= radio_button_tag "filter[gender]", 'Male' %>
-            <%= label_tag "filter[gender]", 'Show only results by Males' %>
+            <%= label_tag "filter[gender]", t('results.show_only_results_by_males') %>
           </p>
           <p>
             <%= radio_button_tag "filter[gender]", 'Female' %>
-            <%= label_tag "filter[gender]", 'Show only results by Females' %>
+            <%= label_tag "filter[gender]", t('results.show_only_results_by_females') %>
           </p>
 
           <%= submit_tag 'Filter', class: 'btn btn-primary' %>
@@ -32,7 +32,7 @@
     <div class="card-header" role="tab" id="headingTwo">
       <h5 class="mb-0">
         <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-         Filter results by Educational Specialism
+         <%= t('results.filtering_results_by_educational_specialism') %>
         </a>
       </h5>
     </div>
@@ -40,30 +40,30 @@
     <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
       <div class="card-block">
         <%= form_tag results_path(@results.uuid, anchor: "chart"), method: :get do %>
-          <h4>Educational Specialism</h4>
+          <h4><%= t('results.educational_specialism') %></h4>
           <p class="card-text">
             <%= radio_button_tag "filter[educational_specialism]", 'Biological Sciences' %>
-            <%= label_tag 'Biological Sciences (e.g. Zoology, Plant Sciences)' %>
+            <%= label_tag t('results.biological_sciences_zoology_plant_sciences') %>
           </p>
           <p class="card-text">
             <%= radio_button_tag "filter[educational_specialism]", 'Non-biological Natural Sciences' %>
-            <%= label_tag 'Non-biological Natural Sciences (e.g. Chemistry, Maths, Engineering)' %>
+            <%= label_tag t('results.non_biological_natural_sciences_chemistry_maths_engineering') %>
           </p>
           <p class="card-text">
             <%= radio_button_tag "filter[educational_specialism]", 'Social Sciences' %>
-            <%= label_tag 'Social Sciences (e.g. Economics, Human Geography, Political Science)' %>
+            <%= label_tag t('results.social_sciences_economics_human_geography_political_science') %>
           </p>
           <p class="card-text">
             <%= radio_button_tag "filter[educational_specialism]", 'Humanities' %>
-            <%= label_tag 'Humanities (e.g. Literature, History, Philosophy, Languages)' %>
+            <%= label_tag t('results.humanities_literature_history_philosophy_languages') %>
           </p>
           <p class="card-text">
             <%= radio_button_tag "filter[educational_specialism]", 'Interdisciplinary' %>
-            <%= label_tag 'Interdisciplinary (a combination of at least two of Natural Science, Social Science and Humanities)' %>
+            <%= label_tag t('results.interdisciplinary_a_combination') %>
           </p>
           <p class="card-text">
             <%= radio_button_tag "filter[educational_specialism]", 'Not Applicable' %>
-            <%= label_tag 'Not Applicable' %>
+            <%= label_tag t('results.not_applicable') %>
           </p>
 
           <%= submit_tag 'Filter', class: 'btn btn-primary' %>
@@ -76,7 +76,7 @@
     <div class="card-header" role="tab" id="headingThree">
       <h5 class="mb-0">
         <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-         Highest completed educational qualification
+          <%= t('results.highest_completed_educational_qualification') %>
         </a>
       </h5>
     </div>
@@ -84,29 +84,29 @@
     <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree">
       <div class="card-block">
         <%= form_tag results_path(@results.uuid, anchor: "chart"), method: :get do %>
-          <h4>Highest completed educational qualification</h4>
+          <h4><%= t('results.highest_completed_educational_qualification') %></h4>
           <p class="card-text">
             <%= radio_button_tag "filter[education]", 'School level' %>
-            <%= label_tag 'School level' %>
+            <%= label_tag t('results.school_level') %>
           </p>
           <p class="card-text">
             <%= radio_button_tag "filter[education]", 'Post-high school, but at an institution other than a university' %>
-            <%= label_tag 'Post-high school, but at an institution other than a university' %>
+            <%= label_tag t('results.post_high_school_but_at_an_institution_other_than_a_university') %>
           </p>
           <p class="card-text">
             <%= radio_button_tag "filter[education]", 'Undergraduate/Bachelors university degree' %>
-            <%= label_tag 'Undergraduate/Bachelors university degree' %>
+            <%= label_tag t('results.undergraduate_bachelors_university_degree') %>
           </p>
           <p class="card-text">
             <%= radio_button_tag "filter[education]", 'Masters degree/Postgraduate qualification' %>
-            <%= label_tag 'Masters degree/Postgraduate qualification' %>
+            <%= label_tag t('results.masters_degree_postgraduate_qualification') %>
           </p>
           <p class="card-text">
             <%= radio_button_tag "filter[education]", 'Doctorate' %>
-            <%= label_tag 'Doctorate' %>
+            <%= label_tag t('results.doctorate') %>
           </p>
 
-          <%= submit_tag 'Filter', class: 'btn btn-primary' %>
+          <%= submit_tag t('results.filter'), class: 'btn btn-primary' %>
         <% end %>
       </div>
     </div>
@@ -127,11 +127,11 @@
           <h4>Age</h4>
           <p class="card-text">
             <%= number_field_tag "filter[age][min]", 'School level' %>
-            <%= label_tag 'Minimum Age' %>
+            <%= label_tag t('results.minimum_age') %>
           </p>
           <p class="card-text">
             <%= number_field_tag "filter[age][max]", 'Post-high school, but at an institution other than a university' %>
-            <%= label_tag 'Maximum Age' %>
+            <%= label_tag t('results.maximum_age') %>
           </p>
 
           <%= submit_tag 'Filter', class: 'btn btn-primary' %>
