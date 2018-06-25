@@ -124,14 +124,14 @@ end
 
 classifications = [
   {
-    name: I18n.t('results.classifications.critical_social_science.title'),
-    description: I18n.t('results.classifications.critical_social_science.description'),
-    results_description: I18n.t('results.classifications.critical_social_science.results_description')
+    name: "Critical Social Science",
+    description: "According to critical social scientists, the impacts of conservation on human wellbeing should be at the forefront of the conservation debate. This entails both being critical of negative side-effects that conservation activities might have on people who are economically poor and/or politically marginalised, and also employing conservation initiatives as a means of improving human welfare. However, critical social scientists tend to be sceptical of the ability of markets and capitalism to deliver benefits for both nature and people. For example, the economic valuation of nature might be perceived as a corporate strategy to open up avenues for its exploitation, whilst concealing the negative impacts of such activities by manipulating the way in which these activities are presented to the public. This position is sometimes critiqued by others for offering a strong diagnosis of what is wrong with conservation practice, whilst failing to offer practical alternatives.",
+    results_description: "Your position on the two axes above reflects your survey answers. A move from left to right along the horizontal axis (people & nature) implies a shift from seeing conservation as a means of improving human welfare to conservation for nature’s own sake. The vertical axis (capitalism & conservation) indicates a spectrum of willingness to embrace markets and capitalism as conservation tools: the higher up the graph your score is, the more pro-markets it is. This places you in the bottom left quadrant of the graph – a position suggesting your views on these particular dimensions of the debate are most closely related to those of what we call ‘critical social science’."
   },
   {
-    name: I18n.t('results.classifications.market_biocentrism.title'),
-    description: I18n.t('results.classifications.market_biocentrism.description')
-    results_description: I18n.t('results.classifications.market_biocentrism.results_description')
+    name: "Market Biocentrism",
+    description: "Support for an intrinsic value-based rationale for conservation along with a market-based approach to achieving conservation goals is not common in the existing literature. Perhaps one example of such ‘market biocentrism’ is EO Wilson’s recent book ‘Half-Earth’, which advocates the setting aside of half of the Earth’s surface for nature reserves. Aware that this ambitious target would require a drastic decrease in per capita environmental footprint worldwide, Wilson advocates free markets as a means to favour those products which yield the maximum profit for the minimum energy and resource consumption. However, Wilson’s pro-markets view seems to be more to do with ensuring that humanity can flourish on only 50% of the Earth’s surface rather than as a tool for carrying out conservation: that is, the pro-market strategy would be used to buffer the ‘human’ half of the Earth against the need to exploit the ‘natural’ half, rather than as a means to create economic value from protecting the ‘natural’ half.",
+    results_description: "Your position on the two axes above reflects your survey answers. A move from left to right along the horizontal axis (people & nature) implies a shift from seeing conservation as a means of improving human welfare to conservation for nature’s own sake. The vertical axis (conservation & capitalism) indicates a spectrum of willingness to embrace markets and capitalism as conservation tools: the higher up the graph your score is, the more pro-markets it is. This places you in the top right quadrant of the graph – a position suggesting your views on these particular dimensions of the debate are most closely related to those of what we call ‘market biocentrism’."
   },
   {
     name: "New Conservation",
