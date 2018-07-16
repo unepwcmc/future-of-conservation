@@ -200,17 +200,25 @@ def populate_classifications(classifications)
       puts "Created classification with the name: #{classification[:name]}..."
     end
 
+    I18n.locale = :en
     # If there is a change from the saved record, update it
-    unless cls.description == classification[:description] ||
-      cls.results_description == classification[:results_description] ||
+    unless cls.description == classification[:description] &&
+      cls.results_description == classification[:results_description] &&
       cls.name == classification[:name]
 
-      I18n.locale = :en
       cls.update_attributes(
         name:                 classification[:name],
         description:          classification[:description],
         results_description:  classification[:results_description]
       )
+      puts "Updated classification with the name: #{classification[:name]}..."
+    end
+
+    I18n.locale = :es
+    # If there is a change from the saved record, update it
+    unless cls.description == classification[:translations][:es][:description] &&
+      cls.results_description == classification[:translations][:es][:results_description] &&
+      cls.name == classification[:translations][:es][:name]
 
       I18n.locale = :es
       cls.update_attributes(
@@ -218,6 +226,8 @@ def populate_classifications(classifications)
         description:          classification[:translations][:es][:description],
         results_description:  classification[:translations][:es][:results_description]
       )
+
+      puts "Updated classification with the name: #{classification[:translations][:es][:name]}..."
     end
   end
 end
