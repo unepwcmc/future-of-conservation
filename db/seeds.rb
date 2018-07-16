@@ -232,5 +232,4 @@ def populate_classifications(classifications)
   end
 end
 
-
 populate_classifications(classifications)
