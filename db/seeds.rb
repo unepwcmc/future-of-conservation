@@ -8,6 +8,8 @@
 
 # Seed Demographic Questions
 #
+require 'byebug'
+
 questions = [
   {
     text: "What is your age?",
@@ -124,84 +126,102 @@ end
 
 classifications = [
   {
-    name: ::I18n.t('results.classifications.critical_social_science.name'),
-    description: ::I18n.t('results.classifications.critical_social_science.description'),
-    results_description: ::I18n.t('results.classifications.critical_social_science.results_description')
+    name: I18n.t('results.classifications.critical_social_science.name'),
+    description: I18n.t('results.classifications.critical_social_science.description'),
+    results_description: I18n.t('results.classifications.critical_social_science.results_description'),
+    translations: {
+      es: {
+        name: I18n.backend.translate(:es, 'results.classifications.critical_social_science.name'),
+        description: I18n.backend.translate(:es, 'results.classifications.critical_social_science.description'),
+        results_description: I18n.backend.translate(:es, 'results.classifications.critical_social_science.results_description')
+      }
+    }
   },
   {
-    name: ::I18n.t('results.classifications.market_biocentrism.name'),
-    description: ::I18n.t('results.classifications.market_biocentrism.description'),
-    results_description: ::I18n.t('results.classifications.market_biocentrism.results_description')
+    name: I18n.t('results.classifications.market_biocentrism.name'),
+    description: I18n.t('results.classifications.market_biocentrism.description'),
+    results_description: I18n.t('results.classifications.market_biocentrism.results_description'),
+    translations: {
+      es: {
+        name: I18n.backend.translate(:es, 'results.classifications.market_biocentrism.name'),
+        description: I18n.backend.translate(:es, 'results.classifications.market_biocentrism.description'),
+        results_description: I18n.backend.translate(:es, 'results.classifications.market_biocentrism.results_description')
+      }
+    }
   },
   {
-    name: ::I18n.t('results.classifications.new_conservation.name'),
-    description: ::I18n.t('results.classifications.new_conservation.description'),
-    results_description: ::I18n.t('results.classifications.new_conservation.results_description')
+    name: I18n.t('results.classifications.new_conservation.name'),
+    description: I18n.t('results.classifications.new_conservation.description'),
+    results_description: I18n.t('results.classifications.new_conservation.results_description'),
+    translations: {
+      es: {
+        name: I18n.backend.translate(:es, 'results.classifications.new_conservation.name'),
+        description: I18n.backend.translate(:es, 'results.classifications.new_conservation.description'),
+        results_description: I18n.backend.translate(:es, 'results.classifications.new_conservation.results_description')
+      }
+    }
   },
   {
-    name: ::I18n.t('results.classifications.traditional_conservation.name'),
-    description: ::I18n.t('results.classifications.traditional_conservation.description'),
-    results_description: ::I18n.t('results.classifications.traditional_conservation.results_description')
+    name: I18n.t('results.classifications.traditional_conservation.name'),
+    description: I18n.t('results.classifications.traditional_conservation.description'),
+    results_description: I18n.t('results.classifications.traditional_conservation.results_description'),
+    translations: {
+      es: {
+        name: I18n.backend.translate(:es, 'results.classifications.traditional_conservation.name'),
+        description: I18n.backend.translate(:es, 'results.classifications.traditional_conservation.description'),
+        results_description: I18n.backend.translate(:es, 'results.classifications.traditional_conservation.results_description')
+      }
+    }
   },
   {
-    name: ::I18n.t('results.classifications.undecided.name'),
-    description: ::I18n.t('results.classifications.undecided.description'),
-    results_description: ::I18n.t('results.classifications.undecided.results_description')
+    name: I18n.t('results.classifications.undecided.name'),
+    description: I18n.t('results.classifications.undecided.description'),
+    results_description: I18n.t('results.classifications.undecided.results_description'),
+    translations: {
+      es: {
+        name: I18n.backend.translate(:es, 'results.classifications.undecided.name'),
+        description: I18n.backend.translate(:es, 'results.classifications.undecided.description'),
+        results_description: I18n.backend.translate(:es, 'results.classifications.undecided.results_description')
+      }
+    }
   }
 ]
 
-def fetch_classifications(locale)
-  I18n.locale = locale
+def populate_classifications(classifications)
+  classifications.each do |classification|
+    cls = Classification.where(name: classification[:name]).first_or_create do |c|
+      I18n.locale = :en
+      c.description = classification[:description]
+      c.results_description = classification[:results_description]
+      byebug
+      I18n.locale = :es
+      c.name = classification[:translations][:es][:name]
+      c.description = classification[:translations][:es][:description]
+      c.results_description = classification[:translations][:es][:results_description]
+      puts "Created classification with the name: #{classification[:name]}..."
+    end
 
-  classifications = [
-    {
-      name: ::I18n.t('results.classifications.critical_social_science.name'),
-      description: ::I18n.t('results.classifications.critical_social_science.description'),
-      results_description: ::I18n.t('results.classifications.critical_social_science.results_description')
-    },
-    {
-      name: ::I18n.t('results.classifications.market_biocentrism.name'),
-      description: ::I18n.t('results.classifications.market_biocentrism.description'),
-      results_description: ::I18n.t('results.classifications.market_biocentrism.results_description')
-    },
-    {
-      name: ::I18n.t('results.classifications.new_conservation.name'),
-      description: ::I18n.t('results.classifications.new_conservation.description'),
-      results_description: ::I18n.t('results.classifications.new_conservation.results_description')
-    },
-    {
-      name: ::I18n.t('results.classifications.traditional_conservation.name'),
-      description: ::I18n.t('results.classifications.traditional_conservation.description'),
-      results_description: ::I18n.t('results.classifications.traditional_conservation.results_description')
-    },
-    {
-      name: ::I18n.t('results.classifications.undecided.name'),
-      description: ::I18n.t('results.classifications.undecided.description'),
-      results_description: ::I18n.t('results.classifications.undecided.results_description')
-    }
-  ]
-end
+    # If there is a change from the saved record, update it
+    unless cls.description == classification[:description] ||
+      cls.results_description == classification[:results_description] ||
+      cls.name == classification[:name]
 
-classifications = fetch_classifications(:es)
-classifications = fetch_classifications(:en)
-#TODO: Need to import the classifications for each locale into the database
+      I18n.locale = :en
+      cls.update_attributes(
+        name:                 classification[:name],
+        description:          classification[:description],
+        results_description:  classification[:results_description]
+      )
 
-classifications.each do |classification|
-  cls = Classification.where(name: classification[:name]).first_or_create do |c|
-    c.description = classification[:description]
-    c.results_description = classification[:results_description]
-    puts "Created classification with the name: #{classification[:name]}..."
-  end
-
-  # If there is a change from the saved record, update it
-  unless cls.description == classification[:description] ||
-    cls.results_description == classification[:results_description] ||
-    cls.name == classification[:name]
-
-    cls.update_attributes(
-      name:                 classification[:name],
-      description:          classification[:description],
-      results_description:  classification[:results_description]
-    )
+      I18n.locale = :es
+      cls.update_attributes(
+        name:                 classification[:translations][:es][:name],
+        description:          classification[:translations][:es][:description],
+        results_description:  classification[:translations][:es][:results_description]
+      )
+    end
   end
 end
+
+
+populate_classifications(classifications)
