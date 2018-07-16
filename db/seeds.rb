@@ -193,7 +193,6 @@ def populate_classifications(classifications)
       I18n.locale = :en
       c.description = classification[:description]
       c.results_description = classification[:results_description]
-      byebug
       I18n.locale = :es
       c.name = classification[:translations][:es][:name]
       c.description = classification[:translations][:es][:description]
