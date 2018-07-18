@@ -318,6 +318,11 @@ en:
     show_only_results_by_females: 'Show only results by Females'
     filter: 'Filter'
     your_results: 'Your results'
+    weakly: 'weakly'
+    strongly: 'strongly'
+    positive: 'postive'
+    negative: 'negative'
+    neutral:  'neutral'
     classifications:
       critical_social_science:
         name: 'Critical Social Science'

@@ -273,8 +273,8 @@ es:
         ceo_office: "CEO Office"
 
   results:
-    see_how_you_compare: "Tus resultados en comparación con el resto de los encuestados"
-    comparing_your_results_against: "Tus resultados comparados con los de"
+    see_how_you_compare: "Sus resultados en comparación con el resto de los encuestados"
+    comparing_your_results_against: "Sus resultados comparados con los de"
     other_most_recent: "encuestados recientes"
     result: "resultado"
     filtering_results_by: "Filtrar por"
@@ -318,6 +318,11 @@ es:
     show_only_results_by_females: 'Sólo mostrando resultados de mujeres'
     filter: 'Filtrar'
     your_results: 'Sus resultados'
+    weakly: 'ligeramente'
+    strongly: 'muy'
+    positive: 'positiva'
+    negative: 'negativa'
+    neutral:  'neutra'
     classifications:
       critical_social_science:
         name: 'Ciencia social crítica'
