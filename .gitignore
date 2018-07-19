@@ -17,3 +17,4 @@
 .byebug_history
 .env
 /public/csv_exports
+.DS_Store
