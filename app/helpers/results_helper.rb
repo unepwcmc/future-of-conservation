@@ -34,6 +34,9 @@ module ResultsHelper
       strength = result.classification_strength_y
     end
 
-    "#{strength}ly #{polarity}"
+    i18n_strength = t("results.#{strength}ly")
+    i18n_polarity = t("results.#{polarity}")
+
+    "#{i18n_strength} #{i18n_polarity}"
   end
 end
