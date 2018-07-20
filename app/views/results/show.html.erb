@@ -7,7 +7,7 @@
       <div class="card-block">
         <a name="chart"></a>
         <h4 class="card-title"><%= t('results.see_how_you_compare') %></h4>
-        <p class="card-text"><%= t('results.comparing_your_results_against') %> <%= @all_other_results.count %> <%= t('results.other_most_recent') %> <%= t('results.result').pluralize(@all_other_results.count) %></p>
+        <p class="card-text"><%= t('results.comparing_your_results_against') %> <%= @all_other_results.count %> <%= t('results.most_recent') %></p>
         <% if params["filter"].present? %>
           <p><%= t('results.filtering_results_by') %> <%= format_filters_for_display %></p>
         <% end %>

@@ -274,8 +274,8 @@ es:
 
   results:
     see_how_you_compare: "Sus resultados en comparación con el resto de los encuestados"
-    comparing_your_results_against: "Sus resultados comparados con los de"
-    other_most_recent: "encuestados recientes"
+    comparing_your_results_against: "Sus resultados comparados con los de los "
+    most_recent: "encuestados más recientes"
     result: "resultado"
     filtering_results_by: "Filtrar por"
     share_the_survey: "Comparta esta encuesta"

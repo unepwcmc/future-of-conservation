@@ -274,8 +274,8 @@ en:
 
   results:
     see_how_you_compare: "See how you compare with others"
-    comparing_your_results_against: "Comparing your results against"
-    other_most_recent: "other most recent"
+    comparing_your_results_against: "Comparing your results against those of the"
+    most_recent: "most recent respondents"
     result: "result"
     filtering_results_by: "Filtering results by:"
     share_the_survey: "Share the survey"
