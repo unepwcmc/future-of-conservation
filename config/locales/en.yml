@@ -271,3 +271,76 @@ en:
         operations: "Operations"
         our_planet: "Our Planet"
         ceo_office: "CEO Office"
+
+  results:
+    see_how_you_compare: "See how you compare with others"
+    comparing_your_results_against: "Comparing your results against those of the"
+    most_recent: "most recent respondents"
+    result: "result"
+    filtering_results_by: "Filtering results by:"
+    share_the_survey: "Share the survey"
+    how_to_interpret: "How to interpret your results"
+    your_position_is: "Your position is"
+    along_the_people_and_nature: "along the people & nature axis and"
+    along_the_conservation_and_capitalism: "along the conservation & capitalism axis."
+    your_thinking_most_closely: "Your thinking most closely aligns with:"
+    all_four_positions: "All four positions represented by these particular dimensions of the debate are shown in the figure below."
+    find_out_more_about: "Find out more about your position and the others."
+    for_more_information: 'For more information about The Future of Conservation project please email <a href="mailto:futureofconservation@gmail.com">futureofconservation@gmail.com'
+    gender: 'Gender'
+    male: 'Male'
+    female: 'Female'
+    educational_specialism: 'Educational Specialism'
+    biological_sciences: 'Biological Sciences'
+    non_biological_natural_sciences: 'Non-biological Natural Sciences'
+    social_sciences: 'Social Sciences'
+    humanities: 'Humanities'
+    interdisciplinary: 'Interdisciplinary'
+    not_applicable: 'Not Applicable'
+    education: 'Education'
+    school_level: 'School level'
+    post_high_school_but_at_an_institution_other_than_a_university: 'Post-high school, but at an institution other than a university'
+    undergraduate_bachelors_university_degree: 'Undergraduate/Bachelors university degree'
+    masters_degree_postgraduate_qualification: 'Masters degree/Postgraduate qualification'
+    doctorate: 'Doctorate'
+    age: 'Age'
+    biological_sciences_zoology_plant_sciences: 'Biological Sciences (e.g. Zoology, Plant Sciences)'
+    non_biological_natural_sciences_chemistry_maths_engineering: 'Non-biological Natural Sciences (e.g. Chemistry, Maths, Engineering)'
+    social_sciences_economics_human_geography_political_science: 'Social Sciences (e.g. Economics, Human Geography, Political Science)'
+    humanities_literature_history_philosophy_languages: 'Humanities (e.g. Literature, History, Philosophy, Languages)'
+    interdisciplinary_a_combination: 'Interdisciplinary (a combination of at least two of Natural Science, Social Science and Humanities)'
+    highest_completed_educational_qualification: 'Highest completed educational qualification'
+    minimum_age: 'Minimum Age'
+    maximum_age: 'Maximum Age'
+    filtering_results_by_educational_specialism: 'Filter results by Educational Specialism'
+    filter_results_by_gender: 'Filter results by Gender'
+    show_only_results_by_males: 'Show only results by Males'
+    show_only_results_by_females: 'Show only results by Females'
+    filter: 'Filter'
+    your_results: 'Your results'
+    weakly: 'weakly'
+    strongly: 'strongly'
+    positive: 'positive'
+    negative: 'negative'
+    neutral:  'neutral'
+    classifications:
+      critical_social_science:
+        name: 'Critical Social Science'
+        description: 'According to critical social scientists, the impacts of conservation on human wellbeing should be at the forefront of the conservation debate. This entails both being critical of negative side-effects that conservation activities might have on people who are economically poor and/or politically marginalised, and also employing conservation initiatives as a means of improving human welfare. However, critical social scientists tend to be sceptical of the ability of markets and capitalism to deliver benefits for both nature and people. For example, the economic valuation of nature might be perceived as a corporate strategy to open up avenues for its exploitation, whilst concealing the negative impacts of such activities by manipulating the way in which these activities are presented to the public. This position is sometimes critiqued by others for offering a strong diagnosis of what is wrong with conservation practice, whilst failing to offer practical alternatives.'
+        results_description: 'Your position on the two axes above reflects your survey answers. A move from left to right along the horizontal axis (people/nature) implies a shift from seeing conservation as a means of improving human welfare to conservation for nature’s own sake. The vertical axis (capitalism & conservation) indicates a spectrum of willingness to embrace markets and capitalism as conservation tools: the higher up the graph your score is, the more pro-markets it is. This places you in the bottom left quadrant of the graph – a position suggesting your views on these particular dimensions of the debate are most closely related to those of what we call ‘critical social science’.'
+      market_biocentrism:
+        name: 'Market Biocentrism'
+        description: 'Support for an intrinsic value-based rationale for conservation along with a market-based approach to achieving conservation goals is not common in the existing literature. Perhaps one example of such ‘market biocentrism’ is EO Wilson’s recent book ‘Half-Earth’, which advocates the setting aside of half of the Earth’s surface for nature reserves. Aware that this ambitious target would require a drastic decrease in per capita environmental footprint worldwide, Wilson advocates free markets as a means to favour those products which yield the maximum profit for the minimum energy and resource consumption. However, Wilson’s pro-markets view seems to be more to do with ensuring that humanity can flourish on only 50% of the Earth’s surface rather than as a tool for carrying out conservation: that is, the pro-market strategy would be used to buffer the ‘human’ half of the Earth against the need to exploit the ‘natural’ half, rather than as a means to create economic value from protecting the ‘natural’ half.'
+        results_description: "Your position on the two axes above reflects your survey answers. A move from left to right along the horizontal axis (people/nature) implies a shift from seeing conservation as a means of improving human welfare to conservation for nature’s own sake. The vertical axis (conservation & capitalism) indicates a spectrum of willingness to embrace markets and capitalism as conservation tools: the higher up the graph your score is, the more pro-markets it is. This places you in the top right quadrant of the graph – a position suggesting your views on these particular dimensions of the debate are most closely related to those of what we call ‘market biocentrism’."
+      new_conservation:
+        name: 'New Conservation'
+        description: 'Central to the ‘new conservation’ position is a shift towards framing conservation as being about protecting nature in order to improve human wellbeing (especially that of the poor), rather than for biodiversity’s own sake. ‘New conservationists’ believe that win-win situations in which people benefit from conservation can often be achieved by promoting economic growth and partnering with corporations. Although new conservation advocates have been criticised for doing away with nature’s intrinsic value, key authors within the movement have responded by clarifying that their motive is not so much an ethical as a strategic or pragmatic one. In other words, they claim that conservation needs to emphasise nature’s instrumental value to people because this better promotes support for conservation compared to arguments based solely on species’ rights to exist.'
+        results_description: 'Your position on the two axes above reflects your survey answers. A move from left to right along the horizontal axis (people/nature) implies a shift from seeing conservation as a means of improving human welfare to conservation for nature’s own sake. The vertical axis (conservation & capitalism) indicates a spectrum of willingness to embrace markets and capitalism as conservation tools: the higher up the graph your score is, the more pro-markets it is. This places you in the top left quadrant of the graph – a position suggesting your views on these particular dimensions of the debate are most closely related to those of ‘new conservationists’ as set out in the literature.'
+      traditional_conservation:
+        name: 'Traditional Conservation'
+        description: 'Traditional conservationists often support the protection of nature for its own sake. This emphasis on nature’s intrinsic value typically leads traditional conservation advocates to be critical of markets and economic growth as tools for conservation. This is because they believe that by embracing markets, we run the risk of ‘selling out nature’ by neglecting species that may be considered to be of little economic value. What’s more, economic growth itself is seen as a major driver of threats to biodiversity. Traditional conservationists often defend their position by claiming that there is nothing new in ‘new conservation’, noting for example that conservation has for a long time kept human wellbeing in mind and tried to minimise any negative impacts it may have had on local communities. Traditional conservationists typically favour protected areas, particularly in ecosystems with relatively low human impacts, as a primary conservation strategy.'
+        results_description: 'Your position on the two axes above reflects your survey answers. A move from left to right along the horizontal axis (people/nature) implies a shift from seeing conservation as a means of improving human welfare to conservation for nature’s own sake. The vertical axis (conservation & capitalism) indicates a spectrum of willingness to embrace markets and capitalism as conservation tools: the higher up the graph your score is, the more pro-markets it is. This places you in the bottom right quadrant of the graph – a position suggesting your views on these particular dimensions of the debate are most closely related to those of what we call ‘traditional conservation’.'
+      undecided:
+        name: 'Undecided'
+        description: 'You are undecided'
+        results_description: 'Your position on the two axes above reflects your survey answers. A move from left to right along the horizontal axis (people/nature) implies a shift from seeing conservation as a means of improving human welfare to conservation for nature’s own sake. The vertical axis (conservation & capitalism) indicates a spectrum of willingness to embrace markets and capitalism as conservation tools: the higher up the graph your score is, the more pro-markets it is. This places you in the centre of the graph – a position suggesting your views on these particular dimensions of the debate are most closely shared between all areas.'

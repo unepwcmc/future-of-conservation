@@ -12,4 +12,5 @@
 
 class Classification < ApplicationRecord
   has_many :answer_sets
+  translates :name, :description, :results_description
 end
