@@ -1,28 +1,28 @@
 <p class="card-text">
   <%= check_box_tag "demographics[#{question.short_name}]", 'Very heavily modified ecosystems' %>
-  <%= label_tag 'Very heavily modified ecosystems (e.g. urban areas)' %>
+  <%= label_tag t('questionnaire.demographic_answers.category_of_most_professional_work.heavily_modified') %>
 </p>
 <p class="card-text">
   <%= check_box_tag "demographics[#{question.short_name}]", 'Largely modified ecosystems' %>
-  <%= label_tag 'Largely modified ecosystems (e.g. intensive farmland, intensive fisheries)' %>
+  <%= label_tag t('questionnaire.demographic_answers.category_of_most_professional_work.largely_modified') %>
 </p>
 <p class="card-text">
   <%= check_box_tag "demographics[#{question.short_name}]", 'Somewhat modified ecosystems' %>
-  <%= label_tag 'Somewhat modified ecosystems (e.g. low intensity farmland, low intensity fisheries)' %>
+  <%= label_tag t('questionnaire.demographic_answers.category_of_most_professional_work.somewhat_modified') %>
 </p>
 <p class="card-text">
   <%= check_box_tag "demographics[#{question.short_name}]", 'Largely unmodified ecosystems' %>
-  <%= label_tag 'Largely unmodified ecosystems (e.g. sustainable use area)' %>
+  <%= label_tag t('questionnaire.demographic_answers.category_of_most_professional_work.largely_unmodified') %>
 </p>
 <p class="card-text">
   <%= check_box_tag "demographics[#{question.short_name}]", 'Unmodified or very little modified ecosystem' %>
-  <%= label_tag 'Unmodified or very little modified ecosystem (e.g. wilderness areas)' %>
+  <%= label_tag t('questionnaire.demographic_answers.category_of_most_professional_work.unmodified') %>
 </p>
 <p class="card-text">
   <%= check_box_tag "demographics[#{question.short_name}]", 'Other' %>
-  <%= label_tag 'Other' %>
+  <%= label_tag t('questionnaire.other') %>
 </p>
 <p class="card-text">
   <%= check_box_tag "demographics[#{question.short_name}]", 'Not applicable' %>
-  <%= label_tag 'Not applicable' %>
+  <%= label_tag t('questionnaire.not_applicable') %>
 </p>

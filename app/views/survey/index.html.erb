@@ -6,7 +6,7 @@
       <section class="survey__page" id="survey__page--<%= set_index + 1%>">
         <%= render partial: 'survey/progress_bar', locals: {current_page: set_index + 1, total_pages: @total_pages} %>
         <h3 class="survey__title--green"></h3>
-        <p>* required</p>
+        <p>* <%= t('questionnaire.required') %></p>
         <div class="survey__questions-set">
           <% questions_set.each_with_index do |question, question_index| %>
 
@@ -26,9 +26,9 @@
       <section class="survey__page demographic" id="survey__page--<%= question_pages_count(@questions_per_page) + set_index + 1%>">
         <%= render partial: 'survey/progress_bar', locals: {current_page: question_pages_count(@questions_per_page) + set_index + 1, total_pages: @total_pages} %>
         <h3 class="survey__title--green"></h3>
-        <p>* required</p>
+        <p>* <%= t('questionnaire.required') %></p>
         <p>
-          Pages 5 and 6 of the survey contain short questions about your work and background. We are asking these questions so that we can understand the factors which determine how opinions on the future of conservation vary amongst conservationists. The data gathered will be used only for this piece of research, and your individual responses will not be identifiable.
+          <%= t('questionnaire.demographic_answers.intro') %>
         </p>
         <div class="survey__questions-set">
           <% questions_set.each_with_index do |question, question_index| %>
@@ -51,8 +51,8 @@
   <% end %>
 
   <hr class="primary">
-  <a href="" class="btn btn-lg btn-primary survey__previous-page">Previous</a>
-  <a href="" class="btn btn-lg btn-primary survey__next-page">Next</a>
-  <%= f.submit "Submit", class: 'btn btn-lg btn-primary survey__submit', style: 'display:none' %>
+  <a href="" class="btn btn-lg btn-primary survey__previous-page"><%= t('questionnaire.previous') %></a>
+  <a href="" class="btn btn-lg btn-primary survey__next-page"><%= t('questionnaire.next') %></a>
+  <%= f.submit t('questionnaire.submit'), class: 'btn btn-lg btn-primary survey__submit', style: 'display:none' %>
 <% end %>
 

@@ -17,6 +17,8 @@ module ResultsHelper
     filters = filters.map do |k, v|
                 key = k.gsub('_', ' ').titleize
                 val = k == "age" ? "#{v['min']} - #{v['max']}" : v
+                key = t("results.#{key.parameterize.underscore}")
+                val = t("results.#{val.parameterize.underscore}") unless k == "age"
                 "#{key} (#{val})"
               end
     filters.join(", ")
@@ -32,6 +34,9 @@ module ResultsHelper
       strength = result.classification_strength_y
     end
 
-    "#{strength}ly #{polarity}"
+    i18n_strength = t("results.#{strength}ly")
+    i18n_polarity = t("results.#{polarity}")
+
+    "#{i18n_strength} #{i18n_polarity}"
   end
 end

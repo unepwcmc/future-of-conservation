@@ -1,24 +1,24 @@
 <p class="card-text">
   <%= radio_button_tag "demographics[#{question.short_name}]", 'Exclusively a Researcher' %>
-  <%= label_tag 'Exclusively a Researcher' %>
+  <%= label_tag t('questionnaire.demographic_answers.professional_engagement.exclusively_a_researcher') %>
 </p>
 <p class="card-text">
   <%= radio_button_tag "demographics[#{question.short_name}]", 'Mostly a Researcher' %>
-  <%= label_tag 'Mostly a Researcher' %>
+  <%= label_tag t('questionnaire.demographic_answers.professional_engagement.mostly_a_researcher') %>
 </p>
 <p class="card-text">
   <%= radio_button_tag "demographics[#{question.short_name}]", 'Both a Researcher and Practitioner' %>
-  <%= label_tag 'Both a Researcher and Practitioner' %>
+  <%= label_tag t('questionnaire.demographic_answers.professional_engagement.researcher_and_practitioner') %>
 </p>
 <p class="card-text">
   <%= radio_button_tag "demographics[#{question.short_name}]", 'Mostly a Practitioner' %>
-  <%= label_tag 'Mostly a Practitioner' %>
+  <%= label_tag t('questionnaire.demographic_answers.professional_engagement.mostly_a_practitioner') %>
 </p>
 <p class="card-text">
   <%= radio_button_tag "demographics[#{question.short_name}]", 'Exclusively a Practitioner' %>
-  <%= label_tag 'Exclusively a Practitioner' %>
+  <%= label_tag t('questionnaire.demographic_answers.professional_engagement.exclusively_a_practitioner') %>
 </p>
 <p class="card-text">
   <%= radio_button_tag "demographics[#{question.short_name}]", 'Not Applicable' %>
-  <%= label_tag 'Not Applicable' %>
+  <%= label_tag t('questionnaire.not_applicable') %>
 </p>

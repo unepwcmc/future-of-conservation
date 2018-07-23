@@ -1,14 +1,16 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Text:</strong>
-  <%= @demographic_question.text %>
-</p>
+<% @demographic_question.translations.each do |translation| %>
+  <p>
+  <strong>Text (<%= t('language', locale: translation.locale) %>)</strong>
+  <%= translation.text %>
+  </p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @demographic_question.description %>
-</p>
+  <p>
+  <strong>Description (<%= t('language', locale: translation.locale) %>)</strong>
+  <%= translation.description %>
+  </p>
+<% end %>
 
 <p>
   <strong>Position:</strong>

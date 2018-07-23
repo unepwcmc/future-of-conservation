@@ -1,3 +1,12 @@
+GIT
+  remote: https://github.com/globalize/globalize
+  revision: 11f47cfee50d0442988b4e52f45eae4fce12f4e9
+  specs:
+    globalize (5.1.0.beta2)
+      activemodel (>= 4.2, < 5.2)
+      activerecord (>= 4.2, < 5.2)
+      request_store (~> 1.0)
+
 GEM
   remote: https://rubygems.org/
   remote: https://rails-assets.org/
@@ -30,6 +39,10 @@ GEM
       globalid (>= 0.3.6)
     activemodel (5.0.0.1)
       activesupport (= 5.0.0.1)
+    activemodel-serializers-xml (1.0.2)
+      activemodel (> 5.x)
+      activesupport (> 5.x)
+      builder (~> 3.1)
     activerecord (5.0.0.1)
       activemodel (= 5.0.0.1)
       activesupport (= 5.0.0.1)
@@ -229,6 +242,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  activemodel-serializers-xml
   annotate (~> 2.7.1)
   bootstrap (~> 4.0.0.alpha5)
   byebug
@@ -242,6 +256,7 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   country_select (~> 2.5.2)
   dotenv-rails (~> 2.1.1)
+  globalize!
   jbuilder (~> 2.5)
   jquery-rails
   letter_opener

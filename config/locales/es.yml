@@ -1,0 +1,347 @@
+es:
+  # Universal
+
+  language: 'Español'
+  here: 'siga este link'
+  contact:
+    title: "Contacto"
+    text: '<p>Si tiene alguna duda o quiere obtener más información sobre el proyecto del Futuro de la Conservación, no dude en escribirnos en <a href="mailto:futureofconservation@gmail.com">futureofconservation@gmail.com</a></p>'
+
+  # Menu
+
+  menu:
+    home: 'Inicio'
+    take_the_survey: 'Participe'
+    about_the_project: 'Sobre el proyecto'
+    about_the_debate: 'Sobre el debate'
+
+
+  # Home page: static_pages#index
+
+  home:
+    title: "El Futuro de la Conservación"
+    intro: '<p>Hace tiempo que se producen intensos debates sobre el rumbo que debe seguir la conservación de la biodiversidad. Sin embargo, estos debates suelen estar monopolizados por unos pocos individuos de reconocido prestigio.</p>
+
+<p>Esta encuesta le permite contribuir sus puntos de vista, con el objetivo de que en dichos debates se tenga en cuenta un mayor número de opiniones. La encuesta se completa en apenas 15 minutos, y al finalizarla obtendrá una representación gráfica de sus valores ambientalistas, situados en relación a los del resto de la comunidad de conservacionistas.</p>
+
+<p>Esperamos que le resulte interesante participar en esta proyecto. Asimismo, le animamos a compartir su experiencia y a difundir la encuesta.</p>'
+    call_to_action: "Participe"
+    disclaimer: "Sus respuestas se conservarán anónimas, se almacenarán de forma segura y sólo se usarán en este proyecto. Para obtener todos los detalles sobre la ética de investigación y la seguridad de los datos,"
+    what_next:
+      title: "Próximos pasos"
+      text: "<p>Los datos obtenidos de las preguntas demográficas se utilizarán para determinar si existe algún factor (como nacionalidad, nivel académico o experiencia en diversos ecosistemas) que expliquen los diversos enfoques de los conservacionistas. Pretendemos difundir los resultados a la comunidad conservacionista mediante esta página web, revistas de conservación de la biodiversidad y otros medios.</p>"
+
+  # About the Debate: static_pages#about_the_debate
+
+  about_the_debate:
+    title: "Sobre el debate del Futuro de la Conservación"
+    intro: "<p>Aunque es probable que los debates sobre los objetivos y métodos de la conservación se remonten al nacimiento de la conservación, el debate sobre la ‘nueva conservación’ en sí lo provocó el artículo de Kareiva y Marvier titulado ‘What is conservation science?’ y publicado en 2012.</p>
+<p>Dos puntos de vista prominentes emergen en este debate: el de Kareiva y Marvier, al que llamamos ‘nueva conservación’ (cuadrante superior izquierdo en el gráfico inferior), y una posición radicalmente opuesta a la que llamamos ‘conservación tradicional’ (cuadrante inferior derecho).</p>
+<p>Estos puntos de vista son claramente distinguibles por sus opiniones sobre la naturaleza y las personas, por una parte, y sobre el papel de las corporaciones y el capital en la conservación, por otra (los dos ejes en el gráfico). </p>
+<p>Sin embargo, nuestra investigación previa sugiere que existen conservacionistas con puntos de vista diferentes, que los situarían en los cuadrantes inferior izquierdo (ciencia social crítica) o superior derecho (biocentrismo de mercado). Esta página describe estas cuatro posiciones. </p>"
+    key_references: "Biografía selecta"
+    new_conservation:
+      title: "Nueva conservación"
+      text: '"<p>Una idea fundamental de la "nueva conservación" es la redefinición de la protección de la naturaleza como forma de mejorar el bienestar humano (sobre todo el de las personas pobres), en lugar de proteger la naturaleza por su valor intrínseco.</p>
+        <p>Los "nuevos conservacionistas" creen que se pueden lograr situaciones en las que las personas se beneficien de la conservación mediante el estímulo del crecimiento económico y la alianza empresarial.</p>
+        <p>Aunque los partidarios del nuevo conservacionismo han recibido críticas por prescindir del valor intrínseco de la naturaleza, autores clave dentro del movimiento han aclarado que los motivos de este renuncia no son éticos, sino estratégicos o pragmáticos.</p>
+        <p>Es decir, reivindican que la conservación debe subrayar el valor utilitario de la naturaleza para las personas porque esto genera más apoyo a la conservación que los argumentos basados en el derecho de las especies no humanas a sobrevivir. </p>'
+
+      citations: '“Conservation in the Anthropocene -- Beyond Solitude and Fragility.” Accessed February 24, 2015. <a href="http://thebreakthrough.org/index.php/journal/past-issues/issue-2/conservation-in-the-anthropocene">http://thebreakthrough.org/index.php/journal/past-issues/issue-2/conservation-in-the-anthropocene</a>.<br>
+        Kareiva, Peter, and Michelle Marvier. “What Is Conservation Science?” BioScience 62, no. 11 (November 1, 2012): 962–69. doi:10.1525/bio.2012.62.11.5.<br>
+        Kareiva, Peter. “New Conservation: Setting the Record Straight and Finding Common Ground.” Conservation Biology 28, no. 3 (June 1, 2014): 634–36. doi:10.1111/cobi.12295.<br>
+        Levin, Phillip S. “New Conservation for the Anthropocene Ocean.” Conservation Letters 7, no. 4 (July 1, 2014): 339–40. doi:10.1111/conl.12108.<br>
+        Marris, Emma. “‘New Conservation’ Is an Expansion of Approaches, Not an Ethical Orientation.” Animal Conservation 17, no. 6 (December 1, 2014): 516–17. doi:10.1111/acv.12129.<br>
+        Marvier, Michelle, and Peter Kareiva. “The Evidence and Values Underlying ‘New Conservation’.” Trends in Ecology & Evolution 29, no. 3 (January 3, 2014): 131–32. doi:10.1016/j.tree.2014.01.005.'
+    traditional_conservation:
+      title: "Conservación tradicional"
+      text: '<p> Los conservacionistas tradicionales a menudo basan la protección de la naturaleza en el valor que tiene en sí misma.</p>
+        <p>Este énfasis en el valor intrínseco de la naturaleza a menudo lleva a los conservacionistas tradicionales a criticar los mercados y el crecimiento económico como herramientas de conservación. Esto se debe al convencimiento de que la alianza con los mercados conlleva el riesgo de abandono de aquellas especies consideradas de escaso valor económico.</p>
+        <p>Es más, el crecimiento económico en sí es considerado uno de los principales culpables de la extinción de las especies.</p>
+        <p>Los conservacionistas tradicionales con frecuencia defienden su opinión subrayando que no hay nada nuevo en la "nueva conservación": por ejemplo, argumentan que la conservación lleva mucho tiempo preocupándose del bienestar humano  y tratando de reducir cualquier impacto negativo que sus actividades puedan tener sobre las comunidades locales.</p>
+        <p>Los conservacionistas tradicionales suelen favorecer los espacios protegidos, sobre todo en ecosistemas donde la influencia humana es relativamente escasa, como estrategia fundamental de la conservación.</p>'
+      citations: 'Soulé, Michael “What is conservation biology?” Bioscience 35, no. 11 (December, 1985): 727-734. Doi: 10.1111/cobi.12147<br>
+        Greenwald, Noah, Dominick A. Dellasala, and John W. Terborgh. “Nothing New in Kareiva and Marvier.” BioScience 63, no. 4 (April 1, 2013): 241–241. Doi:10.1525/bio.2013.63.4.18.<br>
+        Noss, Reed, Nash, Roderick, Paquet, Paul, and Michael Soulé. “Humanity’s Domination of Nature is Part of the Problem: A Response to Kareiva and Marvier.” BioScience 63, no. 4 (April 1, 2013): 241–42. Doi:10.1525/bio.2013.63.4.19.<br>
+        McCauley, Douglas J.. “Selling out on Nature”. Nature 443 (September 7, 2006): 27-28. DOI: 10.1038/443027a.<br>
+        Wuerthner, Geroge, Crist, Eileen, and Tom Butler (eds.). Keeping the Wild: Against the Domestication of Earth. Island Press. Doi: 10.5822/978-1-61091-559-5<br>
+        Miller, B., M.E. Soulé, and J. Terborgh. “’New Conservation’ or Surrender to Development?” Animal Conservation 17, no.6 (December 1, 2014): 509-15. Doi: 10.1111/acv.12127'
+    market_biocentrism:
+      title: "Biocentrismo y mercados "
+      text: '<p> La combinación de puntos de vista pro-naturaleza y pro-mercados es poco frecuente en la literatura conservacionista.</p>
+        <p>Tal vez la reciente obra Half-Earth, en la que E.O. Wilson propone dejar la mitad de la superficie terrestre como reserva natural, sea un ejemplo de "biocentrismo y mercados". </p>
+        <p>Consciente de que un objetivo tan alto requeriría una reducción drástica de la huella ecológica de la humanidad, Wilson propone el libre mercado como manera de favorecer aquellos productos que produzcan el mayor beneficio con el menor empleo de energía y recursos naturales.</p>
+        <p>No obstante, las sugerencias de Wilson acerca de los mercados tienen más que ver con asegurar que la humanidad pueda prosperar en tan sólo el 50% de la superficie terrestre que desarrollar la conservación en sí. Es decir, la estrategia pro-mercados se aplicaría a la mitad humana del planeta y no a la natural.<p>'
+
+      citations: "Wilson, E.O. Half-Earth: Our Planet’s Fight for Life. New York: Liveright Publishing Corporation, 2016."
+    critical_social_science:
+      title: "Ciencia social crítica"
+      text: "<p>Los científicos sociales críticos consideran que los impactos de la conservación en el bienestar humano deberían regir los debates sobre la conservación.</p>
+        <p>Por una parte, esto supone la crítica de los impactos negativos que las actividades conservacionistas ocasionen sobre las personas de escasos recursos y/o marginadas políticamente, y por otra, el empleo de iniciativas conservacionistas como herramienta para mejorar el bienestar humano.</p>
+        <p>Sin embargo, los científicos sociales críticos suelen ser escépticos sobre los mercados y el capitalismo como maneras de producir beneficios tanto para la naturaleza como para las personas.</p>
+        <p>Por ejemplo, la evaluación económica de la naturaleza puede percibirse como una estrategia de las corporaciones para abrir nuevas vías de explotación, mientras se maquillan los impactos negativos de dicha explotación, manipulando el modo en que estas actividades se presentan al público.</p>
+        <p>En ocasiones se reprocha a los científicos sociales críticos que formulen un severo análisis de los problemas de la conservación, sin proponer alternativas prácticas a los métodos convencionales.</p>"
+      citations: "Büscher, Bram, Sullivan, Sian, Neves, Katja, Igoe, Jim and Dan Brockington. “Towards a Synthesized Critique of Neoliberal Biodiversity Conservation” Capitalism Nature Socialism 23, no. 2 (June 2012): 4-30. Doi: 10.1080/10455752.2012.674149<br>
+        Spash, Clive L. “Bulldozing biodiversity: The economics of offsets and trading-in Nature”. Biological Conservation 192 (December 2015): 541-551 .Doi: 10.1016/j.biocon.2015.07.037<br>
+        Brockington, Dan and Rosaleen Duffy (eds.). Capitalism and Conservation. Chichester: Wiley-Blackwell, 2011."
+
+  # About the Project: static_pages#about_the_project
+
+  about_the_project:
+    title: "Sobre el proyecto del Futuro de la Conservación "
+    intro: "<p>El propósito de este proyecto es conocer los puntos de vista de los conservacionistas respecto a varios temas clave, con el objetivo de informar debates sobre el futuro de la conservación. Recientemente, dichos debates han sido monopolizados por un escaso número de personas prestigiosas, cuyos puntos de vista tienden a situarse en polos opuestos. En esta encuesta, exploramos la diversidad de puntos de vista que existen en la comunidad de conservacionistas a escala global, y cómo estos varían según ciertas características demográficas como la edad, género, nacionalidad y especialidad profesional.</p>"
+    how_does_it_work:
+      title: "¿Cómo funciona? "
+      text:  '<p> Al completar la encuesta, recibirá una imagen de sus puntos de vista situados en un gráfico con dos ejes: el horizontal representa el antropocentrismo vs biocentrismo, y el vertical el apego o desapego a los mercados capitalistas. Elegimos estos dos ejes basándonos en los resultados de nuestros estudios previos, los cuales identificaron dichos ejes como las dimensiones más relevantes a la hora de distinguir entre los puntos de vista de los conservacionistas. </p>
+      <p>Su punto de vista se sitúa en el gráfico al calcularse una puntuación para cada eje. Esto se consigue aplicándose a su vez una magnitud de relevancia a cada pregunta. Estas puntuaciones de magnitud se derivan de nuestros estudios previos y del criterio profesional.</p>
+      <p>A la hora de analizar los datos recolectados y redactar las publicaciones, utilizaremos las técnicas estadísticas más sofisticadas, con el fin de originar una representación más detallada de los puntos de vista de los conservacionistas.</p>
+      <p>Nuestros resultados se publicarán de diversas formas. En la medida de lo posible, trataremos de incluirlos en esta página web. Nos comprometemos a intentar que nuestros resultados sean ampliamente accesibles de manera que ayuden a informar los debates sobre el futuro de la conservación.</p>'
+    about_us:
+      title: "Sobre el equipo"
+      text: '<p> Los siguientes miembros han creado la página web y los proyectos de investigación:</p>
+    <ul>
+      <li> <a href="http://www.geog.cam.ac.uk/people/sandbrook/" target="_blank">Chris Sandbrook (UN Environment World Conservation Monitoring Centre, and University of Cambridge)</a> </li>
+      <li> <a href="http://www.see.leeds.ac.uk/people/g.holmes" target="_blank">George Holmes (University of Leeds)</a></li>
+      <li> <a href="http://www.geos.ed.ac.uk/homes/jfisher2/" target="_blank">Janet Fisher (University of Edinburgh)</a> </li>
+      <li> <a href="http://www.geog.cam.ac.uk/people/luque-lora/" target="_blank">Rogelio Luque-Lora (University of Cambridge)</a> </li>
+    </ul>
+    <p>La página web se encuentra bajo los auspicios UN Environment World Conservation Monitoring Centre.</p>'
+    research_ethics_and_data_storage:
+      title: "Ética de investigación y almacenamiento de datos"
+      text: "<p> Este proyecto ha sido aprobado por el Comité de Ética de Investigación de la Universidad de Leeds. </p>
+      <p>Todos los datos recolectados se guardarán de manera segura y anónima por UN Environment World Conservation Monitoring Centre, y se utilizarán exclusivamente para el proyecto del Futuro de la Conservación. Bajo ninguna circunstancia serán accesibles o visualizados por personas ajenas al proyecto. </p>
+      <p> Sus respuestas no serán identificables ni en esta página ni en nuestras publicaciones. Si elige proporcionar su dirección de correo electrónico, esta no será compartida con personas ajenas al proyecto, y tan sólo se utilizará para mandarle resúmenes de los resultados e invitarle a participar en futuras encuestas.</p>"
+    frequently_asked_questions:
+      title: "Preguntas frecuentes:"
+      text: '    <p>Hemos recibido correos de diversas personas respecto al proyecto del Futuro de la Conservación. Para evitar repetirlas de manera individual hemos preparado una serie de respuestas a las preguntas más frecuentes. Si sus dudas no se resuelven con las respuestas que encontrará a continuación, ¡no dude en ponerse en contacto! </p>
+
+    <p class="text-primary">
+    P: Para algunas de vuestras preguntas mi respuesta depende del contexto: en algunas situaciones estoy de acuerdo y en otras no, pero esto no puede expresarse mediante las opciones disponibles.
+    </p>
+
+    <p>
+    R: Ésta es una preocupación razonable, pero esperamos y asumimos que en dichas situaciones los participantes elegirán el punto medio ("ni de acuerdo ni en desacuerdo"), o cerca del punto medio, entendiendo que de promedio se sienten ligeramente a favor o en contra de la proposición. Mientras esto ocurra, la encuesta funcionará bien, ya que otras personas tendrán puntos de vista claramente a favor o en contra de la misma pregunta, y elegirán "muy de acuerdo" o "muy en desacuerdo". En este sentido la encuesta es eficaz a la hora de distinguir a aquellos que tienen puntos de vista mixtos de aquellos que tienen opiniones claramente independientes del contexto al que se apliquen. </p>
+
+    <p class="text-primary">
+    P: La encuesta opera de manera cuantitativa, pero los temas tratados son complejos y requieren técnicas cualitativas. Debería existir la posibilidad de optar por más respuestas cualitativas en la encuesta.     </p>
+    </p>
+    <p>
+    Estamos de acuerdo en que los temas aquí tratados son complejos, y usamos datos cualitativos en nuestras investigaciones de manera regular. De hecho, las preguntas que usamos para la Encuesta sobre el Futuro de la Conservación se desarrollaron a partir de un estudio previo que utilizaba metodologías tanto cuantitativas como cualitativas. Este estudio reveló formas concretas para explorar los temas tratados en esta encuesta, y en este proyecto aspiramos a observar la prevalencia de ciertas opiniones en la comunidad de conservacionistas, y también si existen factores demográficos que expliquen las variaciones en los puntos de vista. Para poder alcanzar estos objetivos, optamos por un método cuantitativo y una muestra lo más amplia posible. Es importante tener en cuenta que si recibiéramos el mismo número de respuestas cualitativas (de momento más de 8,000), no habría manera de analizarlas todas.
+    </p>
+    P: La encuesta simplifica el debate de manera contraproducente y reduccionista.
+    </p>
+    <p>
+    R: Consideramos que nuestra encuesta enfoca el debate de manera relativamente reduccionista, pero pensamos (y muchos de los correos que hemos recibido así lo indican) que nuestro trabajo es útil a la hora de exponer la diversidad de temas existentes en los debates sobre la conservación y de permitir a los participantes comparar sus puntos de vista con los del resto de la comunidad de conservacionistas. En esta investigación en concreto, hemos dado prioridad a la amplitud sobre la profundidad: somos conscientes de que cualquier encuesta que dure más de 15 minutos obtendría menos participantes, de ahí la decisión de trabajar con datos cuantitativos y preguntas pre-formuladas. Sabemos que los dos ejes presentados en el gráfico no cubren completamente todos los temas presentes en los debates sobre la conservación, y de hecho algunas de las preguntas de la encuesta no contribuyen a la puntuación final sobre los ejes. Una vez recolectados los datos, planeamos generar nuevos ejes directamente a partir de las respuestas obtenidas, utilizando métodos estadísticos, y estamos convencidos de que resultará interesante comparar los ejes así obtenidos con los que diseñamos a priori. Prevemos publicar los resultados del estudio a medida que se vayan generando y proporcionar enlaces y resúmenes en esta página web.
+    </p>
+
+    <p class="text-primary">
+    P: Algunas de las preguntas no están claramente articuladas, de manera que es difícil saber cómo responderlas.
+    </p>
+
+    <p>
+    R: Pusimos la encuesta a prueba de manera larga y rigurosa, pero como todas las encuestas, aceptamos que no todas las preguntas son perfectas y que algunas no les gustarán a una parte de los encuestados. Cabe destacar que como la encuesta pretende revelar las diversas opiniones de los conservacionistas sobre el debate de la Nueva Conservación, muchas de las proposiciones son citas extraídas directamente de artículos publicados sobre el debate.
+    </p>
+
+
+    <p class="text-primary">
+    P: Realmente no estoy de acuerdo con el punto dónde me sitúa el gráfico, o con el cuadrante al que he sido asignado.
+    </p>
+
+    <p>
+    R: Sentimos que esté en desacuerdo, pero estamos seguros de que el mecanismo que genera los resultados gráficos funciona correctamente y la mayoría de los encuestados consideran que su situación gráfica representa sus puntos de vista satisfactoriamente. Cabe resaltar lo siguiente: (1) Hemos sido cuidadosos al expresar que tu “posición sugiere que sus puntos de vista sobre estas dimensiones del debate están más relacionados con los de la "X"”, en lugar de “usted es X”, ya que estimamos que la encuesta no es una herramienta perfecta y que clasificar según los puntos de vista puede ser problemático. (2) Puede que esté muy cerca de la divisoria entre cuadrantes en uno o ambos ejes. Si ese es el caso, quizás su punto de vista se encuentra entre ambas clasificaciones en lugar de en una u otra. (3) Si cree que se le ha situado en una clasificación completamente errónea, es posible que haya respondido una o varias preguntas de manera incorrecta al no percatarse del planteamiento negativo de la proposición: por ejemplo, si respondiese que está muy en desacuerdo con la proposición “Los paisajes altamente modificados por la influencia humana son de poco valor para la conservación”, lo que realmente está diciendo es que sí que piensa que hay valor en los paisajes altamente modificados.
+    </p>
+
+
+    <p class="text-primary">
+    P:Esto es un proyecto académico, no tendrá ninguna consecuencia en el mundo real.
+    </p>
+
+    <p>
+    R: Deseamos que esta encuesta sea más que un mero proyecto académico, y tenemos planeado que sea una etapa en un proceso más amplio. Estamos muy contentos de que ya haya provocado tantos debates, y pensamos que esto es muy valioso para la comunidad de conservacionistas. Como próxima etapa, tenemos pensado desarrollar una versión de la página web que pueda utilizarse específicamente para grupos definidos, por ejemplo compañeros en una organización o grupos de estudiantes, así como desarrollar material adicional que ayude a considerar las implicaciones de sus resultados. Ya hemos recibido correos de diversas organizaciones expresando su interés por una colaboración de este tipo: si usted también está interesado, escríbanos al futureofconservation@gmail.com
+    </p>
+
+    <p class="text-primary">
+    P: ¿Puede utilizarse la encuesta sólo para mi organización o grupo?
+    </p>
+
+    <p>
+    R: Varios grupos ya nos han preguntado sobre la posibilidad de ajustar la encuesta para su uso privado, y ya estamos trabajando para hacer que esto sea posible. Si está interesado en colaborar con nosotros de esta manera, o tiene sugerencias de posibles fondos o becas para desarrollar dicha herramienta, estaríamos encantados si se pusiera en contacto: futureofconservation@gmail.com
+    </p>
+
+    <p class="text-primary">
+    P: ¿Por qué habéis elegido estas preguntas en concreto? Al limitar las preguntas al debate de la Nueva Conservación, estáis reproduciendo las limitaciones de dicho debate.
+    </p>
+
+    <p>
+    R: En cierta medida, esto es verdad. Nuestras investigaciones comenzaron por examinar las diversas opiniones de los conservacionistas sobre los temas tratados en el debate de la Nueva Conservación, y hemos mantenido ese objetivo en esta encuesta. Este debate es suficientemente amplio y ya cubre muchos de los temas fundamentales de la conservación. Aun así, estimamos que hay otros aspectos de la conservación que merecen debatirse, y que no reciben suficiente atención en el debate de la Nueva Conservación (y por tanto tampoco en nuestra encuesta). Nos mantenemos abiertos a la posibilidad de incorporar nuevas preguntas en próximas versiones de este proyecto.
+    </p>
+
+    <p class="text-primary">
+    P: Las preguntas están sesgadas, y el diseño de la investigación es problemático.
+    </p>
+
+    <p>
+    R: La encuesta está basada en proposiciones en lugar de preguntas, y por tanto no pueden estar sesgadas, ya que se le pregunta al encuestado hasta qué punto está de acuerdo con dichas proposiciones. El uso de escalas Likert, tal y como empleamos nosotros, es típico en las ciencias sociales.
+    </p>'
+
+  # Questionnaire
+  questionnaire:
+    "yes": "Sí"
+    "no": "No"
+    next: "Siguiente"
+    previous: "Anterior"
+    submit: "Enviar"
+    required: "Obligatorio"
+    other: "Otro"
+    not_applicable: "No se aplica"
+    none_of_the_above: "Ninguna de éstas"
+    notices:
+      there_are_unanswered_questions: "Por favor, responda todas las preguntas obligatorias para acceder a la siguiente página"
+    answers:
+      strongly_agree: "Muy de acuerdo"
+      agree: "De acuerdo"
+      slightly_agree: "Ligeramente de acuerdo"
+      neutral: "Ni de acuerdo ni en desacuerdo"
+      slightly_disagree: "Ligeramente en desacuerdo"
+      disagree: "En desacuerdo"
+      strongly_disagree: "Muy en desacuerdo"
+    demographic_answers:
+      intro: "Las páginas 5 y 6 de esta encuesta contienen breves preguntas sobre su formación y experiencia profesional. Estas preguntas han sido incluidas con el propósito de investigar qué factores influyen sobre las opiniones de los conservacionistas. Los datos recolectados serán utilizados exclusivamente para esta investigación, y sus respuestas individuales no serán identificables."
+      age: "Edad"
+      category_of_most_professional_work:
+        heavily_modified: "Ecosistemas altamente modificados (ej. Zonas urbanas)"
+        largely_modified: "Ecosistemas bastante modificados (ej. Agricultura intensiva, piscicultura intensiva)"
+        somewhat_modified: "Ecosistemas algo modificados (ej. Agricultura extensiva, piscicultura extensiva)"
+        largely_unmodified: "Ecosistemas poco modificados (ej. Áreas de uso sostenible)"
+        unmodified: "Ecosistemas no modificados (o prácticamente no modificados) (ej. Áreas salvajes)"
+      conservational_sectors:
+        academia: "Académico/institución educativa "
+        not_for_profit: "Organización sin ánimo lucrativo/organización no gubernamental"
+        private_sector: "Sector privado"
+        government: "Funcionario"
+      education:
+        school_level: "Colegio/instituto"
+        post_high_school: "Post-colegial, pero en una institución no-universitaria"
+        undergraduate: "Grado universitario"
+        postgraduate: "Maestría/posgrado universitario "
+        doctorate: "Doctorado "
+      educational_specialism:
+        biological_sciences: "Ciencias biológicas (Ej. biología, ecología, zoología)"
+        non_biological_sciences: "Ciencias no-biológicas (Ej. química, matemáticas, ingeniería)"
+        social_sciences: "Ciencias sociales (Ej. económicas, geografía humana, ciencias políticas)"
+        humanities: "Humanidades (Ej. literatura, historia, filosofía, lenguas) "
+        interdisciplinary: "Interdisciplinario (combinando al menos dos de ciencias naturales, ciencias sociales y humanidades) "
+      email: "Email"
+      gender:
+        male: "Hombre"
+        female: "Mujer"
+        prefer_not_to_say: "Prefiero no indicarlo"
+      professional_engagement:
+        exclusively_a_researcher: "Exclusivamente (o casi exclusivamente) investigación"
+        mostly_a_researcher: "Principalmente investigación"
+        researcher_and_practitioner: "Investigación y práctica a partes más o menos iguales"
+        mostly_a_practitioner: "Principalmente práctica"
+        exclusively_a_practitioner: "Exclusivamente (o casi exclusivamente) práctica"
+      research_experience:
+        researcher: "Sí, en la investigación"
+        practitioner: "Sí, en la práctica"
+        researcher_and_practitioner: "Sí, tanto en la investigación como en la práctica"
+      seniority_of_current_role:
+        very_junior: "Muy “junior” (baja autoridad)"
+        fairly_junior: "Relativamente “junior” (autoridad media-baja)"
+        neither: "Intermedio"
+        fairly_senior: "Relativamente “senior” (autoridad media-alta)"
+        very_senior: "Muy “senior” (alta autoridad)"
+        not_currently_working_in_conservation: "Actualmente no trabajo en la conservación"
+      value_shaping_items:
+        family_during_childhood: "Los  valores de la familia y amigos en la infancia"
+        family_during_adulthood: "Los  valores de la familia y amigos en la madurez"
+        outdoor_play_during_childhood: "Juegos o recreo al aire libre en la infancia"
+        outdoor_play_during_adulthood: "Juegos o recreo al aire libre en la madurez"
+        indoor_experiences_during_childhood: "Actividades en el interior (ej. lectura/documentales/videojuegos) en la infancia"
+        indoor_experiences_during_adulthood: "Actividades en el interior (ej. lectura/documentales/videojuegos) en la madurez"
+        formal_education_during_childhood: "Educación oficial (ej. excursiones, clases) en la infancia"
+        formal_education_during_adulthood: "Educación oficial (ej. excursiones, clases) en la madurez"
+        professional_experience: "Experiencia profesional en la madurez"
+      wwf_programme:
+        advocacy: "Advocacy"
+        comms_and_media: "Comms and media"
+        fundraising: "Fundraising"
+        global_programmes: "Global programmes"
+        operations: "Operations"
+        our_planet: "Our Planet"
+        ceo_office: "CEO Office"
+
+  results:
+    see_how_you_compare: "Sus resultados en comparación con el resto de los encuestados"
+    comparing_your_results_against: "Sus resultados comparados con los de los "
+    most_recent: "encuestados más recientes"
+    result: "resultado"
+    filtering_results_by: "Filtrar por"
+    share_the_survey: "Comparta esta encuesta"
+    how_to_interpret: "Cómo interpretar sus resultados"
+    your_position_is: "Su posición es"
+    along_the_people_and_nature: "sobre el eje de las personas y la naturaleza, y"
+    along_the_conservation_and_capitalism: "sobre el eje de la conservación y el capitalismo."
+    your_thinking_most_closely: "Sus resultados se asimilan más a:"
+    all_four_positions: "El gráfico inferior representa las cuatro posiciones del debate tratadas en esta encuesta."
+    find_out_more_about: "Haga click aquí para obtener más información sobre estas posiciones."
+    for_more_information: 'Para obtener más información sobre el proyecto del Futuro de la Conservación, escríbanos en <a href="mailto:futureofconservation@gmail.com">futureofconservation@gmail.com'
+    gender: 'Sexo'
+    male: 'Hombre'
+    female: 'Mujer'
+    educational_specialism: 'Disciplina'
+    biological_sciences: 'Ciencias biológicas'
+    non_biological_natural_sciences: 'Ciencias naturales no biológicas'
+    social_sciences: 'Ciencias sociales'
+    humanities: 'Humanidades'
+    interdisciplinary: 'Interdisciplinario'
+    not_applicable: 'No se aplica'
+    education: 'Grado educativo'
+    school_level: 'Colegio/instituto'
+    post_high_school_but_at_an_institution_other_than_a_university: 'Post-colegial, pero en una institución no-universitaria'
+    undergraduate_bachelors_university_degree: 'Grado universitario'
+    masters_degree_postgraduate_qualification: 'Maestría/masters'
+    doctorate: 'Doctorado'
+    age: 'Edad'
+    biological_sciences_zoology_plant_sciences: 'Ciencias biológicas (por ejemplo, biología, ecología, zoología, etc.)'
+    non_biological_natural_sciences_chemistry_maths_engineering: 'Ciencias no-biológicas (por ejemplo, química, matemáticas, ingeniería)'
+    social_sciences_economics_human_geography_political_science: 'Ciencias sociales (por ejemplo, económicas, geografía humana, ciencias políticas)'
+    humanities_literature_history_philosophy_languages: 'Humanidades (por ejemplo, literatura, historia, filosofía, lenguas)'
+    interdisciplinary_a_combination: 'Interdisciplinario (combinando al menos dos de ciencias naturales, ciencias sociales y humanidades)'
+    highest_completed_educational_qualification: 'Máxima cualificación'
+    minimum_age: 'Edad mínima'
+    maximum_age: 'Edad máxima'
+    filtering_results_by_educational_specialism: 'Filtrar por disciplina'
+    filter_results_by_gender: 'Filtrar por sexo'
+    show_only_results_by_males: 'Sólo mostrando resultados de hombres'
+    show_only_results_by_females: 'Sólo mostrando resultados de mujeres'
+    filter: 'Filtrar'
+    your_results: 'Sus resultados'
+    weakly: 'ligeramente'
+    strongly: 'muy'
+    positive: 'positiva'
+    negative: 'negativa'
+    neutral:  'neutra'
+    classifications:
+      critical_social_science:
+        name: 'Ciencia social crítica (Critical Social Science)'
+        description: 'Los científicos sociales críticos piensan que los impactos de la conservación en el bienestar humano deberían encabezar los debates sobre la conservación. Esto supone tanto la crítica de los impactos negativos que las actividades conservacionistas puedan tener sobre las personas de escasos recursos y/o marginadas políticamente, como el empleo de iniciativas conservacionistas como herramienta para mejorar el bienestar humano. Sin embargo, los científicos sociales críticos suelen mostrarse escépticos sobre los mercados y el capitalismo como maneras de producir beneficios tanto para la naturaleza como para las personas. Por ejemplo, la evaluación económica de la naturaleza puede percibirse como una estrategia de las corporaciones para abrir nuevas vías de explotación, mientras se maquillan los impactos negativos de dicha explotación manipulando el modo en que estas actividades se presentan al público. Los científicos sociales críticos a veces son criticados por ofrecer un duro análisis de los problemas de la conservación, sin a su vez ofrecer alternativas prácticas a los métodos convencionales.'
+        results_description: 'La posición sobre los dos ejes del gráfico de arriba refleja sus respuestas al cuestionario. Un desplazamiento de izquierda a derecha sobre el eje horizontal (personas/naturaleza; people and nature) refleja el cambio de ver la conservación como un modo de mejorar el bienestar humano a la conservación de la naturaleza por su valor intrínseco. El eje vertical (conservación y capitalismo; conservation and capitalism) representa la disposición a adoptar los mercados y el capitalismo como herramientas de conservación: a medida que nos desplazamos hacia arriba sobre el eje vertical, mostramos una actitud más favorable a los mercados. Esto le sitúa en el cuadrante inferior izquierdo, posición que sugiere que sus puntos de vista sobre estas dimensiones del debate están más relacionados con los de la ciencia social crítica, tal y como se define en las publicaciones.'
+      market_biocentrism:
+        name: 'Biocentrismo y mercados (Market Biocentrism)'
+        description: 'La combinación de puntos de vista pro-naturaleza y pro-mercados es poco común en la literatura conservacionista.
+        Tal vez la reciente obra Half-Earth, en la que E.O. Wilson propone dejar la mitad de la superficie terrestre como reserva natural, sea un ejemplo de "biocentrismo y mercados". Consciente de que un objetivo tan alto requeriría una reducción drástica de la huella ecológica de la humanidad, Wilson propone el libre mercado como manera de favorecer aquellos productos que produzcan el mayor beneficio con el menor empleo de energía y recursos naturales. No obstante, las sugerencias de Wilson acerca de los mercados tienen más que ver con asegurar que la humanidad pueda prosperar en tan sólo el 50% de la superficie terrestre que con llevar a cabo la conservación en sí: es decir, la estrategia pro-mercados se aplicaría a la mitad humana del planeta y no a la natural.'
+        results_description: "La posición sobre los dos ejes del gráfico de arriba refleja sus respuestas al cuestionario. Un desplazamiento de izquierda a derecha sobre el eje horizontal (personas/naturaleza; people and nature) refleja el cambio de ver la conservación como un modo de mejorar el bienestar humano a la conservación de la naturaleza por su valor intrínseco. El eje vertical (conservación y capitalismo; conservation and capitalism) representa la disposición a adoptar los mercados y el capitalismo como herramientas de conservación: a medida que nos desplazamos hacia arriba sobre el eje vertical, mostramos una actitud más favorable a los mercados. Esto le sitúa en el cuadrante superior derecho, posición que sugiere que sus puntos de vista sobre estas dimensiones del debate están más relacionados con los de el biocentrismo y mercados, tal y como se define en las publicaciones."
+      new_conservation:
+        name: 'Nueva conservación (New Conservation)'
+        description: 'Una idea fundamental de la "nueva conservación" es la redefinición de la protección de la naturaleza como manera de mejorar el bienestar humano (sobre todo el de los pobres), en lugar de proteger la naturaleza por su valor intrínseco. Los "nuevos conservacionistas" creen que se pueden lograr situaciones en las que las personas se beneficien de la conservación mediante el estímulo del crecimiento económico y la alianza empresarial. Aunque los partidarios del nuevo conservacionismo han recibido críticas por prescindir del valor intrínseco de la naturaleza, autores clave dentro del movimiento han aclarado que los motivos del abandono de este argumento no son éticos, sino estratégicos o pragmáticos. Es decir, reivindican que la conservación debe subrayar el valor utilitario de la naturaleza para las personas porque esto genera más apoyo a la conservación que los argumentos basados en el derecho de las especies no humanas a sobrevivir.'
+        results_description: "La posición sobre los dos ejes del gráfico de arriba refleja sus respuestas al cuestionario. Un desplazamiento de izquierda a derecha sobre el eje horizontal (personas/naturaleza; people and nature) refleja el cambio de ver la conservación como un modo de mejorar el bienestar humano a la conservación de la naturaleza por su valor intrínseco. El eje vertical (conservación y capitalismo; conservation and capitalism) representa la disposición a adoptar los mercados y el capitalismo como herramientas de conservación: a medida que nos desplazamos hacia arriba sobre el eje vertical, mostramos una actitud más favorable a los mercados. Esto le sitúa en el cuadrante superior izquierdo, posición que sugiere que sus puntos de vista sobre estas dimensiones del debate están más relacionados con los de la nueva conservación, tal y como se define en las publicaciones."
+      traditional_conservation:
+        name: 'Conservación tradicional (Traditional Conservation)'
+        description: 'Los conservacionistas tradicionales a menudo basan la protección de la naturaleza en el valor que tiene en sí misma. Este énfasis en el valor intrínseco de la naturaleza a menudo conduce a los conservacionistas tradicionales a la crítica de los mercados y el crecimiento económico como herramientas de conservación. Esto se debe al convencimiento de que la alianza con los mercados conlleva el riesgo de abandono de aquellas especies consideradas de escaso valor económico. Es más, el crecimiento económico en sí es considerado uno de los principales culpables de la extinción de las especies. Los conservacionistas tradicionales con frecuencia defienden su postura subrayando que no hay nada nuevo en la "nueva conservación": por ejemplo, argumentan que la conservación lleva mucho tiempo preocupándose del bienestar humano  y tratando de reducir cualquier impacto negativo que sus actividades puedan tener sobre las comunidades locales. Los conservacionistas tradicionales suelen favorecer los espacios protegidos, sobre todo en ecosistemas donde la influencia humana es relativamente escasa, como estrategia fundamental de la conservación.'
+        results_description: "La posición sobre los dos ejes del gráfico de arriba refleja sus respuestas al cuestionario. Un desplazamiento de izquierda a derecha sobre el eje horizontal (personas/naturaleza; people and nature) refleja el cambio de ver la conservación como un modo de mejorar el bienestar humano a la conservación de la naturaleza por su valor intrínseco. El eje vertical (conservación y capitalismo; conservation and capitalism) representa la disposición a adoptar los mercados y el capitalismo como herramientas de conservación: a medida que nos desplazamos hacia arriba sobre el eje vertical, mostramos una actitud más favorable a los mercados. Esto le sitúa en el cuadrante inferior derecho, posición que sugiere que sus puntos de vista sobre estas dimensiones del debate están más relacionados con los de la conservación tradicional, tal y como se define en las publicaciones."
+      undecided:
+        name: 'Neutro'
+        description: 'Sus puntos de vista son relativamente neutros'
+        results_description: 'La posición sobre los dos ejes del gráfico de arriba refleja sus respuestas al cuestionario. Un desplazamiento de izquierda a derecha sobre el eje horizontal (personas/naturaleza; people and nature) refleja el cambio de ver la conservación como un modo de mejorar el bienestar humano a la conservación de la naturaleza por su valor intrínseco. El eje vertical (conservación y capitalismo; conservation and capitalism) representa la disposición a adoptar los mercados y el capitalismo como herramientas de conservación: a medida que nos desplazamos hacia arriba sobre el eje vertical, mostramos una actitud más favorable a los mercados. Esto le sitúa en el centro del gráfico, lo cual sugiere que sus puntos de vista sobre estas dimensiones del debate contienen elementos de cada una de las posiciones principales.'

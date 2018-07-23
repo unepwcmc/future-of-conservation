@@ -59,4 +59,6 @@ Rails.application.configure do
   secrets = Rails.application.secrets.mailer
   config.action_mailer.asset_host = secrets["host"]
   config.action_mailer.default_url_options = { host: secrets["host"]}
+
+  config.i18n.fallbacks = true
 end
