@@ -8,7 +8,6 @@
 
 # Seed Demographic Questions
 #
-require 'byebug'
 
 questions = [
   {
