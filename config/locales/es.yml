@@ -273,6 +273,7 @@ es:
         ceo_office: "CEO Office"
 
   results:
+    your_response_was_successfully_created: "Su resultado se generó correctamente"
     see_how_you_compare: "Sus resultados en comparación con el resto de los encuestados"
     comparing_your_results_against: "Sus resultados comparados con los de los "
     most_recent: "encuestados más recientes"
