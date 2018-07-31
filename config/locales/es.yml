@@ -186,6 +186,7 @@ es:
 
   # Questionnaire
   questionnaire:
+    there_are_unanswered_questions: "Por favor, responda a todas las preguntas obligatorias en esta página"
     "yes": "Sí"
     "no": "No"
     next: "Siguiente"

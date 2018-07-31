@@ -186,6 +186,7 @@ en:
 
   # Questionnaire
   questionnaire:
+    there_are_unanswered_questions: "There are unanswered questions on this page"
     "yes": "Yes"
     "no": "No"
     next: "Next"
