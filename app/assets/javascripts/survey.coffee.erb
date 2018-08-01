@@ -1,13 +1,12 @@
 # Place all the behaviors and hooks related to the matching controller here.
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
-root = exports ? this
 
 $(document).on 'turbolinks:load', ->
   if debugMode()
     alert("Debug mode is on, all validations will be skipped")
 
-  root.I18n =
+  i18n =
   <% I18n.available_locales.each do |lang| %>
     <% I18n.with_locale lang do %>
     <%= lang %>:
@@ -15,7 +14,7 @@ $(document).on 'turbolinks:load', ->
     <% end %>
   <% end %>
 
-  root.I18n = I18n[$('.container').data('lang')]
+  i18n = i18n[$('.container').data('lang')]
 
   # Hide all pages except first one
   $('section.survey__page').not(':eq(0)').hide()
@@ -29,7 +28,7 @@ $(document).on 'turbolinks:load', ->
       nextPage()
       toggleSurveyControls($('section.survey__page:visible'))
     else
-      alert(I18n.there_are_unanswered_questions)
+      alert(i18n.there_are_unanswered_questions)
 
   # On previous page click
   $('.survey__previous-page').click (e) ->
