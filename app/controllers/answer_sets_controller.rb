@@ -6,7 +6,7 @@ class AnswerSetsController < ApplicationController
     @answer_set.uuid        = SecureRandom.urlsafe_base64
 
     if @answer_set.save!
-      redirect_to results_path(@answer_set.uuid), notice: 'Your response was successfully created.'
+      redirect_to results_path(@answer_set.uuid), notice: t('results.your_response_was_successfully_created')
     else
       redirect_to root_path, notice: 'Something went wrong'
     end
