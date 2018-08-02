@@ -15,6 +15,7 @@
 #  classification_id         :integer
 #  classification_strength_x :string
 #  classification_strength_y :string
+#  language                  :string
 #
 # Indexes
 #
