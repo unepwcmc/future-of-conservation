@@ -95,10 +95,6 @@ module CsvExporter
         DemographicQuestion.find_by_short_name("value_shaping_items").text,
         DemographicQuestion.find_by_short_name("shaping_values").text,
         DemographicQuestion.find_by_short_name("email").text,
-        DemographicQuestion.find_by_short_name("taken_survey_before").text,
-        DemographicQuestion.find_by_short_name("wwf_programme").text,
-        DemographicQuestion.find_by_short_name("wwf_staff_survey").text,
-        DemographicQuestion.find_by_short_name("ol_pejeta_staff_survey").text,
         'Language'
       ].flatten.map {|q| q.gsub(",", "") }
     end
