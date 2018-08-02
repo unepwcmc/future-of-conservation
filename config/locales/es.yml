@@ -208,9 +208,6 @@ es:
       strongly_disagree: "Muy en desacuerdo"
     demographic_answers:
       intro: "Las páginas 5 y 6 de esta encuesta contienen breves preguntas sobre su formación y experiencia profesional. Estas preguntas han sido incluidas con el propósito de investigar qué factores influyen sobre las opiniones de los conservacionistas. Los datos recolectados serán utilizados exclusivamente para esta investigación, y sus respuestas individuales no serán identificables."
-      language:
-        english: "Inglés"
-        spanish: "Español"
       age: "Edad"
       category_of_most_professional_work:
         heavily_modified: "Ecosistemas altamente modificados (ej. Zonas urbanas)"
