@@ -1,0 +1,8 @@
+<p class="card-text">
+  <%= radio_button_tag "demographics[#{question.short_name}]", 'English' %>
+  <%= label_tag t('questionnaire.demographic_answers.language.english') %>
+</p>
+<p class="card-text">
+  <%= radio_button_tag "demographics[#{question.short_name}]", 'Spanish' %>
+  <%= label_tag t('questionnaire.demographic_answers.language.spanish') %>
+</p>

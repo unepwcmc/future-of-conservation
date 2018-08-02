@@ -208,6 +208,9 @@ en:
       strongly_disagree: "Strongly Disagree"
     demographic_answers:
       intro: "Pages 5 and 6 of the survey contain short questions about your work and background. We are asking these questions so that we can understand the factors which determine how opinions on the future of conservation vary amongst conservationists. The data gathered will be used only for this piece of research, and your individual responses will not be identifiable."
+      language:
+        english: "English"
+        spanish: "Spanish"
       age: "Age"
       category_of_most_professional_work:
         heavily_modified: "Very heavily modified ecosystems (e.g. urban areas)"

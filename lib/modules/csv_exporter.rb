@@ -97,7 +97,8 @@ module CsvExporter
         DemographicQuestion.find_by_short_name("taken_survey_before").text,
         DemographicQuestion.find_by_short_name("wwf_programme").text,
         DemographicQuestion.find_by_short_name("wwf_staff_survey").text,
-        DemographicQuestion.find_by_short_name("ol_pejeta_staff_survey").text
+        DemographicQuestion.find_by_short_name("ol_pejeta_staff_survey").text,
+        DemographicQuestion.find_by_short_name("which_language").text
       ].flatten.map {|q| q.gsub(",", "") }
     end
 
@@ -169,7 +170,8 @@ module CsvExporter
         result.find_demographic_answer_by_key("taken_survey_before", default),
         result.find_demographic_answer_by_key("wwf_programme", default),
         result.find_demographic_answer_by_key("wwf_staff_survey", default),
-        result.find_demographic_answer_by_key("ol_pejeta_staff_survey", default)
+        result.find_demographic_answer_by_key("ol_pejeta_staff_survey", default),
+        result.find_demographic_answer_by_key("which_language", default)
       ].flatten
 
       row.map do |answer|
