@@ -208,5 +208,4 @@ module CsvExporter
       year, month, day = date&.split("-").map(&:to_i)
       Date.valid_date?(year, month, day)
     end
-
 end
