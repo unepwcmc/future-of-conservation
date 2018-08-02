@@ -16,7 +16,7 @@ module CsvExporter
       else
         from_date   = self.date_valid?(from_date) ? from_date : AnswerSet.first.created_at
         to_date     = self.date_valid?(to_date)   ? to_date   : DateTime.now
-        to_date     = Date.parse(to_date) + 1.day
+        to_date     = Date.parse(to_date).end_of_day
 
         @answersets = AnswerSet.where("created_at >= ? AND created_at <= ?", from_date, to_date).find_in_batches(batch_size: 250)
       end
