@@ -21,7 +21,6 @@
             <%= label_tag "filter[gender]", t('results.show_only_results_by_females') %>
           </p>
 
-          <%= hidden_field_tag "locale", @locale %>
           <%= submit_tag t('results.filter'), class: 'btn btn-primary' %>
         <% end %>
       </div>
@@ -67,7 +66,6 @@
             <%= label_tag t('results.not_applicable') %>
           </p>
 
-          <%= hidden_field_tag "locale", @locale %>
           <%= submit_tag t('results.filter'), class: 'btn btn-primary' %>
         <% end %>
       </div>
@@ -108,7 +106,6 @@
             <%= label_tag t('results.doctorate') %>
           </p>
 
-          <%= hidden_field_tag "locale", @locale %>
           <%= submit_tag t('results.filter'), class: 'btn btn-primary' %>
         <% end %>
       </div>
@@ -137,7 +134,6 @@
             <%= label_tag t('results.maximum_age') %>
           </p>
 
-          <%= hidden_field_tag "locale", @locale %>
           <%= submit_tag t('results.filter'), class: 'btn btn-primary' %>
         <% end %>
       </div>

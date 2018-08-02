@@ -12,7 +12,6 @@ class ResultsController < ApplicationController
   def show
     @results = AnswerSet.find_by(uuid: params[:uuid])
     @all_other_results = AnswerSet.last(1000).reject{ |r| r.id == @results.id }.pluck(:x_axis_scaled, :y_axis_scaled)
-    @locale = I18n.locale
 
     if params["filter"].present?
       if params["filter"]["gender"].present?
@@ -43,5 +42,4 @@ class ResultsController < ApplicationController
     CsvExporterJob.perform_later(to_email, from_date, to_date)
     redirect_to root_path, notice: "Your CSV is being generated, we will send an email to #{to_email} when it is ready to download"
   end
-
 end
