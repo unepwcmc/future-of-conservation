@@ -16,6 +16,7 @@ module CsvExporter
       else
         from_date   = self.date_valid?(from_date) ? from_date : AnswerSet.first.created_at
         to_date     = self.date_valid?(to_date)   ? to_date   : DateTime.now
+        to_date     = Date.parse(to_date).end_of_day
 
         @answersets = AnswerSet.where("created_at >= ? AND created_at <= ?", from_date, to_date).find_in_batches(batch_size: 250)
       end
@@ -97,7 +98,8 @@ module CsvExporter
         DemographicQuestion.find_by_short_name("taken_survey_before").text,
         DemographicQuestion.find_by_short_name("wwf_programme").text,
         DemographicQuestion.find_by_short_name("wwf_staff_survey").text,
-        DemographicQuestion.find_by_short_name("ol_pejeta_staff_survey").text
+        DemographicQuestion.find_by_short_name("ol_pejeta_staff_survey").text,
+        'Language'
       ].flatten.map {|q| q.gsub(",", "") }
     end
 
@@ -169,7 +171,8 @@ module CsvExporter
         result.find_demographic_answer_by_key("taken_survey_before", default),
         result.find_demographic_answer_by_key("wwf_programme", default),
         result.find_demographic_answer_by_key("wwf_staff_survey", default),
-        result.find_demographic_answer_by_key("ol_pejeta_staff_survey", default)
+        result.find_demographic_answer_by_key("ol_pejeta_staff_survey", default),
+        result.language
       ].flatten
 
       row.map do |answer|
