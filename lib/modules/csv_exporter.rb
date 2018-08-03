@@ -2,6 +2,7 @@ require 'csv'
 
 module CsvExporter
   def self.export_results(from_date, to_date)
+    I18n.locale = :en
     folder = Rails.root.join("public", "csv_exports")
     FileUtils.mkdir_p(folder)
     filepath = folder.join("csv_export_#{DateTime.now.to_i}.csv")
@@ -16,6 +17,7 @@ module CsvExporter
       else
         from_date   = self.date_valid?(from_date) ? from_date : AnswerSet.first.created_at
         to_date     = self.date_valid?(to_date)   ? to_date   : DateTime.now
+        to_date     = Date.parse(to_date).end_of_day
 
         @answersets = AnswerSet.where("created_at >= ? AND created_at <= ?", from_date, to_date).find_in_batches(batch_size: 250)
       end
@@ -94,10 +96,7 @@ module CsvExporter
         DemographicQuestion.find_by_short_name("value_shaping_items").text,
         DemographicQuestion.find_by_short_name("shaping_values").text,
         DemographicQuestion.find_by_short_name("email").text,
-        DemographicQuestion.find_by_short_name("taken_survey_before").text,
-        DemographicQuestion.find_by_short_name("wwf_programme").text,
-        DemographicQuestion.find_by_short_name("wwf_staff_survey").text,
-        DemographicQuestion.find_by_short_name("ol_pejeta_staff_survey").text
+        'Language'
       ].flatten.map {|q| q.gsub(",", "") }
     end
 
@@ -166,10 +165,7 @@ module CsvExporter
         self.format_multiple_answer(result.find_demographic_answer_by_key("value_shaping_items"), default),
         result.find_demographic_answer_by_key("shaping_values", default),
         result.find_demographic_answer_by_key("email", default),
-        result.find_demographic_answer_by_key("taken_survey_before", default),
-        result.find_demographic_answer_by_key("wwf_programme", default),
-        result.find_demographic_answer_by_key("wwf_staff_survey", default),
-        result.find_demographic_answer_by_key("ol_pejeta_staff_survey", default)
+        result.language || "en"
       ].flatten
 
       row.map do |answer|
