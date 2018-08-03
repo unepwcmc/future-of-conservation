@@ -2,8 +2,8 @@
 
 **Fixes for Spanish translations:**
 
-* Fixed missing translations.
-
+* Fixed missing translations,
+* Fixed CSV export bug.
 
 ### 0.1.0
 
