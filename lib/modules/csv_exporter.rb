@@ -2,6 +2,7 @@ require 'csv'
 
 module CsvExporter
   def self.export_results(from_date, to_date)
+    I18n.locale = :en
     folder = Rails.root.join("public", "csv_exports")
     FileUtils.mkdir_p(folder)
     filepath = folder.join("csv_export_#{DateTime.now.to_i}.csv")
