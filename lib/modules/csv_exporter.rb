@@ -33,11 +33,11 @@ module CsvExporter
         end
       end
 
-    f.write BOM
-    f.write(csv_file)
+      f.write BOM
+      f.write(csv_file)
     end
 
-  filepath
+    filepath
   end
 
   private
