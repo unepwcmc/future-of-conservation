@@ -96,6 +96,8 @@ module CsvExporter
         DemographicQuestion.find_by_short_name("value_shaping_items").text,
         DemographicQuestion.find_by_short_name("shaping_values").text,
         DemographicQuestion.find_by_short_name("email").text,
+        DemographicQuestion.find_by_short_name("bto_survey").text,
+        DemographicQuestion.find_by_short_name("fpt_survey").text,
         'Language'
       ].flatten.map {|q| q.gsub(",", "") }
     end
@@ -165,6 +167,8 @@ module CsvExporter
         self.format_multiple_answer(result.find_demographic_answer_by_key("value_shaping_items"), default),
         result.find_demographic_answer_by_key("shaping_values", default),
         result.find_demographic_answer_by_key("email", default),
+        result.find_demographic_answer_by_key("bto_survey", default),
+        result.find_demographic_answer_by_key("fpt_survey", default),
         result.language || "en"
       ].flatten
 

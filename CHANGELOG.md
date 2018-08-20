@@ -1,3 +1,9 @@
+### 0.1.2
+
+**Add missing questions:**
+
+* Added missing questions.
+
 ### 0.1.1
 
 **Fixes for Spanish translations:**
