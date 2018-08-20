@@ -112,6 +112,18 @@ questions = [
     short_name: "email",
     optional: true
   },
+  {
+    text: "Are you taking this survey as a staff member of the British Trust for Ornithology?",
+    position: 18,
+    short_name: "bto_survey",
+    optional: true
+  },
+  {
+    text: "Are you taking this survey as a staff member of the Fundação Príncipe Trust?",
+    position: 19,
+    short_name: "fpt_survey",
+    optional: true
+  }
 ]
 
 questions.each do |question|
