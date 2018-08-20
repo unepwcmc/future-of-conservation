@@ -1,8 +1,9 @@
 ### 0.1.2
 
-**Add missing questions:**
+**Add missing questions and fix CSV export bug:**
 
-* Added missing questions.
+* Added missing questions,
+* Fix CSV export bug affecting UTF-8 encoded strings.
 
 ### 0.1.1
 
