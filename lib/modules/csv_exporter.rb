@@ -1,7 +1,7 @@
 require 'csv'
 
 BOM = "\xEF\xBB\xBF" # byte order mark
-OPEN_MODE = "w+:UTF-16LE:UTF-8"
+OPEN_MODE = "wb:UTF-16LE:UTF-8"
 
 module CsvExporter
   def self.export_results(from_date, to_date)
