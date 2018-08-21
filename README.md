@@ -37,7 +37,7 @@ You can append `?debug=true` to the URL in development and staging to remove the
 
 Clone repo
 
-* Rename .env-docker .env and configure with correct info
+* Rename .env-docker to .env and configure with correct info
 * docker-compose build
 * docker-compose up
 * docker-compose run web rake db:create
