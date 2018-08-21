@@ -31,3 +31,19 @@ Because of the variation of the answer types for a demographic question, they ea
 # Debug mode
 
 You can append `?debug=true` to the URL in development and staging to remove the Javascript validations for making sure questions are answered before allowing a user to advance pages of the survey
+
+# Docker
+
+
+
+
+
+* docker-compose build
+* docker-compose up
+* docker-compose run web rake db:create
+* docker-compose run web rake db:migrate
+* docker-compose run web rake db:seed
+* docker-compose run web rake assets:precompile
+
+
+
