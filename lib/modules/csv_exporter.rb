@@ -12,29 +12,33 @@ module CsvExporter
     # Use last answer set to grab the headers as these may change
     latest = AnswerSet.last
 
-    File.open(filepath, OPEN_MODE) do |f|
-      csv_file = CSV.generate({:col_sep => "\t"}) do |csv|
-        csv << self.headers(latest)
+    begin
+      File.open(filepath, OPEN_MODE) do |f|
+        csv_file = CSV.generate({:col_sep => "\t"}) do |csv|
+          csv << self.headers(latest)
 
-        if from_date.empty? && to_date.empty?
-          @answersets = AnswerSet.find_in_batches(batch_size: 250)
-        else
-          from_date   = self.date_valid?(from_date) ? from_date : AnswerSet.first.created_at
-          to_date     = self.date_valid?(to_date)   ? to_date   : DateTime.now
-          to_date     = Date.parse(to_date).end_of_day
+          if from_date.empty? && to_date.empty?
+            @answersets = AnswerSet.find_in_batches(batch_size: 250)
+          else
+            from_date   = self.date_valid?(from_date) ? from_date : AnswerSet.first.created_at
+            to_date     = self.date_valid?(to_date)   ? to_date   : DateTime.now
+            to_date     = Date.parse(to_date).end_of_day
 
-          @answersets = AnswerSet.where("created_at >= ? AND created_at <= ?", from_date, to_date).find_in_batches(batch_size: 250)
-        end
+            @answersets = AnswerSet.where("created_at >= ? AND created_at <= ?", from_date, to_date).find_in_batches(batch_size: 250)
+          end
 
-        @answersets.each do |batch|
-          batch.each do |result|
-            csv << self.format_row(result)
+          @answersets.each do |batch|
+            batch.each do |result|
+              csv << self.format_row(result)
+            end
           end
         end
-      end
 
-      f.write BOM
-      f.write(csv_file)
+        f.write BOM
+        f.write(csv_file)
+      end
+    rescue Exception => e
+      Appsignal.send_error(e)
     end
 
     filepath

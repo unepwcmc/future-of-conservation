@@ -59,6 +59,8 @@ GEM
     annotate (2.7.1)
       activerecord (>= 3.2, < 6.0)
       rake (>= 10.4, < 12.0)
+    appsignal (2.7.0)
+      rack
     arel (7.1.2)
     autoprefixer-rails (6.5.1.1)
       execjs
@@ -244,6 +246,7 @@ PLATFORMS
 DEPENDENCIES
   activemodel-serializers-xml
   annotate (~> 2.7.1)
+  appsignal
   bootstrap (~> 4.0.0.alpha5)
   byebug
   capistrano (~> 3.0)
@@ -276,4 +279,4 @@ DEPENDENCIES
   web-console
 
 BUNDLED WITH
-   1.15.4
+   1.16.3

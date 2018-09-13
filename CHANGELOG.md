@@ -1,3 +1,9 @@
+### 0.1.3
+
+**Add AppSignal support:**
+
+* Added AppSignal.
+
 ### 0.1.2
 
 **Add missing questions and fix CSV export bug:**
