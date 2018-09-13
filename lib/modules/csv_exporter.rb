@@ -36,9 +36,9 @@ module CsvExporter
 
         f.write BOM
         f.write(csv_file)
-      rescue Exception => e
-        Appsignal.send_error(e)
       end
+    rescue Exception => e
+      Appsignal.send_error(e)
     end
 
     filepath
